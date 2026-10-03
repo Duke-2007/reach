@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { I18nProvider, type Lang, useT } from "@/hooks/useT";
+import { type Lang, useT } from "@/hooks/useT";
 
 type Route = {
   href: string;
@@ -16,7 +16,7 @@ const ROUTES: Route[] = [
   { href: "/missed", key: "missed" },
   { href: "/model", key: "model" },
   { href: "/simulate", key: "simulate" },
-  { href: "/brief/gasabo", key: "brief", dynamic: true },
+  { href: "/brief/national", key: "brief", dynamic: true },
 ];
 
 function isActive(key: Route["key"], pathname: string | null): boolean {
@@ -191,9 +191,5 @@ function HeaderNavInner({ district }: { district?: string }) {
 }
 
 export function HeaderNav({ district }: { district?: string }) {
-  return (
-    <I18nProvider>
-      <HeaderNavInner district={district} />
-    </I18nProvider>
-  );
+  return <HeaderNavInner district={district} />;
 }

@@ -19,13 +19,14 @@ function titleDistrict(slug: string): string {
   return lower.charAt(0).toUpperCase() + lower.slice(1);
 }
 
-export default function BriefPage({
+export default async function BriefPage({
   params,
 }: {
-  params: { district: string };
+  params: Promise<{ district: string }>;
 }) {
-  const district = titleDistrict(params.district);
+  const { district } = await params;
+  const districtTitle = district ? titleDistrict(district) : "District";
   return (
-    <PageShell titleKey="pages.brief_heading" titleValues={{ district }} />
+    <PageShell titleKey="pages.brief_heading" titleValues={{ district: districtTitle }} />
   );
 }

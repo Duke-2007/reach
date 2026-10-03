@@ -60,22 +60,33 @@ function interpolate(
 }
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(() => {
-    if (typeof window === "undefined") return DEFAULT_LANG;
+  const [lang, setLangState] = useState<Lang>(DEFAULT_LANG);
+
+  useEffect(() => {
+    let savedLang: Lang | null = null;
     try {
       const saved = window.localStorage.getItem(STORAGE_KEY);
-      if (saved === "en" || saved === "rw") return saved;
+      if (saved === "en" || saved === "rw") {
+        savedLang = saved;
+      }
     } catch {
       /* ignore */
     }
-    try {
-      const nav = (window.navigator.language || "").toLowerCase();
-      if (nav.startsWith("rw") || nav.startsWith("kin")) return "rw";
-    } catch {
-      /* ignore */
+    if (!savedLang) {
+      try {
+        const nav = (window.navigator.language || "").toLowerCase();
+        if (nav.startsWith("rw") || nav.startsWith("kin")) {
+          savedLang = "rw";
+        }
+      } catch {
+        /* ignore */
+      }
     }
-    return DEFAULT_LANG;
-  });
+    if (savedLang && savedLang !== DEFAULT_LANG) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setLangState(savedLang);
+    }
+  }, []);
 
   useEffect(() => {
     if (typeof document !== "undefined") {

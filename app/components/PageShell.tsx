@@ -1,9 +1,9 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { I18nProvider, useT } from "@/hooks/useT";
+import { useT } from "@/hooks/useT";
 
-function Inner({
+export default function PageShell({
   titleKey,
   titleValues,
   children,
@@ -23,23 +23,5 @@ function Inner({
         {children}
       </div>
     </main>
-  );
-}
-
-export default function PageShell({
-  titleKey,
-  titleValues,
-  children,
-}: {
-  titleKey: string;
-  titleValues?: Record<string, string | number>;
-  children?: ReactNode;
-}) {
-  return (
-    <I18nProvider>
-      <Inner titleKey={titleKey} titleValues={titleValues}>
-        {children}
-      </Inner>
-    </I18nProvider>
   );
 }

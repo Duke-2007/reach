@@ -6,6 +6,7 @@ import "./globals.css";
 import { PlaceholderBanner } from "@/components/PlaceholderBanner";
 import { HeaderNav } from "@/components/HeaderNav";
 import { AppFooter } from "@/components/AppFooter";
+import { I18nProvider } from "@/hooks/useT";
 import {
   derivePlaceholderStatus,
   loadDistrictGaps,
@@ -91,10 +92,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <PlaceholderDataBanner />
-        <HeaderNav />
-        <div className="flex min-h-0 flex-1 flex-col">{children}</div>
-        <AppFooter />
+        <I18nProvider>
+          <PlaceholderDataBanner />
+          <HeaderNav />
+          <div className="flex min-h-0 flex-1 flex-col">{children}</div>
+          <AppFooter />
+        </I18nProvider>
       </body>
     </html>
   );
