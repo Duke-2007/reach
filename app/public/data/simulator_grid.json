@@ -1,0 +1,6093 @@
+{
+  "placeholder": true,
+  "note": "PLACEHOLDER DATA FOR UI DEVELOPMENT ONLY. All numerical values are synthetic and invented with a fixed random seed. They MUST be replaced by the output of the pipeline scripts (pipeline/01-05) before any public use. These are NOT survey results and are NOT claimed to represent real households, districts, or any outcome of the EICV7 data.",
+  "areas": [
+    "national",
+    "Gasabo",
+    "Huye",
+    "Musanze"
+  ],
+  "rules": [
+    {
+      "code": "A",
+      "label": "Observed / current targeting"
+    },
+    {
+      "code": "B",
+      "label": "Model-ranked (out-of-fold poverty risk)"
+    },
+    {
+      "code": "C",
+      "label": "Simple scorecard"
+    }
+  ],
+  "rule_A_note": "Rule A has exactly 1 record per area, at that area's observed actual_coverage; its budget_share equals actual_coverage. poor_reached / extreme_poor_reached are SHARES in [0,1] of the poor population, not counts.",
+  "share_scale_note": "poor_reached, poor_reached_ci, and extreme_poor_reached are fractions of the total poor (resp. extreme-poor) households in the area, i.e. 0 = 0 % and 1 = 100 %.",
+  "n_records": 404,
+  "records": [
+    {
+      "area": "national",
+      "budget_share": 0.4034,
+      "rule": "A",
+      "rule_label": "Observed / current targeting",
+      "poor_reached": 0.7449,
+      "poor_reached_ci": [
+        0.7316,
+        0.7582
+      ],
+      "extreme_poor_reached": 0.6631,
+      "exclusion_error": 0.2551,
+      "leakage": 0.1369,
+      "cost_per_poor_reached": 328288,
+      "actual_coverage": 0.4034
+    },
+    {
+      "area": "national",
+      "budget_share": 0.01,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0197,
+      "poor_reached_ci": [
+        0.0155,
+        0.024
+      ],
+      "extreme_poor_reached": 0.0206,
+      "exclusion_error": 0.9803,
+      "leakage": 0.249,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.01,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.0186,
+      "poor_reached_ci": [
+        0.0145,
+        0.0228
+      ],
+      "extreme_poor_reached": 0.0165,
+      "exclusion_error": 0.9814,
+      "leakage": 0.2861,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.02,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0394,
+      "poor_reached_ci": [
+        0.0335,
+        0.0454
+      ],
+      "extreme_poor_reached": 0.0352,
+      "exclusion_error": 0.9606,
+      "leakage": 0.2773,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.02,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.0373,
+      "poor_reached_ci": [
+        0.0315,
+        0.043
+      ],
+      "extreme_poor_reached": 0.0274,
+      "exclusion_error": 0.9627,
+      "leakage": 0.3502,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.03,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0591,
+      "poor_reached_ci": [
+        0.0519,
+        0.0663
+      ],
+      "extreme_poor_reached": 0.0469,
+      "exclusion_error": 0.9409,
+      "leakage": 0.2663,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.03,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.0559,
+      "poor_reached_ci": [
+        0.0489,
+        0.0629
+      ],
+      "extreme_poor_reached": 0.0536,
+      "exclusion_error": 0.9441,
+      "leakage": 0.1254,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.04,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0788,
+      "poor_reached_ci": [
+        0.0706,
+        0.0871
+      ],
+      "extreme_poor_reached": 0.063,
+      "exclusion_error": 0.9212,
+      "leakage": 0.1072,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.04,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.0745,
+      "poor_reached_ci": [
+        0.0665,
+        0.0825
+      ],
+      "extreme_poor_reached": 0.0611,
+      "exclusion_error": 0.9255,
+      "leakage": 0.2887,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.05,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0985,
+      "poor_reached_ci": [
+        0.0895,
+        0.1076
+      ],
+      "extreme_poor_reached": 0.0984,
+      "exclusion_error": 0.9015,
+      "leakage": 0.1751,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.05,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.0931,
+      "poor_reached_ci": [
+        0.0843,
+        0.102
+      ],
+      "extreme_poor_reached": 0.0734,
+      "exclusion_error": 0.9069,
+      "leakage": 0.3552,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.06,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1183,
+      "poor_reached_ci": [
+        0.1084,
+        0.1281
+      ],
+      "extreme_poor_reached": 0.0849,
+      "exclusion_error": 0.8817,
+      "leakage": 0.2041,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.06,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.1118,
+      "poor_reached_ci": [
+        0.1022,
+        0.1214
+      ],
+      "extreme_poor_reached": 0.1107,
+      "exclusion_error": 0.8882,
+      "leakage": 0.0898,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.07,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.138,
+      "poor_reached_ci": [
+        0.1274,
+        0.1485
+      ],
+      "extreme_poor_reached": 0.1127,
+      "exclusion_error": 0.862,
+      "leakage": 0.0875,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.07,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.1304,
+      "poor_reached_ci": [
+        0.1201,
+        0.1407
+      ],
+      "extreme_poor_reached": 0.136,
+      "exclusion_error": 0.8696,
+      "leakage": 0.1252,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.08,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1577,
+      "poor_reached_ci": [
+        0.1466,
+        0.1688
+      ],
+      "extreme_poor_reached": 0.1348,
+      "exclusion_error": 0.8423,
+      "leakage": 0.2188,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.08,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.149,
+      "poor_reached_ci": [
+        0.1382,
+        0.1599
+      ],
+      "extreme_poor_reached": 0.1336,
+      "exclusion_error": 0.851,
+      "leakage": 0.1096,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.09,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1774,
+      "poor_reached_ci": [
+        0.1657,
+        0.189
+      ],
+      "extreme_poor_reached": 0.1828,
+      "exclusion_error": 0.8226,
+      "leakage": 0.2146,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.09,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.1677,
+      "poor_reached_ci": [
+        0.1563,
+        0.1791
+      ],
+      "extreme_poor_reached": 0.1261,
+      "exclusion_error": 0.8323,
+      "leakage": 0.0863,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.1,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1971,
+      "poor_reached_ci": [
+        0.185,
+        0.2092
+      ],
+      "extreme_poor_reached": 0.1634,
+      "exclusion_error": 0.8029,
+      "leakage": 0.1822,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.1,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.1863,
+      "poor_reached_ci": [
+        0.1744,
+        0.1982
+      ],
+      "extreme_poor_reached": 0.1584,
+      "exclusion_error": 0.8137,
+      "leakage": 0.0877,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.11,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2168,
+      "poor_reached_ci": [
+        0.2042,
+        0.2294
+      ],
+      "extreme_poor_reached": 0.1794,
+      "exclusion_error": 0.7832,
+      "leakage": 0.2675,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.11,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2049,
+      "poor_reached_ci": [
+        0.1926,
+        0.2172
+      ],
+      "extreme_poor_reached": 0.2132,
+      "exclusion_error": 0.7951,
+      "leakage": 0.0867,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.12,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2365,
+      "poor_reached_ci": [
+        0.2235,
+        0.2495
+      ],
+      "extreme_poor_reached": 0.1952,
+      "exclusion_error": 0.7635,
+      "leakage": 0.2099,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.12,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2235,
+      "poor_reached_ci": [
+        0.2108,
+        0.2363
+      ],
+      "extreme_poor_reached": 0.2087,
+      "exclusion_error": 0.7765,
+      "leakage": 0.1799,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.13,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2562,
+      "poor_reached_ci": [
+        0.2429,
+        0.2696
+      ],
+      "extreme_poor_reached": 0.2296,
+      "exclusion_error": 0.7438,
+      "leakage": 0.2522,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.13,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2422,
+      "poor_reached_ci": [
+        0.2291,
+        0.2553
+      ],
+      "extreme_poor_reached": 0.2521,
+      "exclusion_error": 0.7578,
+      "leakage": 0.2965,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.14,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2759,
+      "poor_reached_ci": [
+        0.2623,
+        0.2896
+      ],
+      "extreme_poor_reached": 0.2826,
+      "exclusion_error": 0.7241,
+      "leakage": 0.1087,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.14,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2608,
+      "poor_reached_ci": [
+        0.2474,
+        0.2742
+      ],
+      "extreme_poor_reached": 0.1974,
+      "exclusion_error": 0.7392,
+      "leakage": 0.3102,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.15,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2956,
+      "poor_reached_ci": [
+        0.2817,
+        0.3096
+      ],
+      "extreme_poor_reached": 0.2253,
+      "exclusion_error": 0.7044,
+      "leakage": 0.1472,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.15,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2794,
+      "poor_reached_ci": [
+        0.2657,
+        0.2931
+      ],
+      "extreme_poor_reached": 0.2131,
+      "exclusion_error": 0.7206,
+      "leakage": 0.3455,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.16,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3154,
+      "poor_reached_ci": [
+        0.3012,
+        0.3295
+      ],
+      "extreme_poor_reached": 0.3071,
+      "exclusion_error": 0.6846,
+      "leakage": 0.1465,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.16,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2981,
+      "poor_reached_ci": [
+        0.2841,
+        0.312
+      ],
+      "extreme_poor_reached": 0.2785,
+      "exclusion_error": 0.7019,
+      "leakage": 0.2886,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.17,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3351,
+      "poor_reached_ci": [
+        0.3207,
+        0.3495
+      ],
+      "extreme_poor_reached": 0.2637,
+      "exclusion_error": 0.6649,
+      "leakage": 0.0902,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.17,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.3167,
+      "poor_reached_ci": [
+        0.3025,
+        0.3309
+      ],
+      "extreme_poor_reached": 0.2994,
+      "exclusion_error": 0.6833,
+      "leakage": 0.1845,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.18,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3548,
+      "poor_reached_ci": [
+        0.3402,
+        0.3694
+      ],
+      "extreme_poor_reached": 0.2532,
+      "exclusion_error": 0.6452,
+      "leakage": 0.1582,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.18,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.3353,
+      "poor_reached_ci": [
+        0.3209,
+        0.3497
+      ],
+      "extreme_poor_reached": 0.2581,
+      "exclusion_error": 0.6647,
+      "leakage": 0.3394,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.19,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3745,
+      "poor_reached_ci": [
+        0.3597,
+        0.3893
+      ],
+      "extreme_poor_reached": 0.308,
+      "exclusion_error": 0.6255,
+      "leakage": 0.234,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.19,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.354,
+      "poor_reached_ci": [
+        0.3394,
+        0.3685
+      ],
+      "extreme_poor_reached": 0.3557,
+      "exclusion_error": 0.646,
+      "leakage": 0.1368,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.2,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3942,
+      "poor_reached_ci": [
+        0.3793,
+        0.4091
+      ],
+      "extreme_poor_reached": 0.367,
+      "exclusion_error": 0.6058,
+      "leakage": 0.1411,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.2,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.3726,
+      "poor_reached_ci": [
+        0.3578,
+        0.3873
+      ],
+      "extreme_poor_reached": 0.2971,
+      "exclusion_error": 0.6274,
+      "leakage": 0.092,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.21,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4139,
+      "poor_reached_ci": [
+        0.3989,
+        0.4289
+      ],
+      "extreme_poor_reached": 0.4018,
+      "exclusion_error": 0.5861,
+      "leakage": 0.1302,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.21,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.3912,
+      "poor_reached_ci": [
+        0.3763,
+        0.4061
+      ],
+      "extreme_poor_reached": 0.3436,
+      "exclusion_error": 0.6088,
+      "leakage": 0.2665,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.22,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4336,
+      "poor_reached_ci": [
+        0.4185,
+        0.4487
+      ],
+      "extreme_poor_reached": 0.4316,
+      "exclusion_error": 0.5664,
+      "leakage": 0.1254,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.22,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.4098,
+      "poor_reached_ci": [
+        0.3948,
+        0.4249
+      ],
+      "extreme_poor_reached": 0.2908,
+      "exclusion_error": 0.5902,
+      "leakage": 0.3217,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.23,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4533,
+      "poor_reached_ci": [
+        0.4381,
+        0.4685
+      ],
+      "extreme_poor_reached": 0.3588,
+      "exclusion_error": 0.5467,
+      "leakage": 0.1784,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.23,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.4285,
+      "poor_reached_ci": [
+        0.4134,
+        0.4436
+      ],
+      "extreme_poor_reached": 0.4474,
+      "exclusion_error": 0.5715,
+      "leakage": 0.0819,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.24,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.473,
+      "poor_reached_ci": [
+        0.4578,
+        0.4883
+      ],
+      "extreme_poor_reached": 0.4299,
+      "exclusion_error": 0.527,
+      "leakage": 0.1274,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.24,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.4471,
+      "poor_reached_ci": [
+        0.4319,
+        0.4623
+      ],
+      "extreme_poor_reached": 0.436,
+      "exclusion_error": 0.5529,
+      "leakage": 0.1942,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.25,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4927,
+      "poor_reached_ci": [
+        0.4775,
+        0.508
+      ],
+      "extreme_poor_reached": 0.5147,
+      "exclusion_error": 0.5073,
+      "leakage": 0.0778,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.25,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.4657,
+      "poor_reached_ci": [
+        0.4505,
+        0.481
+      ],
+      "extreme_poor_reached": 0.4726,
+      "exclusion_error": 0.5343,
+      "leakage": 0.124,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.26,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5125,
+      "poor_reached_ci": [
+        0.4972,
+        0.5277
+      ],
+      "extreme_poor_reached": 0.3667,
+      "exclusion_error": 0.4875,
+      "leakage": 0.1454,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.26,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.4844,
+      "poor_reached_ci": [
+        0.4691,
+        0.4996
+      ],
+      "extreme_poor_reached": 0.4272,
+      "exclusion_error": 0.5156,
+      "leakage": 0.2963,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.27,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5322,
+      "poor_reached_ci": [
+        0.5169,
+        0.5474
+      ],
+      "extreme_poor_reached": 0.5005,
+      "exclusion_error": 0.4678,
+      "leakage": 0.2511,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.27,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.503,
+      "poor_reached_ci": [
+        0.4877,
+        0.5182
+      ],
+      "extreme_poor_reached": 0.4818,
+      "exclusion_error": 0.497,
+      "leakage": 0.1248,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.28,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5519,
+      "poor_reached_ci": [
+        0.5367,
+        0.5671
+      ],
+      "extreme_poor_reached": 0.4696,
+      "exclusion_error": 0.4481,
+      "leakage": 0.2518,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.28,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.5216,
+      "poor_reached_ci": [
+        0.5064,
+        0.5369
+      ],
+      "extreme_poor_reached": 0.5332,
+      "exclusion_error": 0.4784,
+      "leakage": 0.2427,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.29,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5716,
+      "poor_reached_ci": [
+        0.5565,
+        0.5867
+      ],
+      "extreme_poor_reached": 0.5328,
+      "exclusion_error": 0.4284,
+      "leakage": 0.0783,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.29,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.5402,
+      "poor_reached_ci": [
+        0.525,
+        0.5555
+      ],
+      "extreme_poor_reached": 0.5484,
+      "exclusion_error": 0.4598,
+      "leakage": 0.2095,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.3,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5913,
+      "poor_reached_ci": [
+        0.5763,
+        0.6063
+      ],
+      "extreme_poor_reached": 0.5519,
+      "exclusion_error": 0.4087,
+      "leakage": 0.1199,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.3,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.5589,
+      "poor_reached_ci": [
+        0.5437,
+        0.574
+      ],
+      "extreme_poor_reached": 0.5276,
+      "exclusion_error": 0.4411,
+      "leakage": 0.2215,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.31,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.611,
+      "poor_reached_ci": [
+        0.5961,
+        0.6259
+      ],
+      "extreme_poor_reached": 0.4687,
+      "exclusion_error": 0.389,
+      "leakage": 0.1896,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.31,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.5775,
+      "poor_reached_ci": [
+        0.5624,
+        0.5926
+      ],
+      "extreme_poor_reached": 0.4809,
+      "exclusion_error": 0.4225,
+      "leakage": 0.2736,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.32,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6307,
+      "poor_reached_ci": [
+        0.616,
+        0.6454
+      ],
+      "extreme_poor_reached": 0.4799,
+      "exclusion_error": 0.3693,
+      "leakage": 0.1689,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.32,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.5961,
+      "poor_reached_ci": [
+        0.5812,
+        0.6111
+      ],
+      "extreme_poor_reached": 0.502,
+      "exclusion_error": 0.4039,
+      "leakage": 0.2958,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.33,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6504,
+      "poor_reached_ci": [
+        0.6359,
+        0.665
+      ],
+      "extreme_poor_reached": 0.5245,
+      "exclusion_error": 0.3496,
+      "leakage": 0.0945,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.33,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.6148,
+      "poor_reached_ci": [
+        0.5999,
+        0.6296
+      ],
+      "extreme_poor_reached": 0.5994,
+      "exclusion_error": 0.3852,
+      "leakage": 0.2327,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.34,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6701,
+      "poor_reached_ci": [
+        0.6558,
+        0.6845
+      ],
+      "extreme_poor_reached": 0.5447,
+      "exclusion_error": 0.3299,
+      "leakage": 0.1414,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.34,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.6334,
+      "poor_reached_ci": [
+        0.6187,
+        0.6481
+      ],
+      "extreme_poor_reached": 0.5932,
+      "exclusion_error": 0.3666,
+      "leakage": 0.2058,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.35,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6898,
+      "poor_reached_ci": [
+        0.6757,
+        0.704
+      ],
+      "extreme_poor_reached": 0.6745,
+      "exclusion_error": 0.3102,
+      "leakage": 0.2461,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.35,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.652,
+      "poor_reached_ci": [
+        0.6375,
+        0.6666
+      ],
+      "extreme_poor_reached": 0.6244,
+      "exclusion_error": 0.348,
+      "leakage": 0.2446,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.36,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7096,
+      "poor_reached_ci": [
+        0.6957,
+        0.7234
+      ],
+      "extreme_poor_reached": 0.5672,
+      "exclusion_error": 0.2904,
+      "leakage": 0.185,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.36,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.6706,
+      "poor_reached_ci": [
+        0.6563,
+        0.685
+      ],
+      "extreme_poor_reached": 0.6148,
+      "exclusion_error": 0.3294,
+      "leakage": 0.092,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.37,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7293,
+      "poor_reached_ci": [
+        0.7157,
+        0.7428
+      ],
+      "extreme_poor_reached": 0.7535,
+      "exclusion_error": 0.2707,
+      "leakage": 0.0977,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.37,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.6893,
+      "poor_reached_ci": [
+        0.6752,
+        0.7034
+      ],
+      "extreme_poor_reached": 0.5574,
+      "exclusion_error": 0.3107,
+      "leakage": 0.2817,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.38,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.749,
+      "poor_reached_ci": [
+        0.7357,
+        0.7622
+      ],
+      "extreme_poor_reached": 0.5629,
+      "exclusion_error": 0.251,
+      "leakage": 0.0594,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.38,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.7079,
+      "poor_reached_ci": [
+        0.694,
+        0.7218
+      ],
+      "extreme_poor_reached": 0.7393,
+      "exclusion_error": 0.2921,
+      "leakage": 0.2286,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.39,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7687,
+      "poor_reached_ci": [
+        0.7558,
+        0.7816
+      ],
+      "extreme_poor_reached": 0.7448,
+      "exclusion_error": 0.2313,
+      "leakage": 0.1408,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.39,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.7265,
+      "poor_reached_ci": [
+        0.7129,
+        0.7401
+      ],
+      "extreme_poor_reached": 0.7339,
+      "exclusion_error": 0.2735,
+      "leakage": 0.2181,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.4,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7884,
+      "poor_reached_ci": [
+        0.7759,
+        0.8009
+      ],
+      "extreme_poor_reached": 0.7501,
+      "exclusion_error": 0.2116,
+      "leakage": 0.126,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.4,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.7452,
+      "poor_reached_ci": [
+        0.7319,
+        0.7585
+      ],
+      "extreme_poor_reached": 0.6258,
+      "exclusion_error": 0.2548,
+      "leakage": 0.1045,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.41,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8081,
+      "poor_reached_ci": [
+        0.7961,
+        0.8201
+      ],
+      "extreme_poor_reached": 0.7602,
+      "exclusion_error": 0.1919,
+      "leakage": 0.2259,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.41,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.7638,
+      "poor_reached_ci": [
+        0.7508,
+        0.7768
+      ],
+      "extreme_poor_reached": 0.7647,
+      "exclusion_error": 0.2362,
+      "leakage": 0.2971,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.42,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8278,
+      "poor_reached_ci": [
+        0.8163,
+        0.8393
+      ],
+      "extreme_poor_reached": 0.805,
+      "exclusion_error": 0.1722,
+      "leakage": 0.0923,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.42,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.7824,
+      "poor_reached_ci": [
+        0.7698,
+        0.795
+      ],
+      "extreme_poor_reached": 0.7679,
+      "exclusion_error": 0.2176,
+      "leakage": 0.2463,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.43,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8475,
+      "poor_reached_ci": [
+        0.8366,
+        0.8585
+      ],
+      "extreme_poor_reached": 0.7311,
+      "exclusion_error": 0.1525,
+      "leakage": 0.1581,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.43,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.8011,
+      "poor_reached_ci": [
+        0.7889,
+        0.8132
+      ],
+      "extreme_poor_reached": 0.818,
+      "exclusion_error": 0.1989,
+      "leakage": 0.0962,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.44,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8672,
+      "poor_reached_ci": [
+        0.8569,
+        0.8776
+      ],
+      "extreme_poor_reached": 0.6475,
+      "exclusion_error": 0.1328,
+      "leakage": 0.1393,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.44,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.8197,
+      "poor_reached_ci": [
+        0.8079,
+        0.8314
+      ],
+      "extreme_poor_reached": 0.7262,
+      "exclusion_error": 0.1803,
+      "leakage": 0.2086,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.45,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8869,
+      "poor_reached_ci": [
+        0.8773,
+        0.8966
+      ],
+      "extreme_poor_reached": 0.7194,
+      "exclusion_error": 0.1131,
+      "leakage": 0.195,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.45,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.8383,
+      "poor_reached_ci": [
+        0.8271,
+        0.8495
+      ],
+      "extreme_poor_reached": 0.7167,
+      "exclusion_error": 0.1617,
+      "leakage": 0.2733,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.46,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.9067,
+      "poor_reached_ci": [
+        0.8978,
+        0.9155
+      ],
+      "extreme_poor_reached": 0.9177,
+      "exclusion_error": 0.0933,
+      "leakage": 0.1306,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.46,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.8569,
+      "poor_reached_ci": [
+        0.8463,
+        0.8676
+      ],
+      "extreme_poor_reached": 0.8718,
+      "exclusion_error": 0.1431,
+      "leakage": 0.1777,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.47,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.9264,
+      "poor_reached_ci": [
+        0.9184,
+        0.9343
+      ],
+      "extreme_poor_reached": 0.7001,
+      "exclusion_error": 0.0736,
+      "leakage": 0.2135,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.47,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.8756,
+      "poor_reached_ci": [
+        0.8655,
+        0.8856
+      ],
+      "extreme_poor_reached": 0.7508,
+      "exclusion_error": 0.1244,
+      "leakage": 0.2546,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.48,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.9461,
+      "poor_reached_ci": [
+        0.9392,
+        0.953
+      ],
+      "extreme_poor_reached": 0.9404,
+      "exclusion_error": 0.0539,
+      "leakage": 0.1008,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.48,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.8942,
+      "poor_reached_ci": [
+        0.8848,
+        0.9036
+      ],
+      "extreme_poor_reached": 0.8693,
+      "exclusion_error": 0.1058,
+      "leakage": 0.1858,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.49,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.9658,
+      "poor_reached_ci": [
+        0.9602,
+        0.9713
+      ],
+      "extreme_poor_reached": 0.7569,
+      "exclusion_error": 0.0342,
+      "leakage": 0.1312,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.49,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.9128,
+      "poor_reached_ci": [
+        0.9042,
+        0.9214
+      ],
+      "extreme_poor_reached": 0.8669,
+      "exclusion_error": 0.0872,
+      "leakage": 0.1219,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "national",
+      "budget_share": 0.5,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.9855,
+      "poor_reached_ci": [
+        0.9818,
+        0.9891
+      ],
+      "extreme_poor_reached": 0.8057,
+      "exclusion_error": 0.0145,
+      "leakage": 0.2163,
+      "cost_per_poor_reached": 307565
+    },
+    {
+      "area": "national",
+      "budget_share": 0.5,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.9315,
+      "poor_reached_ci": [
+        0.9237,
+        0.9392
+      ],
+      "extreme_poor_reached": 0.6783,
+      "exclusion_error": 0.0685,
+      "leakage": 0.1004,
+      "cost_per_poor_reached": 325409
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.5102,
+      "rule": "A",
+      "rule_label": "Observed / current targeting",
+      "poor_reached": 0.9141,
+      "poor_reached_ci": [
+        0.8494,
+        0.9788
+      ],
+      "extreme_poor_reached": 0.7457,
+      "exclusion_error": 0.0859,
+      "leakage": 0.1633,
+      "cost_per_poor_reached": 19379667,
+      "actual_coverage": 0.5102
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.01,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0193,
+      "poor_reached_ci": [
+        0.0,
+        0.051
+      ],
+      "extreme_poor_reached": 0.0139,
+      "exclusion_error": 0.9807,
+      "leakage": 0.2496,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.01,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.0185,
+      "poor_reached_ci": [
+        0.0,
+        0.0496
+      ],
+      "extreme_poor_reached": 0.0155,
+      "exclusion_error": 0.9815,
+      "leakage": 0.3155,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.02,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0386,
+      "poor_reached_ci": [
+        0.0,
+        0.083
+      ],
+      "extreme_poor_reached": 0.0398,
+      "exclusion_error": 0.9614,
+      "leakage": 0.0619,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.02,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.037,
+      "poor_reached_ci": [
+        0.0,
+        0.0806
+      ],
+      "extreme_poor_reached": 0.0373,
+      "exclusion_error": 0.963,
+      "leakage": 0.2544,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.03,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0579,
+      "poor_reached_ci": [
+        0.0039,
+        0.1118
+      ],
+      "extreme_poor_reached": 0.0502,
+      "exclusion_error": 0.9421,
+      "leakage": 0.2727,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.03,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.0555,
+      "poor_reached_ci": [
+        0.0026,
+        0.1083
+      ],
+      "extreme_poor_reached": 0.0446,
+      "exclusion_error": 0.9445,
+      "leakage": 0.1964,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.04,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0771,
+      "poor_reached_ci": [
+        0.0155,
+        0.1388
+      ],
+      "extreme_poor_reached": 0.0781,
+      "exclusion_error": 0.9229,
+      "leakage": 0.2472,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.04,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.074,
+      "poor_reached_ci": [
+        0.0135,
+        0.1344
+      ],
+      "extreme_poor_reached": 0.0657,
+      "exclusion_error": 0.926,
+      "leakage": 0.301,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.05,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0964,
+      "poor_reached_ci": [
+        0.0282,
+        0.1646
+      ],
+      "extreme_poor_reached": 0.0945,
+      "exclusion_error": 0.9036,
+      "leakage": 0.2603,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.05,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.0924,
+      "poor_reached_ci": [
+        0.0255,
+        0.1594
+      ],
+      "extreme_poor_reached": 0.0805,
+      "exclusion_error": 0.9076,
+      "leakage": 0.1592,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.06,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1157,
+      "poor_reached_ci": [
+        0.0418,
+        0.1896
+      ],
+      "extreme_poor_reached": 0.1007,
+      "exclusion_error": 0.8843,
+      "leakage": 0.1443,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.06,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.1109,
+      "poor_reached_ci": [
+        0.0384,
+        0.1835
+      ],
+      "extreme_poor_reached": 0.1036,
+      "exclusion_error": 0.8891,
+      "leakage": 0.3178,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.07,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.135,
+      "poor_reached_ci": [
+        0.0561,
+        0.2139
+      ],
+      "extreme_poor_reached": 0.1287,
+      "exclusion_error": 0.865,
+      "leakage": 0.2453,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.07,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.1294,
+      "poor_reached_ci": [
+        0.0519,
+        0.207
+      ],
+      "extreme_poor_reached": 0.1323,
+      "exclusion_error": 0.8706,
+      "leakage": 0.3716,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.08,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1543,
+      "poor_reached_ci": [
+        0.0708,
+        0.2377
+      ],
+      "extreme_poor_reached": 0.1368,
+      "exclusion_error": 0.8457,
+      "leakage": 0.2592,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.08,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.1479,
+      "poor_reached_ci": [
+        0.0659,
+        0.2299
+      ],
+      "extreme_poor_reached": 0.1342,
+      "exclusion_error": 0.8521,
+      "leakage": 0.2745,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.09,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1736,
+      "poor_reached_ci": [
+        0.0861,
+        0.261
+      ],
+      "extreme_poor_reached": 0.1266,
+      "exclusion_error": 0.8264,
+      "leakage": 0.1514,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.09,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.1664,
+      "poor_reached_ci": [
+        0.0804,
+        0.2524
+      ],
+      "extreme_poor_reached": 0.167,
+      "exclusion_error": 0.8336,
+      "leakage": 0.1293,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.1,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1928,
+      "poor_reached_ci": [
+        0.1017,
+        0.284
+      ],
+      "extreme_poor_reached": 0.1525,
+      "exclusion_error": 0.8072,
+      "leakage": 0.1283,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.1,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.1849,
+      "poor_reached_ci": [
+        0.0952,
+        0.2746
+      ],
+      "extreme_poor_reached": 0.1588,
+      "exclusion_error": 0.8151,
+      "leakage": 0.1752,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.11,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2121,
+      "poor_reached_ci": [
+        0.1177,
+        0.3066
+      ],
+      "extreme_poor_reached": 0.2138,
+      "exclusion_error": 0.7879,
+      "leakage": 0.1169,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.11,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2034,
+      "poor_reached_ci": [
+        0.1104,
+        0.2964
+      ],
+      "extreme_poor_reached": 0.2101,
+      "exclusion_error": 0.7966,
+      "leakage": 0.1994,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.12,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2314,
+      "poor_reached_ci": [
+        0.134,
+        0.3288
+      ],
+      "extreme_poor_reached": 0.2296,
+      "exclusion_error": 0.7686,
+      "leakage": 0.1587,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.12,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2219,
+      "poor_reached_ci": [
+        0.1259,
+        0.3178
+      ],
+      "extreme_poor_reached": 0.2135,
+      "exclusion_error": 0.7781,
+      "leakage": 0.0893,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.13,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2507,
+      "poor_reached_ci": [
+        0.1506,
+        0.3508
+      ],
+      "extreme_poor_reached": 0.259,
+      "exclusion_error": 0.7493,
+      "leakage": 0.104,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.13,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2404,
+      "poor_reached_ci": [
+        0.1417,
+        0.3391
+      ],
+      "extreme_poor_reached": 0.174,
+      "exclusion_error": 0.7596,
+      "leakage": 0.3555,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.14,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.27,
+      "poor_reached_ci": [
+        0.1674,
+        0.3725
+      ],
+      "extreme_poor_reached": 0.1928,
+      "exclusion_error": 0.73,
+      "leakage": 0.0614,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.14,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2588,
+      "poor_reached_ci": [
+        0.1577,
+        0.36
+      ],
+      "extreme_poor_reached": 0.2036,
+      "exclusion_error": 0.7412,
+      "leakage": 0.3194,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.15,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2893,
+      "poor_reached_ci": [
+        0.1845,
+        0.394
+      ],
+      "extreme_poor_reached": 0.2654,
+      "exclusion_error": 0.7107,
+      "leakage": 0.1063,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.15,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2773,
+      "poor_reached_ci": [
+        0.1739,
+        0.3807
+      ],
+      "extreme_poor_reached": 0.2401,
+      "exclusion_error": 0.7227,
+      "leakage": 0.1064,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.16,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3085,
+      "poor_reached_ci": [
+        0.2018,
+        0.4152
+      ],
+      "extreme_poor_reached": 0.3183,
+      "exclusion_error": 0.6915,
+      "leakage": 0.1549,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.16,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2958,
+      "poor_reached_ci": [
+        0.1904,
+        0.4013
+      ],
+      "extreme_poor_reached": 0.2336,
+      "exclusion_error": 0.7042,
+      "leakage": 0.1799,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.17,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3278,
+      "poor_reached_ci": [
+        0.2194,
+        0.4363
+      ],
+      "extreme_poor_reached": 0.299,
+      "exclusion_error": 0.6722,
+      "leakage": 0.2618,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.17,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.3143,
+      "poor_reached_ci": [
+        0.2071,
+        0.4216
+      ],
+      "extreme_poor_reached": 0.299,
+      "exclusion_error": 0.6857,
+      "leakage": 0.2975,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.18,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3471,
+      "poor_reached_ci": [
+        0.2371,
+        0.4571
+      ],
+      "extreme_poor_reached": 0.2629,
+      "exclusion_error": 0.6529,
+      "leakage": 0.1205,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.18,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.3328,
+      "poor_reached_ci": [
+        0.224,
+        0.4417
+      ],
+      "extreme_poor_reached": 0.3004,
+      "exclusion_error": 0.6672,
+      "leakage": 0.3398,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.19,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3664,
+      "poor_reached_ci": [
+        0.2551,
+        0.4777
+      ],
+      "extreme_poor_reached": 0.3303,
+      "exclusion_error": 0.6336,
+      "leakage": 0.2476,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.19,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.3513,
+      "poor_reached_ci": [
+        0.241,
+        0.4616
+      ],
+      "extreme_poor_reached": 0.2921,
+      "exclusion_error": 0.6487,
+      "leakage": 0.342,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.2,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3857,
+      "poor_reached_ci": [
+        0.2732,
+        0.4981
+      ],
+      "extreme_poor_reached": 0.2967,
+      "exclusion_error": 0.6143,
+      "leakage": 0.1793,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.2,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.3698,
+      "poor_reached_ci": [
+        0.2583,
+        0.4813
+      ],
+      "extreme_poor_reached": 0.3663,
+      "exclusion_error": 0.6302,
+      "leakage": 0.1408,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.21,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.405,
+      "poor_reached_ci": [
+        0.2916,
+        0.5183
+      ],
+      "extreme_poor_reached": 0.3823,
+      "exclusion_error": 0.595,
+      "leakage": 0.1169,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.21,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.3883,
+      "poor_reached_ci": [
+        0.2757,
+        0.5008
+      ],
+      "extreme_poor_reached": 0.3648,
+      "exclusion_error": 0.6117,
+      "leakage": 0.3003,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.22,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4242,
+      "poor_reached_ci": [
+        0.3101,
+        0.5384
+      ],
+      "extreme_poor_reached": 0.4152,
+      "exclusion_error": 0.5758,
+      "leakage": 0.1722,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.22,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.4068,
+      "poor_reached_ci": [
+        0.2933,
+        0.5202
+      ],
+      "extreme_poor_reached": 0.2906,
+      "exclusion_error": 0.5932,
+      "leakage": 0.2217,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.23,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4435,
+      "poor_reached_ci": [
+        0.3288,
+        0.5583
+      ],
+      "extreme_poor_reached": 0.4132,
+      "exclusion_error": 0.5565,
+      "leakage": 0.067,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.23,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.4253,
+      "poor_reached_ci": [
+        0.3111,
+        0.5394
+      ],
+      "extreme_poor_reached": 0.3941,
+      "exclusion_error": 0.5747,
+      "leakage": 0.0741,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.24,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4628,
+      "poor_reached_ci": [
+        0.3476,
+        0.578
+      ],
+      "extreme_poor_reached": 0.392,
+      "exclusion_error": 0.5372,
+      "leakage": 0.1548,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.24,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.4437,
+      "poor_reached_ci": [
+        0.329,
+        0.5585
+      ],
+      "extreme_poor_reached": 0.3779,
+      "exclusion_error": 0.5563,
+      "leakage": 0.1719,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.25,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4821,
+      "poor_reached_ci": [
+        0.3667,
+        0.5975
+      ],
+      "extreme_poor_reached": 0.4879,
+      "exclusion_error": 0.5179,
+      "leakage": 0.1478,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.25,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.4622,
+      "poor_reached_ci": [
+        0.3471,
+        0.5774
+      ],
+      "extreme_poor_reached": 0.3483,
+      "exclusion_error": 0.5378,
+      "leakage": 0.1191,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.26,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5014,
+      "poor_reached_ci": [
+        0.3859,
+        0.6169
+      ],
+      "extreme_poor_reached": 0.4425,
+      "exclusion_error": 0.4986,
+      "leakage": 0.1867,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.26,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.4807,
+      "poor_reached_ci": [
+        0.3653,
+        0.5961
+      ],
+      "extreme_poor_reached": 0.4401,
+      "exclusion_error": 0.5193,
+      "leakage": 0.3255,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.27,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5207,
+      "poor_reached_ci": [
+        0.4053,
+        0.6361
+      ],
+      "extreme_poor_reached": 0.5056,
+      "exclusion_error": 0.4793,
+      "leakage": 0.1476,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.27,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.4992,
+      "poor_reached_ci": [
+        0.3837,
+        0.6147
+      ],
+      "extreme_poor_reached": 0.4937,
+      "exclusion_error": 0.5008,
+      "leakage": 0.2334,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.28,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5399,
+      "poor_reached_ci": [
+        0.4248,
+        0.6551
+      ],
+      "extreme_poor_reached": 0.4389,
+      "exclusion_error": 0.4601,
+      "leakage": 0.1018,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.28,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.5177,
+      "poor_reached_ci": [
+        0.4023,
+        0.6331
+      ],
+      "extreme_poor_reached": 0.5317,
+      "exclusion_error": 0.4823,
+      "leakage": 0.1459,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.29,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5592,
+      "poor_reached_ci": [
+        0.4445,
+        0.6739
+      ],
+      "extreme_poor_reached": 0.4797,
+      "exclusion_error": 0.4408,
+      "leakage": 0.2047,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.29,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.5362,
+      "poor_reached_ci": [
+        0.421,
+        0.6514
+      ],
+      "extreme_poor_reached": 0.4823,
+      "exclusion_error": 0.4638,
+      "leakage": 0.2521,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.3,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5785,
+      "poor_reached_ci": [
+        0.4645,
+        0.6926
+      ],
+      "extreme_poor_reached": 0.4731,
+      "exclusion_error": 0.4215,
+      "leakage": 0.1516,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.3,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.5547,
+      "poor_reached_ci": [
+        0.4399,
+        0.6695
+      ],
+      "extreme_poor_reached": 0.4514,
+      "exclusion_error": 0.4453,
+      "leakage": 0.2016,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.31,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5978,
+      "poor_reached_ci": [
+        0.4845,
+        0.7111
+      ],
+      "extreme_poor_reached": 0.4927,
+      "exclusion_error": 0.4022,
+      "leakage": 0.103,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.31,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.5732,
+      "poor_reached_ci": [
+        0.4589,
+        0.6874
+      ],
+      "extreme_poor_reached": 0.4573,
+      "exclusion_error": 0.4268,
+      "leakage": 0.2302,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.32,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6171,
+      "poor_reached_ci": [
+        0.5048,
+        0.7294
+      ],
+      "extreme_poor_reached": 0.622,
+      "exclusion_error": 0.3829,
+      "leakage": 0.1626,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.32,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.5917,
+      "poor_reached_ci": [
+        0.4781,
+        0.7052
+      ],
+      "extreme_poor_reached": 0.5211,
+      "exclusion_error": 0.4083,
+      "leakage": 0.1195,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.33,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6364,
+      "poor_reached_ci": [
+        0.5252,
+        0.7475
+      ],
+      "extreme_poor_reached": 0.4992,
+      "exclusion_error": 0.3636,
+      "leakage": 0.1318,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.33,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.6101,
+      "poor_reached_ci": [
+        0.4975,
+        0.7228
+      ],
+      "extreme_poor_reached": 0.5457,
+      "exclusion_error": 0.3899,
+      "leakage": 0.1322,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.34,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6556,
+      "poor_reached_ci": [
+        0.5459,
+        0.7654
+      ],
+      "extreme_poor_reached": 0.5682,
+      "exclusion_error": 0.3444,
+      "leakage": 0.1923,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.34,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.6286,
+      "poor_reached_ci": [
+        0.517,
+        0.7402
+      ],
+      "extreme_poor_reached": 0.5387,
+      "exclusion_error": 0.3714,
+      "leakage": 0.0717,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.35,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6749,
+      "poor_reached_ci": [
+        0.5667,
+        0.7831
+      ],
+      "extreme_poor_reached": 0.542,
+      "exclusion_error": 0.3251,
+      "leakage": 0.1302,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.35,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.6471,
+      "poor_reached_ci": [
+        0.5367,
+        0.7575
+      ],
+      "extreme_poor_reached": 0.5081,
+      "exclusion_error": 0.3529,
+      "leakage": 0.2441,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.36,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6942,
+      "poor_reached_ci": [
+        0.5878,
+        0.8006
+      ],
+      "extreme_poor_reached": 0.5756,
+      "exclusion_error": 0.3058,
+      "leakage": 0.1592,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.36,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.6656,
+      "poor_reached_ci": [
+        0.5566,
+        0.7746
+      ],
+      "extreme_poor_reached": 0.546,
+      "exclusion_error": 0.3344,
+      "leakage": 0.3315,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.37,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7135,
+      "poor_reached_ci": [
+        0.6091,
+        0.8179
+      ],
+      "extreme_poor_reached": 0.6369,
+      "exclusion_error": 0.2865,
+      "leakage": 0.1187,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.37,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.6841,
+      "poor_reached_ci": [
+        0.5767,
+        0.7915
+      ],
+      "extreme_poor_reached": 0.5875,
+      "exclusion_error": 0.3159,
+      "leakage": 0.1473,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.38,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7328,
+      "poor_reached_ci": [
+        0.6306,
+        0.835
+      ],
+      "extreme_poor_reached": 0.5721,
+      "exclusion_error": 0.2672,
+      "leakage": 0.1906,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.38,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.7026,
+      "poor_reached_ci": [
+        0.597,
+        0.8082
+      ],
+      "extreme_poor_reached": 0.5694,
+      "exclusion_error": 0.2974,
+      "leakage": 0.2615,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.39,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7521,
+      "poor_reached_ci": [
+        0.6523,
+        0.8518
+      ],
+      "extreme_poor_reached": 0.7767,
+      "exclusion_error": 0.2479,
+      "leakage": 0.1836,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.39,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.7211,
+      "poor_reached_ci": [
+        0.6175,
+        0.8247
+      ],
+      "extreme_poor_reached": 0.5531,
+      "exclusion_error": 0.2789,
+      "leakage": 0.2592,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.4,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7713,
+      "poor_reached_ci": [
+        0.6743,
+        0.8684
+      ],
+      "extreme_poor_reached": 0.6146,
+      "exclusion_error": 0.2287,
+      "leakage": 0.1632,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.4,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.7396,
+      "poor_reached_ci": [
+        0.6382,
+        0.8409
+      ],
+      "extreme_poor_reached": 0.7145,
+      "exclusion_error": 0.2604,
+      "leakage": 0.2209,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.41,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7906,
+      "poor_reached_ci": [
+        0.6967,
+        0.8846
+      ],
+      "extreme_poor_reached": 0.8248,
+      "exclusion_error": 0.2094,
+      "leakage": 0.2094,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.41,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.7581,
+      "poor_reached_ci": [
+        0.6591,
+        0.857
+      ],
+      "extreme_poor_reached": 0.6092,
+      "exclusion_error": 0.2419,
+      "leakage": 0.1586,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.42,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8099,
+      "poor_reached_ci": [
+        0.7193,
+        0.9005
+      ],
+      "extreme_poor_reached": 0.6526,
+      "exclusion_error": 0.1901,
+      "leakage": 0.1844,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.42,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.7765,
+      "poor_reached_ci": [
+        0.6803,
+        0.8728
+      ],
+      "extreme_poor_reached": 0.578,
+      "exclusion_error": 0.2235,
+      "leakage": 0.0764,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.43,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8292,
+      "poor_reached_ci": [
+        0.7423,
+        0.9161
+      ],
+      "extreme_poor_reached": 0.5963,
+      "exclusion_error": 0.1708,
+      "leakage": 0.1039,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.43,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.795,
+      "poor_reached_ci": [
+        0.7018,
+        0.8883
+      ],
+      "extreme_poor_reached": 0.8192,
+      "exclusion_error": 0.205,
+      "leakage": 0.2284,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.44,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8485,
+      "poor_reached_ci": [
+        0.7657,
+        0.9313
+      ],
+      "extreme_poor_reached": 0.8175,
+      "exclusion_error": 0.1515,
+      "leakage": 0.0672,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.44,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.8135,
+      "poor_reached_ci": [
+        0.7236,
+        0.9035
+      ],
+      "extreme_poor_reached": 0.573,
+      "exclusion_error": 0.1865,
+      "leakage": 0.1368,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.45,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8678,
+      "poor_reached_ci": [
+        0.7895,
+        0.946
+      ],
+      "extreme_poor_reached": 0.7528,
+      "exclusion_error": 0.1322,
+      "leakage": 0.1121,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.45,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.832,
+      "poor_reached_ci": [
+        0.7457,
+        0.9184
+      ],
+      "extreme_poor_reached": 0.8636,
+      "exclusion_error": 0.168,
+      "leakage": 0.128,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.46,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8871,
+      "poor_reached_ci": [
+        0.8139,
+        0.9602
+      ],
+      "extreme_poor_reached": 0.8885,
+      "exclusion_error": 0.1129,
+      "leakage": 0.0687,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.46,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.8505,
+      "poor_reached_ci": [
+        0.7681,
+        0.9329
+      ],
+      "extreme_poor_reached": 0.6148,
+      "exclusion_error": 0.1495,
+      "leakage": 0.188,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.47,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.9063,
+      "poor_reached_ci": [
+        0.839,
+        0.9736
+      ],
+      "extreme_poor_reached": 0.8175,
+      "exclusion_error": 0.0937,
+      "leakage": 0.176,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.47,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.869,
+      "poor_reached_ci": [
+        0.7911,
+        0.9469
+      ],
+      "extreme_poor_reached": 0.6544,
+      "exclusion_error": 0.131,
+      "leakage": 0.2676,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.48,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.9256,
+      "poor_reached_ci": [
+        0.865,
+        0.9862
+      ],
+      "extreme_poor_reached": 0.9554,
+      "exclusion_error": 0.0744,
+      "leakage": 0.0627,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.48,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.8875,
+      "poor_reached_ci": [
+        0.8145,
+        0.9605
+      ],
+      "extreme_poor_reached": 0.6983,
+      "exclusion_error": 0.1125,
+      "leakage": 0.2028,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.49,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.9449,
+      "poor_reached_ci": [
+        0.8922,
+        0.9976
+      ],
+      "extreme_poor_reached": 0.7991,
+      "exclusion_error": 0.0551,
+      "leakage": 0.1574,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.49,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.906,
+      "poor_reached_ci": [
+        0.8386,
+        0.9734
+      ],
+      "extreme_poor_reached": 0.8303,
+      "exclusion_error": 0.094,
+      "leakage": 0.2562,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.5,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.9642,
+      "poor_reached_ci": [
+        0.9213,
+        1.0
+      ],
+      "extreme_poor_reached": 0.8033,
+      "exclusion_error": 0.0358,
+      "leakage": 0.2145,
+      "cost_per_poor_reached": 18005980
+    },
+    {
+      "area": "Gasabo",
+      "budget_share": 0.5,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.9245,
+      "poor_reached_ci": [
+        0.8634,
+        0.9855
+      ],
+      "extreme_poor_reached": 0.7433,
+      "exclusion_error": 0.0755,
+      "leakage": 0.2084,
+      "cost_per_poor_reached": 18779725
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.5258,
+      "rule": "A",
+      "rule_label": "Observed / current targeting",
+      "poor_reached": 0.99,
+      "poor_reached_ci": [
+        0.9691,
+        1.0
+      ],
+      "extreme_poor_reached": 0.7274,
+      "exclusion_error": 0.01,
+      "leakage": 0.2612,
+      "cost_per_poor_reached": 15261814,
+      "actual_coverage": 0.5258
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.01,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0184,
+      "poor_reached_ci": [
+        0.0,
+        0.0466
+      ],
+      "extreme_poor_reached": 0.0169,
+      "exclusion_error": 0.9816,
+      "leakage": 0.1129,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.01,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.0218,
+      "poor_reached_ci": [
+        0.0,
+        0.0524
+      ],
+      "extreme_poor_reached": 0.0159,
+      "exclusion_error": 0.9782,
+      "leakage": 0.1784,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.02,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0367,
+      "poor_reached_ci": [
+        0.0,
+        0.0762
+      ],
+      "extreme_poor_reached": 0.0328,
+      "exclusion_error": 0.9633,
+      "leakage": 0.0889,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.02,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.0435,
+      "poor_reached_ci": [
+        0.0006,
+        0.0864
+      ],
+      "extreme_poor_reached": 0.0367,
+      "exclusion_error": 0.9565,
+      "leakage": 0.3407,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.03,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0551,
+      "poor_reached_ci": [
+        0.0071,
+        0.103
+      ],
+      "extreme_poor_reached": 0.0476,
+      "exclusion_error": 0.9449,
+      "leakage": 0.0615,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.03,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.0653,
+      "poor_reached_ci": [
+        0.0134,
+        0.1172
+      ],
+      "extreme_poor_reached": 0.0523,
+      "exclusion_error": 0.9347,
+      "leakage": 0.1924,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.04,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0734,
+      "poor_reached_ci": [
+        0.0186,
+        0.1283
+      ],
+      "extreme_poor_reached": 0.0735,
+      "exclusion_error": 0.9266,
+      "leakage": 0.0696,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.04,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.087,
+      "poor_reached_ci": [
+        0.0278,
+        0.1463
+      ],
+      "extreme_poor_reached": 0.068,
+      "exclusion_error": 0.913,
+      "leakage": 0.1851,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.05,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0918,
+      "poor_reached_ci": [
+        0.0311,
+        0.1525
+      ],
+      "extreme_poor_reached": 0.0897,
+      "exclusion_error": 0.9082,
+      "leakage": 0.1813,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.05,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.1088,
+      "poor_reached_ci": [
+        0.0434,
+        0.1742
+      ],
+      "extreme_poor_reached": 0.1068,
+      "exclusion_error": 0.8912,
+      "leakage": 0.1604,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.06,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1102,
+      "poor_reached_ci": [
+        0.0444,
+        0.176
+      ],
+      "extreme_poor_reached": 0.0815,
+      "exclusion_error": 0.8898,
+      "leakage": 0.1021,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.06,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.1306,
+      "poor_reached_ci": [
+        0.0598,
+        0.2014
+      ],
+      "extreme_poor_reached": 0.0982,
+      "exclusion_error": 0.8694,
+      "leakage": 0.184,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.07,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1285,
+      "poor_reached_ci": [
+        0.0582,
+        0.1989
+      ],
+      "extreme_poor_reached": 0.0964,
+      "exclusion_error": 0.8715,
+      "leakage": 0.0663,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.07,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.1523,
+      "poor_reached_ci": [
+        0.0768,
+        0.2278
+      ],
+      "extreme_poor_reached": 0.1489,
+      "exclusion_error": 0.8477,
+      "leakage": 0.3003,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.08,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1469,
+      "poor_reached_ci": [
+        0.0725,
+        0.2213
+      ],
+      "extreme_poor_reached": 0.1452,
+      "exclusion_error": 0.8531,
+      "leakage": 0.2498,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.08,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.1741,
+      "poor_reached_ci": [
+        0.0944,
+        0.2538
+      ],
+      "extreme_poor_reached": 0.1486,
+      "exclusion_error": 0.8259,
+      "leakage": 0.2543,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.09,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1653,
+      "poor_reached_ci": [
+        0.0872,
+        0.2433
+      ],
+      "extreme_poor_reached": 0.1333,
+      "exclusion_error": 0.8347,
+      "leakage": 0.1386,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.09,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.1958,
+      "poor_reached_ci": [
+        0.1125,
+        0.2792
+      ],
+      "extreme_poor_reached": 0.1558,
+      "exclusion_error": 0.8042,
+      "leakage": 0.2784,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.1,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1836,
+      "poor_reached_ci": [
+        0.1023,
+        0.265
+      ],
+      "extreme_poor_reached": 0.1567,
+      "exclusion_error": 0.8164,
+      "leakage": 0.1794,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.1,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2176,
+      "poor_reached_ci": [
+        0.1309,
+        0.3043
+      ],
+      "extreme_poor_reached": 0.2201,
+      "exclusion_error": 0.7824,
+      "leakage": 0.3455,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.11,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.202,
+      "poor_reached_ci": [
+        0.1176,
+        0.2863
+      ],
+      "extreme_poor_reached": 0.1841,
+      "exclusion_error": 0.798,
+      "leakage": 0.0581,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.11,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2394,
+      "poor_reached_ci": [
+        0.1497,
+        0.329
+      ],
+      "extreme_poor_reached": 0.1867,
+      "exclusion_error": 0.7606,
+      "leakage": 0.323,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.12,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2203,
+      "poor_reached_ci": [
+        0.1332,
+        0.3074
+      ],
+      "extreme_poor_reached": 0.2206,
+      "exclusion_error": 0.7797,
+      "leakage": 0.1756,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.12,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2611,
+      "poor_reached_ci": [
+        0.1688,
+        0.3534
+      ],
+      "extreme_poor_reached": 0.1847,
+      "exclusion_error": 0.7389,
+      "leakage": 0.3532,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.13,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2387,
+      "poor_reached_ci": [
+        0.1491,
+        0.3283
+      ],
+      "extreme_poor_reached": 0.2357,
+      "exclusion_error": 0.7613,
+      "leakage": 0.1726,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.13,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2829,
+      "poor_reached_ci": [
+        0.1882,
+        0.3775
+      ],
+      "extreme_poor_reached": 0.2736,
+      "exclusion_error": 0.7171,
+      "leakage": 0.1474,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.14,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2571,
+      "poor_reached_ci": [
+        0.1652,
+        0.3489
+      ],
+      "extreme_poor_reached": 0.2266,
+      "exclusion_error": 0.7429,
+      "leakage": 0.144,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.14,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.3046,
+      "poor_reached_ci": [
+        0.2079,
+        0.4014
+      ],
+      "extreme_poor_reached": 0.2429,
+      "exclusion_error": 0.6954,
+      "leakage": 0.4303,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.15,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2754,
+      "poor_reached_ci": [
+        0.1815,
+        0.3693
+      ],
+      "extreme_poor_reached": 0.2348,
+      "exclusion_error": 0.7246,
+      "leakage": 0.2204,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.15,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.3264,
+      "poor_reached_ci": [
+        0.2279,
+        0.4249
+      ],
+      "extreme_poor_reached": 0.3392,
+      "exclusion_error": 0.6736,
+      "leakage": 0.2474,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.16,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2938,
+      "poor_reached_ci": [
+        0.1981,
+        0.3895
+      ],
+      "extreme_poor_reached": 0.2476,
+      "exclusion_error": 0.7062,
+      "leakage": 0.1178,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.16,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.3482,
+      "poor_reached_ci": [
+        0.2481,
+        0.4483
+      ],
+      "extreme_poor_reached": 0.2565,
+      "exclusion_error": 0.6518,
+      "leakage": 0.1406,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.17,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3121,
+      "poor_reached_ci": [
+        0.2148,
+        0.4095
+      ],
+      "extreme_poor_reached": 0.2635,
+      "exclusion_error": 0.6879,
+      "leakage": 0.1531,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.17,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.3699,
+      "poor_reached_ci": [
+        0.2685,
+        0.4714
+      ],
+      "extreme_poor_reached": 0.3447,
+      "exclusion_error": 0.6301,
+      "leakage": 0.2216,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.18,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3305,
+      "poor_reached_ci": [
+        0.2317,
+        0.4294
+      ],
+      "extreme_poor_reached": 0.3193,
+      "exclusion_error": 0.6695,
+      "leakage": 0.0586,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.18,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.3917,
+      "poor_reached_ci": [
+        0.2891,
+        0.4943
+      ],
+      "extreme_poor_reached": 0.2863,
+      "exclusion_error": 0.6083,
+      "leakage": 0.1704,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.19,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3489,
+      "poor_reached_ci": [
+        0.2487,
+        0.449
+      ],
+      "extreme_poor_reached": 0.2584,
+      "exclusion_error": 0.6511,
+      "leakage": 0.2082,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.19,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.4135,
+      "poor_reached_ci": [
+        0.31,
+        0.5169
+      ],
+      "extreme_poor_reached": 0.4146,
+      "exclusion_error": 0.5865,
+      "leakage": 0.3631,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.2,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3672,
+      "poor_reached_ci": [
+        0.2659,
+        0.4685
+      ],
+      "extreme_poor_reached": 0.2572,
+      "exclusion_error": 0.6328,
+      "leakage": 0.2269,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.2,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.4352,
+      "poor_reached_ci": [
+        0.331,
+        0.5394
+      ],
+      "extreme_poor_reached": 0.375,
+      "exclusion_error": 0.5648,
+      "leakage": 0.1023,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.21,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3856,
+      "poor_reached_ci": [
+        0.2833,
+        0.4879
+      ],
+      "extreme_poor_reached": 0.3399,
+      "exclusion_error": 0.6144,
+      "leakage": 0.1761,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.21,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.457,
+      "poor_reached_ci": [
+        0.3523,
+        0.5617
+      ],
+      "extreme_poor_reached": 0.3996,
+      "exclusion_error": 0.543,
+      "leakage": 0.2317,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.22,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.404,
+      "poor_reached_ci": [
+        0.3008,
+        0.5071
+      ],
+      "extreme_poor_reached": 0.2901,
+      "exclusion_error": 0.596,
+      "leakage": 0.1039,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.22,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.4787,
+      "poor_reached_ci": [
+        0.3738,
+        0.5837
+      ],
+      "extreme_poor_reached": 0.3571,
+      "exclusion_error": 0.5213,
+      "leakage": 0.1794,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.23,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4223,
+      "poor_reached_ci": [
+        0.3185,
+        0.5261
+      ],
+      "extreme_poor_reached": 0.4258,
+      "exclusion_error": 0.5777,
+      "leakage": 0.147,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.23,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.5005,
+      "poor_reached_ci": [
+        0.3954,
+        0.6056
+      ],
+      "extreme_poor_reached": 0.3554,
+      "exclusion_error": 0.4995,
+      "leakage": 0.2921,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.24,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4407,
+      "poor_reached_ci": [
+        0.3363,
+        0.545
+      ],
+      "extreme_poor_reached": 0.4318,
+      "exclusion_error": 0.5593,
+      "leakage": 0.1912,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.24,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.5223,
+      "poor_reached_ci": [
+        0.4173,
+        0.6272
+      ],
+      "extreme_poor_reached": 0.4224,
+      "exclusion_error": 0.4777,
+      "leakage": 0.0871,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.25,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.459,
+      "poor_reached_ci": [
+        0.3543,
+        0.5637
+      ],
+      "extreme_poor_reached": 0.3869,
+      "exclusion_error": 0.541,
+      "leakage": 0.0941,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.25,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.544,
+      "poor_reached_ci": [
+        0.4394,
+        0.6487
+      ],
+      "extreme_poor_reached": 0.541,
+      "exclusion_error": 0.456,
+      "leakage": 0.1196,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.26,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4774,
+      "poor_reached_ci": [
+        0.3724,
+        0.5824
+      ],
+      "extreme_poor_reached": 0.4924,
+      "exclusion_error": 0.5226,
+      "leakage": 0.1772,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.26,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.5658,
+      "poor_reached_ci": [
+        0.4616,
+        0.6699
+      ],
+      "extreme_poor_reached": 0.4265,
+      "exclusion_error": 0.4342,
+      "leakage": 0.3874,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.27,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4958,
+      "poor_reached_ci": [
+        0.3907,
+        0.6008
+      ],
+      "extreme_poor_reached": 0.3977,
+      "exclusion_error": 0.5042,
+      "leakage": 0.1878,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.27,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.5875,
+      "poor_reached_ci": [
+        0.4841,
+        0.691
+      ],
+      "extreme_poor_reached": 0.4967,
+      "exclusion_error": 0.4125,
+      "leakage": 0.2389,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.28,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5141,
+      "poor_reached_ci": [
+        0.4091,
+        0.6191
+      ],
+      "extreme_poor_reached": 0.4449,
+      "exclusion_error": 0.4859,
+      "leakage": 0.1383,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.28,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.6093,
+      "poor_reached_ci": [
+        0.5068,
+        0.7118
+      ],
+      "extreme_poor_reached": 0.4574,
+      "exclusion_error": 0.3907,
+      "leakage": 0.143,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.29,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5325,
+      "poor_reached_ci": [
+        0.4276,
+        0.6373
+      ],
+      "extreme_poor_reached": 0.4844,
+      "exclusion_error": 0.4675,
+      "leakage": 0.1941,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.29,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.6311,
+      "poor_reached_ci": [
+        0.5297,
+        0.7325
+      ],
+      "extreme_poor_reached": 0.4719,
+      "exclusion_error": 0.3689,
+      "leakage": 0.1034,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.3,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5508,
+      "poor_reached_ci": [
+        0.4463,
+        0.6554
+      ],
+      "extreme_poor_reached": 0.5346,
+      "exclusion_error": 0.4492,
+      "leakage": 0.2141,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.3,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.6528,
+      "poor_reached_ci": [
+        0.5528,
+        0.7529
+      ],
+      "extreme_poor_reached": 0.5346,
+      "exclusion_error": 0.3472,
+      "leakage": 0.3338,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.31,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5692,
+      "poor_reached_ci": [
+        0.4651,
+        0.6733
+      ],
+      "extreme_poor_reached": 0.4517,
+      "exclusion_error": 0.4308,
+      "leakage": 0.0487,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.31,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.6746,
+      "poor_reached_ci": [
+        0.5761,
+        0.773
+      ],
+      "extreme_poor_reached": 0.6436,
+      "exclusion_error": 0.3254,
+      "leakage": 0.3483,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.32,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5876,
+      "poor_reached_ci": [
+        0.4841,
+        0.691
+      ],
+      "extreme_poor_reached": 0.5306,
+      "exclusion_error": 0.4124,
+      "leakage": 0.1748,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.32,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.6963,
+      "poor_reached_ci": [
+        0.5997,
+        0.793
+      ],
+      "extreme_poor_reached": 0.6983,
+      "exclusion_error": 0.3037,
+      "leakage": 0.222,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.33,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6059,
+      "poor_reached_ci": [
+        0.5032,
+        0.7086
+      ],
+      "extreme_poor_reached": 0.5269,
+      "exclusion_error": 0.3941,
+      "leakage": 0.1114,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.33,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.7181,
+      "poor_reached_ci": [
+        0.6236,
+        0.8126
+      ],
+      "extreme_poor_reached": 0.6944,
+      "exclusion_error": 0.2819,
+      "leakage": 0.199,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.34,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6243,
+      "poor_reached_ci": [
+        0.5225,
+        0.7261
+      ],
+      "extreme_poor_reached": 0.6408,
+      "exclusion_error": 0.3757,
+      "leakage": 0.2131,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.34,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.7399,
+      "poor_reached_ci": [
+        0.6477,
+        0.8321
+      ],
+      "extreme_poor_reached": 0.7719,
+      "exclusion_error": 0.2601,
+      "leakage": 0.1544,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.35,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6426,
+      "poor_reached_ci": [
+        0.5419,
+        0.7433
+      ],
+      "extreme_poor_reached": 0.536,
+      "exclusion_error": 0.3574,
+      "leakage": 0.2096,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.35,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.7616,
+      "poor_reached_ci": [
+        0.6721,
+        0.8512
+      ],
+      "extreme_poor_reached": 0.6426,
+      "exclusion_error": 0.2384,
+      "leakage": 0.1786,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.36,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.661,
+      "poor_reached_ci": [
+        0.5615,
+        0.7605
+      ],
+      "extreme_poor_reached": 0.5721,
+      "exclusion_error": 0.339,
+      "leakage": 0.2194,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.36,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.7834,
+      "poor_reached_ci": [
+        0.6968,
+        0.8699
+      ],
+      "extreme_poor_reached": 0.6529,
+      "exclusion_error": 0.2166,
+      "leakage": 0.3875,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.37,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6794,
+      "poor_reached_ci": [
+        0.5813,
+        0.7774
+      ],
+      "extreme_poor_reached": 0.664,
+      "exclusion_error": 0.3206,
+      "leakage": 0.1693,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.37,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.8051,
+      "poor_reached_ci": [
+        0.7219,
+        0.8884
+      ],
+      "extreme_poor_reached": 0.6065,
+      "exclusion_error": 0.1949,
+      "leakage": 0.3784,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.38,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6977,
+      "poor_reached_ci": [
+        0.6012,
+        0.7942
+      ],
+      "extreme_poor_reached": 0.5192,
+      "exclusion_error": 0.3023,
+      "leakage": 0.2271,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.38,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.8269,
+      "poor_reached_ci": [
+        0.7474,
+        0.9064
+      ],
+      "extreme_poor_reached": 0.6749,
+      "exclusion_error": 0.1731,
+      "leakage": 0.1086,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.39,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7161,
+      "poor_reached_ci": [
+        0.6213,
+        0.8108
+      ],
+      "extreme_poor_reached": 0.7131,
+      "exclusion_error": 0.2839,
+      "leakage": 0.065,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.39,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.8487,
+      "poor_reached_ci": [
+        0.7734,
+        0.924
+      ],
+      "extreme_poor_reached": 0.8645,
+      "exclusion_error": 0.1513,
+      "leakage": 0.0819,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.4,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7345,
+      "poor_reached_ci": [
+        0.6417,
+        0.8273
+      ],
+      "extreme_poor_reached": 0.5512,
+      "exclusion_error": 0.2655,
+      "leakage": 0.2075,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.4,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.8704,
+      "poor_reached_ci": [
+        0.7999,
+        0.941
+      ],
+      "extreme_poor_reached": 0.9048,
+      "exclusion_error": 0.1296,
+      "leakage": 0.0998,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.41,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7528,
+      "poor_reached_ci": [
+        0.6622,
+        0.8435
+      ],
+      "extreme_poor_reached": 0.7329,
+      "exclusion_error": 0.2472,
+      "leakage": 0.0949,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.41,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.8922,
+      "poor_reached_ci": [
+        0.827,
+        0.9574
+      ],
+      "extreme_poor_reached": 0.8192,
+      "exclusion_error": 0.1078,
+      "leakage": 0.1979,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.42,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7712,
+      "poor_reached_ci": [
+        0.6829,
+        0.8594
+      ],
+      "extreme_poor_reached": 0.5615,
+      "exclusion_error": 0.2288,
+      "leakage": 0.1061,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.42,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.9139,
+      "poor_reached_ci": [
+        0.855,
+        0.9729
+      ],
+      "extreme_poor_reached": 0.8555,
+      "exclusion_error": 0.0861,
+      "leakage": 0.2383,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.43,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7895,
+      "poor_reached_ci": [
+        0.7039,
+        0.8752
+      ],
+      "extreme_poor_reached": 0.8163,
+      "exclusion_error": 0.2105,
+      "leakage": 0.16,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.43,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.9357,
+      "poor_reached_ci": [
+        0.8842,
+        0.9872
+      ],
+      "extreme_poor_reached": 0.9456,
+      "exclusion_error": 0.0643,
+      "leakage": 0.2234,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.44,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8079,
+      "poor_reached_ci": [
+        0.7251,
+        0.8907
+      ],
+      "extreme_poor_reached": 0.7185,
+      "exclusion_error": 0.1921,
+      "leakage": 0.1575,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.44,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.9575,
+      "poor_reached_ci": [
+        0.9151,
+        0.9999
+      ],
+      "extreme_poor_reached": 0.7489,
+      "exclusion_error": 0.0425,
+      "leakage": 0.2815,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.45,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8263,
+      "poor_reached_ci": [
+        0.7466,
+        0.9059
+      ],
+      "extreme_poor_reached": 0.6615,
+      "exclusion_error": 0.1737,
+      "leakage": 0.0863,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.45,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.9792,
+      "poor_reached_ci": [
+        0.9493,
+        1.0
+      ],
+      "extreme_poor_reached": 0.7164,
+      "exclusion_error": 0.0208,
+      "leakage": 0.3682,
+      "cost_per_poor_reached": 13205317
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.46,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8446,
+      "poor_reached_ci": [
+        0.7685,
+        0.9207
+      ],
+      "extreme_poor_reached": 0.816,
+      "exclusion_error": 0.1554,
+      "leakage": 0.1715,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.46,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.99,
+      "poor_reached_ci": [
+        0.9691,
+        1.0
+      ],
+      "extreme_poor_reached": 0.7278,
+      "exclusion_error": 0.01,
+      "leakage": 0.1242,
+      "cost_per_poor_reached": 13351910
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.47,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.863,
+      "poor_reached_ci": [
+        0.7907,
+        0.9352
+      ],
+      "extreme_poor_reached": 0.6945,
+      "exclusion_error": 0.137,
+      "leakage": 0.0499,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.47,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.99,
+      "poor_reached_ci": [
+        0.9691,
+        1.0
+      ],
+      "extreme_poor_reached": 0.8054,
+      "exclusion_error": 0.01,
+      "leakage": 0.0909,
+      "cost_per_poor_reached": 13642169
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.48,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8813,
+      "poor_reached_ci": [
+        0.8134,
+        0.9493
+      ],
+      "extreme_poor_reached": 0.7275,
+      "exclusion_error": 0.1187,
+      "leakage": 0.1212,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.48,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.99,
+      "poor_reached_ci": [
+        0.9691,
+        1.0
+      ],
+      "extreme_poor_reached": 0.7776,
+      "exclusion_error": 0.01,
+      "leakage": 0.1956,
+      "cost_per_poor_reached": 13932428
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.49,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8997,
+      "poor_reached_ci": [
+        0.8366,
+        0.9628
+      ],
+      "extreme_poor_reached": 0.8445,
+      "exclusion_error": 0.1003,
+      "leakage": 0.0762,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.49,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.99,
+      "poor_reached_ci": [
+        0.9691,
+        1.0
+      ],
+      "extreme_poor_reached": 0.7537,
+      "exclusion_error": 0.01,
+      "leakage": 0.2526,
+      "cost_per_poor_reached": 14222687
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.5,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.9181,
+      "poor_reached_ci": [
+        0.8604,
+        0.9757
+      ],
+      "extreme_poor_reached": 0.7656,
+      "exclusion_error": 0.0819,
+      "leakage": 0.1645,
+      "cost_per_poor_reached": 15650038
+    },
+    {
+      "area": "Huye",
+      "budget_share": 0.5,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.99,
+      "poor_reached_ci": [
+        0.9691,
+        1.0
+      ],
+      "extreme_poor_reached": 0.8654,
+      "exclusion_error": 0.01,
+      "leakage": 0.2437,
+      "cost_per_poor_reached": 14512946
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.4589,
+      "rule": "A",
+      "rule_label": "Observed / current targeting",
+      "poor_reached": 0.9558,
+      "poor_reached_ci": [
+        0.9269,
+        0.9846
+      ],
+      "extreme_poor_reached": 0.9697,
+      "exclusion_error": 0.0442,
+      "leakage": 0.1946,
+      "cost_per_poor_reached": 6155591,
+      "actual_coverage": 0.4589
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.01,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0208,
+      "poor_reached_ci": [
+        0.0007,
+        0.0408
+      ],
+      "extreme_poor_reached": 0.0166,
+      "exclusion_error": 0.9792,
+      "leakage": 0.1976,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.01,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.02,
+      "poor_reached_ci": [
+        0.0004,
+        0.0397
+      ],
+      "extreme_poor_reached": 0.0145,
+      "exclusion_error": 0.98,
+      "leakage": 0.4,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.02,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0415,
+      "poor_reached_ci": [
+        0.0135,
+        0.0695
+      ],
+      "extreme_poor_reached": 0.0434,
+      "exclusion_error": 0.9585,
+      "leakage": 0.1357,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.02,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.04,
+      "poor_reached_ci": [
+        0.0125,
+        0.0675
+      ],
+      "extreme_poor_reached": 0.0415,
+      "exclusion_error": 0.96,
+      "leakage": 0.3134,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.03,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.0623,
+      "poor_reached_ci": [
+        0.0284,
+        0.0962
+      ],
+      "extreme_poor_reached": 0.0535,
+      "exclusion_error": 0.9377,
+      "leakage": 0.1359,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.03,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.06,
+      "poor_reached_ci": [
+        0.0267,
+        0.0933
+      ],
+      "extreme_poor_reached": 0.063,
+      "exclusion_error": 0.94,
+      "leakage": 0.3663,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.04,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.083,
+      "poor_reached_ci": [
+        0.0443,
+        0.1218
+      ],
+      "extreme_poor_reached": 0.0612,
+      "exclusion_error": 0.917,
+      "leakage": 0.1547,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.04,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.08,
+      "poor_reached_ci": [
+        0.0419,
+        0.1181
+      ],
+      "extreme_poor_reached": 0.0661,
+      "exclusion_error": 0.92,
+      "leakage": 0.1805,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.05,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1038,
+      "poor_reached_ci": [
+        0.061,
+        0.1466
+      ],
+      "extreme_poor_reached": 0.0981,
+      "exclusion_error": 0.8962,
+      "leakage": 0.0664,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.05,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.1,
+      "poor_reached_ci": [
+        0.0579,
+        0.1421
+      ],
+      "extreme_poor_reached": 0.0991,
+      "exclusion_error": 0.9,
+      "leakage": 0.2127,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.06,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1245,
+      "poor_reached_ci": [
+        0.0782,
+        0.1709
+      ],
+      "extreme_poor_reached": 0.0875,
+      "exclusion_error": 0.8755,
+      "leakage": 0.2711,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.06,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.12,
+      "poor_reached_ci": [
+        0.0744,
+        0.1656
+      ],
+      "extreme_poor_reached": 0.1167,
+      "exclusion_error": 0.88,
+      "leakage": 0.4013,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.07,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1453,
+      "poor_reached_ci": [
+        0.0958,
+        0.1948
+      ],
+      "extreme_poor_reached": 0.148,
+      "exclusion_error": 0.8547,
+      "leakage": 0.2409,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.07,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.14,
+      "poor_reached_ci": [
+        0.0913,
+        0.1887
+      ],
+      "extreme_poor_reached": 0.1388,
+      "exclusion_error": 0.86,
+      "leakage": 0.3766,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.08,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1661,
+      "poor_reached_ci": [
+        0.1138,
+        0.2183
+      ],
+      "extreme_poor_reached": 0.1613,
+      "exclusion_error": 0.8339,
+      "leakage": 0.1158,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.08,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.16,
+      "poor_reached_ci": [
+        0.1086,
+        0.2115
+      ],
+      "extreme_poor_reached": 0.1569,
+      "exclusion_error": 0.84,
+      "leakage": 0.1526,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.09,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.1868,
+      "poor_reached_ci": [
+        0.1321,
+        0.2415
+      ],
+      "extreme_poor_reached": 0.1432,
+      "exclusion_error": 0.8132,
+      "leakage": 0.1202,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.09,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.18,
+      "poor_reached_ci": [
+        0.1261,
+        0.2339
+      ],
+      "extreme_poor_reached": 0.1736,
+      "exclusion_error": 0.82,
+      "leakage": 0.3296,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.1,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2076,
+      "poor_reached_ci": [
+        0.1506,
+        0.2645
+      ],
+      "extreme_poor_reached": 0.1948,
+      "exclusion_error": 0.7924,
+      "leakage": 0.0925,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.1,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.2,
+      "poor_reached_ci": [
+        0.1439,
+        0.2562
+      ],
+      "extreme_poor_reached": 0.1468,
+      "exclusion_error": 0.8,
+      "leakage": 0.283,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.11,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2283,
+      "poor_reached_ci": [
+        0.1694,
+        0.2872
+      ],
+      "extreme_poor_reached": 0.163,
+      "exclusion_error": 0.7717,
+      "leakage": 0.2473,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.11,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.22,
+      "poor_reached_ci": [
+        0.1619,
+        0.2782
+      ],
+      "extreme_poor_reached": 0.1566,
+      "exclusion_error": 0.78,
+      "leakage": 0.1975,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.12,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2491,
+      "poor_reached_ci": [
+        0.1884,
+        0.3098
+      ],
+      "extreme_poor_reached": 0.1858,
+      "exclusion_error": 0.7509,
+      "leakage": 0.275,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.12,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.24,
+      "poor_reached_ci": [
+        0.1801,
+        0.3
+      ],
+      "extreme_poor_reached": 0.1955,
+      "exclusion_error": 0.76,
+      "leakage": 0.2129,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.13,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2698,
+      "poor_reached_ci": [
+        0.2075,
+        0.3321
+      ],
+      "extreme_poor_reached": 0.2079,
+      "exclusion_error": 0.7302,
+      "leakage": 0.2448,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.13,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.26,
+      "poor_reached_ci": [
+        0.1984,
+        0.3216
+      ],
+      "extreme_poor_reached": 0.2618,
+      "exclusion_error": 0.74,
+      "leakage": 0.1962,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.14,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.2906,
+      "poor_reached_ci": [
+        0.2269,
+        0.3543
+      ],
+      "extreme_poor_reached": 0.2545,
+      "exclusion_error": 0.7094,
+      "leakage": 0.1229,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.14,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.28,
+      "poor_reached_ci": [
+        0.217,
+        0.343
+      ],
+      "extreme_poor_reached": 0.2121,
+      "exclusion_error": 0.72,
+      "leakage": 0.3692,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.15,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3114,
+      "poor_reached_ci": [
+        0.2464,
+        0.3764
+      ],
+      "extreme_poor_reached": 0.3208,
+      "exclusion_error": 0.6886,
+      "leakage": 0.285,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.15,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.3,
+      "poor_reached_ci": [
+        0.2357,
+        0.3643
+      ],
+      "extreme_poor_reached": 0.241,
+      "exclusion_error": 0.7,
+      "leakage": 0.3539,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.16,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3321,
+      "poor_reached_ci": [
+        0.266,
+        0.3982
+      ],
+      "extreme_poor_reached": 0.326,
+      "exclusion_error": 0.6679,
+      "leakage": 0.1675,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.16,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.32,
+      "poor_reached_ci": [
+        0.2545,
+        0.3855
+      ],
+      "extreme_poor_reached": 0.2324,
+      "exclusion_error": 0.68,
+      "leakage": 0.3158,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.17,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3529,
+      "poor_reached_ci": [
+        0.2858,
+        0.4199
+      ],
+      "extreme_poor_reached": 0.2749,
+      "exclusion_error": 0.6471,
+      "leakage": 0.215,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.17,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.34,
+      "poor_reached_ci": [
+        0.2735,
+        0.4065
+      ],
+      "extreme_poor_reached": 0.3183,
+      "exclusion_error": 0.66,
+      "leakage": 0.2027,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.18,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3736,
+      "poor_reached_ci": [
+        0.3057,
+        0.4415
+      ],
+      "extreme_poor_reached": 0.3721,
+      "exclusion_error": 0.6264,
+      "leakage": 0.1866,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.18,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.36,
+      "poor_reached_ci": [
+        0.2926,
+        0.4274
+      ],
+      "extreme_poor_reached": 0.2634,
+      "exclusion_error": 0.64,
+      "leakage": 0.201,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.19,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.3944,
+      "poor_reached_ci": [
+        0.3258,
+        0.463
+      ],
+      "extreme_poor_reached": 0.3126,
+      "exclusion_error": 0.6056,
+      "leakage": 0.086,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.19,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.38,
+      "poor_reached_ci": [
+        0.3119,
+        0.4481
+      ],
+      "extreme_poor_reached": 0.315,
+      "exclusion_error": 0.62,
+      "leakage": 0.3102,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.2,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4151,
+      "poor_reached_ci": [
+        0.346,
+        0.4843
+      ],
+      "extreme_poor_reached": 0.3287,
+      "exclusion_error": 0.5849,
+      "leakage": 0.1446,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.2,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.4,
+      "poor_reached_ci": [
+        0.3313,
+        0.4688
+      ],
+      "extreme_poor_reached": 0.3694,
+      "exclusion_error": 0.6,
+      "leakage": 0.1921,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.21,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4359,
+      "poor_reached_ci": [
+        0.3663,
+        0.5055
+      ],
+      "extreme_poor_reached": 0.4081,
+      "exclusion_error": 0.5641,
+      "leakage": 0.1646,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.21,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.42,
+      "poor_reached_ci": [
+        0.3507,
+        0.4893
+      ],
+      "extreme_poor_reached": 0.3851,
+      "exclusion_error": 0.58,
+      "leakage": 0.3672,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.22,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4567,
+      "poor_reached_ci": [
+        0.3867,
+        0.5266
+      ],
+      "extreme_poor_reached": 0.3721,
+      "exclusion_error": 0.5433,
+      "leakage": 0.1954,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.22,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.44,
+      "poor_reached_ci": [
+        0.3704,
+        0.5097
+      ],
+      "extreme_poor_reached": 0.4078,
+      "exclusion_error": 0.56,
+      "leakage": 0.2713,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.23,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4774,
+      "poor_reached_ci": [
+        0.4073,
+        0.5475
+      ],
+      "extreme_poor_reached": 0.4118,
+      "exclusion_error": 0.5226,
+      "leakage": 0.2151,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.23,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.46,
+      "poor_reached_ci": [
+        0.3901,
+        0.53
+      ],
+      "extreme_poor_reached": 0.4265,
+      "exclusion_error": 0.54,
+      "leakage": 0.1119,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.24,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.4982,
+      "poor_reached_ci": [
+        0.428,
+        0.5684
+      ],
+      "extreme_poor_reached": 0.3566,
+      "exclusion_error": 0.5018,
+      "leakage": 0.0647,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.24,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.48,
+      "poor_reached_ci": [
+        0.4099,
+        0.5501
+      ],
+      "extreme_poor_reached": 0.5033,
+      "exclusion_error": 0.52,
+      "leakage": 0.1112,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.25,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5189,
+      "poor_reached_ci": [
+        0.4488,
+        0.5891
+      ],
+      "extreme_poor_reached": 0.4059,
+      "exclusion_error": 0.4811,
+      "leakage": 0.1766,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.25,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.5,
+      "poor_reached_ci": [
+        0.4298,
+        0.5702
+      ],
+      "extreme_poor_reached": 0.418,
+      "exclusion_error": 0.5,
+      "leakage": 0.1878,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.26,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5397,
+      "poor_reached_ci": [
+        0.4697,
+        0.6097
+      ],
+      "extreme_poor_reached": 0.5571,
+      "exclusion_error": 0.4603,
+      "leakage": 0.2112,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.26,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.52,
+      "poor_reached_ci": [
+        0.4499,
+        0.5902
+      ],
+      "extreme_poor_reached": 0.4623,
+      "exclusion_error": 0.48,
+      "leakage": 0.2521,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.27,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5605,
+      "poor_reached_ci": [
+        0.4908,
+        0.6301
+      ],
+      "extreme_poor_reached": 0.5348,
+      "exclusion_error": 0.4395,
+      "leakage": 0.2523,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.27,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.54,
+      "poor_reached_ci": [
+        0.4701,
+        0.61
+      ],
+      "extreme_poor_reached": 0.5018,
+      "exclusion_error": 0.46,
+      "leakage": 0.3248,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.28,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.5812,
+      "poor_reached_ci": [
+        0.512,
+        0.6505
+      ],
+      "extreme_poor_reached": 0.5321,
+      "exclusion_error": 0.4188,
+      "leakage": 0.263,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.28,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.56,
+      "poor_reached_ci": [
+        0.4904,
+        0.6297
+      ],
+      "extreme_poor_reached": 0.4469,
+      "exclusion_error": 0.44,
+      "leakage": 0.2806,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.29,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.602,
+      "poor_reached_ci": [
+        0.5333,
+        0.6707
+      ],
+      "extreme_poor_reached": 0.4672,
+      "exclusion_error": 0.398,
+      "leakage": 0.153,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.29,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.58,
+      "poor_reached_ci": [
+        0.5108,
+        0.6493
+      ],
+      "extreme_poor_reached": 0.454,
+      "exclusion_error": 0.42,
+      "leakage": 0.182,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.3,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6227,
+      "poor_reached_ci": [
+        0.5547,
+        0.6908
+      ],
+      "extreme_poor_reached": 0.6497,
+      "exclusion_error": 0.3773,
+      "leakage": 0.1353,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.3,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.6,
+      "poor_reached_ci": [
+        0.5313,
+        0.6688
+      ],
+      "extreme_poor_reached": 0.6094,
+      "exclusion_error": 0.4,
+      "leakage": 0.2646,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.31,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6435,
+      "poor_reached_ci": [
+        0.5763,
+        0.7107
+      ],
+      "extreme_poor_reached": 0.4641,
+      "exclusion_error": 0.3565,
+      "leakage": 0.1147,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.31,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.62,
+      "poor_reached_ci": [
+        0.5519,
+        0.6882
+      ],
+      "extreme_poor_reached": 0.6441,
+      "exclusion_error": 0.38,
+      "leakage": 0.3529,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.32,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.6642,
+      "poor_reached_ci": [
+        0.598,
+        0.7305
+      ],
+      "extreme_poor_reached": 0.6566,
+      "exclusion_error": 0.3358,
+      "leakage": 0.0742,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.32,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.64,
+      "poor_reached_ci": [
+        0.5727,
+        0.7074
+      ],
+      "extreme_poor_reached": 0.4955,
+      "exclusion_error": 0.36,
+      "leakage": 0.2606,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.33,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.685,
+      "poor_reached_ci": [
+        0.6198,
+        0.7502
+      ],
+      "extreme_poor_reached": 0.7123,
+      "exclusion_error": 0.315,
+      "leakage": 0.065,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.33,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.66,
+      "poor_reached_ci": [
+        0.5935,
+        0.7265
+      ],
+      "extreme_poor_reached": 0.5391,
+      "exclusion_error": 0.34,
+      "leakage": 0.3613,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.34,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7058,
+      "poor_reached_ci": [
+        0.6418,
+        0.7697
+      ],
+      "extreme_poor_reached": 0.6884,
+      "exclusion_error": 0.2942,
+      "leakage": 0.098,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.34,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.68,
+      "poor_reached_ci": [
+        0.6146,
+        0.7455
+      ],
+      "extreme_poor_reached": 0.6735,
+      "exclusion_error": 0.32,
+      "leakage": 0.2335,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.35,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7265,
+      "poor_reached_ci": [
+        0.6639,
+        0.7891
+      ],
+      "extreme_poor_reached": 0.6577,
+      "exclusion_error": 0.2735,
+      "leakage": 0.2277,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.35,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.7,
+      "poor_reached_ci": [
+        0.6357,
+        0.7644
+      ],
+      "extreme_poor_reached": 0.5471,
+      "exclusion_error": 0.3,
+      "leakage": 0.296,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.36,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7473,
+      "poor_reached_ci": [
+        0.6863,
+        0.8083
+      ],
+      "extreme_poor_reached": 0.7294,
+      "exclusion_error": 0.2527,
+      "leakage": 0.1804,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.36,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.72,
+      "poor_reached_ci": [
+        0.657,
+        0.7831
+      ],
+      "extreme_poor_reached": 0.5739,
+      "exclusion_error": 0.28,
+      "leakage": 0.3549,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.37,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.768,
+      "poor_reached_ci": [
+        0.7088,
+        0.8273
+      ],
+      "extreme_poor_reached": 0.8031,
+      "exclusion_error": 0.232,
+      "leakage": 0.1677,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.37,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.74,
+      "poor_reached_ci": [
+        0.6785,
+        0.8016
+      ],
+      "extreme_poor_reached": 0.7249,
+      "exclusion_error": 0.26,
+      "leakage": 0.103,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.38,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.7888,
+      "poor_reached_ci": [
+        0.7315,
+        0.8461
+      ],
+      "extreme_poor_reached": 0.7914,
+      "exclusion_error": 0.2112,
+      "leakage": 0.0806,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.38,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.76,
+      "poor_reached_ci": [
+        0.7001,
+        0.82
+      ],
+      "extreme_poor_reached": 0.6273,
+      "exclusion_error": 0.24,
+      "leakage": 0.2959,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.39,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8095,
+      "poor_reached_ci": [
+        0.7544,
+        0.8647
+      ],
+      "extreme_poor_reached": 0.7335,
+      "exclusion_error": 0.1905,
+      "leakage": 0.0559,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.39,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.78,
+      "poor_reached_ci": [
+        0.7219,
+        0.8382
+      ],
+      "extreme_poor_reached": 0.6185,
+      "exclusion_error": 0.22,
+      "leakage": 0.1068,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.4,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8303,
+      "poor_reached_ci": [
+        0.7776,
+        0.883
+      ],
+      "extreme_poor_reached": 0.7035,
+      "exclusion_error": 0.1697,
+      "leakage": 0.0761,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.4,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.8,
+      "poor_reached_ci": [
+        0.7439,
+        0.8562
+      ],
+      "extreme_poor_reached": 0.5778,
+      "exclusion_error": 0.2,
+      "leakage": 0.1971,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.41,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8511,
+      "poor_reached_ci": [
+        0.8011,
+        0.901
+      ],
+      "extreme_poor_reached": 0.7036,
+      "exclusion_error": 0.1489,
+      "leakage": 0.1757,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.41,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.82,
+      "poor_reached_ci": [
+        0.7661,
+        0.874
+      ],
+      "extreme_poor_reached": 0.7038,
+      "exclusion_error": 0.18,
+      "leakage": 0.1325,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.42,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8718,
+      "poor_reached_ci": [
+        0.8249,
+        0.9187
+      ],
+      "extreme_poor_reached": 0.798,
+      "exclusion_error": 0.1282,
+      "leakage": 0.2025,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.42,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.84,
+      "poor_reached_ci": [
+        0.7886,
+        0.8915
+      ],
+      "extreme_poor_reached": 0.8552,
+      "exclusion_error": 0.16,
+      "leakage": 0.2541,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.43,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.8926,
+      "poor_reached_ci": [
+        0.8491,
+        0.936
+      ],
+      "extreme_poor_reached": 0.719,
+      "exclusion_error": 0.1074,
+      "leakage": 0.1842,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.43,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.86,
+      "poor_reached_ci": [
+        0.8113,
+        0.9087
+      ],
+      "extreme_poor_reached": 0.6114,
+      "exclusion_error": 0.14,
+      "leakage": 0.3474,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.44,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.9133,
+      "poor_reached_ci": [
+        0.8738,
+        0.9528
+      ],
+      "extreme_poor_reached": 0.9102,
+      "exclusion_error": 0.0867,
+      "leakage": 0.1388,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.44,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.88,
+      "poor_reached_ci": [
+        0.8344,
+        0.9256
+      ],
+      "extreme_poor_reached": 0.6493,
+      "exclusion_error": 0.12,
+      "leakage": 0.2665,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.45,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.9341,
+      "poor_reached_ci": [
+        0.8993,
+        0.9689
+      ],
+      "extreme_poor_reached": 0.7989,
+      "exclusion_error": 0.0659,
+      "leakage": 0.2347,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.45,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.9,
+      "poor_reached_ci": [
+        0.8579,
+        0.9421
+      ],
+      "extreme_poor_reached": 0.7315,
+      "exclusion_error": 0.1,
+      "leakage": 0.1098,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.46,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.9548,
+      "poor_reached_ci": [
+        0.9257,
+        0.984
+      ],
+      "extreme_poor_reached": 0.7106,
+      "exclusion_error": 0.0452,
+      "leakage": 0.1777,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.46,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.92,
+      "poor_reached_ci": [
+        0.882,
+        0.9581
+      ],
+      "extreme_poor_reached": 0.8325,
+      "exclusion_error": 0.08,
+      "leakage": 0.2638,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.47,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.9756,
+      "poor_reached_ci": [
+        0.9539,
+        0.9973
+      ],
+      "extreme_poor_reached": 0.813,
+      "exclusion_error": 0.0244,
+      "leakage": 0.1714,
+      "cost_per_poor_reached": 6176351
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.47,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.94,
+      "poor_reached_ci": [
+        0.9067,
+        0.9734
+      ],
+      "extreme_poor_reached": 0.7551,
+      "exclusion_error": 0.06,
+      "leakage": 0.2061,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.48,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.99,
+      "poor_reached_ci": [
+        0.976,
+        1.0
+      ],
+      "extreme_poor_reached": 0.8421,
+      "exclusion_error": 0.01,
+      "leakage": 0.2099,
+      "cost_per_poor_reached": 6216006
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.48,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.9601,
+      "poor_reached_ci": [
+        0.9326,
+        0.9875
+      ],
+      "extreme_poor_reached": 0.7105,
+      "exclusion_error": 0.0399,
+      "leakage": 0.2456,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.49,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.99,
+      "poor_reached_ci": [
+        0.976,
+        1.0
+      ],
+      "extreme_poor_reached": 0.99,
+      "exclusion_error": 0.01,
+      "leakage": 0.1605,
+      "cost_per_poor_reached": 6345506
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.49,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.9801,
+      "poor_reached_ci": [
+        0.9604,
+        0.9997
+      ],
+      "extreme_poor_reached": 0.9829,
+      "exclusion_error": 0.0199,
+      "leakage": 0.1837,
+      "cost_per_poor_reached": 6409922
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.5,
+      "rule": "B",
+      "rule_label": "Model-ranked (out-of-fold poverty risk)",
+      "poor_reached": 0.99,
+      "poor_reached_ci": [
+        0.976,
+        1.0
+      ],
+      "extreme_poor_reached": 0.99,
+      "exclusion_error": 0.01,
+      "leakage": 0.1323,
+      "cost_per_poor_reached": 6475006
+    },
+    {
+      "area": "Musanze",
+      "budget_share": 0.5,
+      "rule": "C",
+      "rule_label": "Simple scorecard",
+      "poor_reached": 0.99,
+      "poor_reached_ci": [
+        0.976,
+        1.0
+      ],
+      "extreme_poor_reached": 0.9797,
+      "exclusion_error": 0.01,
+      "leakage": 0.1744,
+      "cost_per_poor_reached": 6475006
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+pandas>=2.2
+numpy>=2.0
+scipy>=1.13
+scikit-learn>=1.5
+statsmodels>=0.14
+pyreadstat>=1.2
+pyarrow>=17.0
+pytest>=8.3
+jsonschema>=4.23

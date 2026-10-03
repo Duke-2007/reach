@@ -1,0 +1,32 @@
+# Data directories (raw and processed microdata never committed)
+data/raw/
+data/processed/
+
+# Data file formats (inside data/)
+data/**/*.dta
+data/**/*.sav
+data/**/*.csv
+
+# Environment
+.env
+.venv/
+
+# Node / Next.js
+node_modules/
+.next/
+app/node_modules/
+app/.next/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

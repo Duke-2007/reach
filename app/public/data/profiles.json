@@ -1,0 +1,475 @@
+{
+  "placeholder": true,
+  "note": "PLACEHOLDER DATA FOR UI DEVELOPMENT ONLY. All numerical values are synthetic and invented with a fixed random seed. They MUST be replaced by the output of the pipeline scripts (pipeline/01-05) before any public use. These are NOT survey results and are NOT claimed to represent real households, districts, or any outcome of the EICV7 data.",
+  "comparison": "missed poor households vs covered poor households",
+  "areas": [
+    "NATIONAL",
+    "Gasabo",
+    "Huye",
+    "Musanze"
+  ],
+  "traits_metadata": [
+    {
+      "key": "household_size",
+      "label": "Mean household size (persons)",
+      "type": "numeric"
+    },
+    {
+      "key": "electricity_pct",
+      "label": "% with electricity in dwelling",
+      "type": "proportion"
+    },
+    {
+      "key": "improved_water_pct",
+      "label": "% with improved drinking water",
+      "type": "proportion"
+    },
+    {
+      "key": "improved_toilet_pct",
+      "label": "% with improved sanitation",
+      "type": "proportion"
+    },
+    {
+      "key": "head_primary_plus_pct",
+      "label": "% heads with primary+ education",
+      "type": "proportion"
+    },
+    {
+      "key": "distance_health_km",
+      "label": "Median distance to nearest health centre (km)",
+      "type": "numeric"
+    },
+    {
+      "key": "owns_mobile_phone_pct",
+      "label": "% owning a mobile phone",
+      "type": "proportion"
+    },
+    {
+      "key": "agriculture_main_pct",
+      "label": "% main livelihood is agriculture",
+      "type": "proportion"
+    }
+  ],
+  "by_area": [
+    {
+      "area": "NATIONAL",
+      "n_poor_households": 4124,
+      "n_missed_poor": 1933,
+      "n_covered_poor": 2191,
+      "small_cell": false,
+      "traits": {
+        "household_size": {
+          "missed": 5.72,
+          "missed_ci": [
+            5.32,
+            6.11
+          ],
+          "covered": 4.99,
+          "covered_ci": [
+            4.65,
+            5.34
+          ]
+        },
+        "electricity_pct": {
+          "missed": 0.4275,
+          "missed_ci": [
+            0.3949,
+            0.4601
+          ],
+          "covered": 0.4908,
+          "covered_ci": [
+            0.4656,
+            0.516
+          ]
+        },
+        "improved_water_pct": {
+          "missed": 0.5985,
+          "missed_ci": [
+            0.5492,
+            0.6478
+          ],
+          "covered": 0.6872,
+          "covered_ci": [
+            0.6492,
+            0.7251
+          ]
+        },
+        "improved_toilet_pct": {
+          "missed": 0.4703,
+          "missed_ci": [
+            0.4302,
+            0.5103
+          ],
+          "covered": 0.5399,
+          "covered_ci": [
+            0.5165,
+            0.5634
+          ]
+        },
+        "head_primary_plus_pct": {
+          "missed": 0.513,
+          "missed_ci": [
+            0.4837,
+            0.5423
+          ],
+          "covered": 0.589,
+          "covered_ci": [
+            0.564,
+            0.614
+          ]
+        },
+        "distance_health_km": {
+          "missed": 1.28,
+          "missed_ci": [
+            0.96,
+            1.59
+          ],
+          "covered": 2.41,
+          "covered_ci": [
+            1.67,
+            3.14
+          ]
+        },
+        "owns_mobile_phone_pct": {
+          "missed": 0.6156,
+          "missed_ci": [
+            0.5742,
+            0.657
+          ],
+          "covered": 0.7068,
+          "covered_ci": [
+            0.6886,
+            0.725
+          ]
+        },
+        "agriculture_main_pct": {
+          "missed": 0.5225,
+          "missed_ci": [
+            0.4748,
+            0.5702
+          ],
+          "covered": 0.4334,
+          "covered_ci": [
+            0.4109,
+            0.456
+          ]
+        }
+      }
+    },
+    {
+      "area": "Gasabo",
+      "n_poor_households": 72,
+      "n_missed_poor": 28,
+      "n_covered_poor": 44,
+      "small_cell": false,
+      "traits": {
+        "household_size": {
+          "missed": 3.25,
+          "missed_ci": [
+            3.02,
+            3.48
+          ],
+          "covered": 2.5,
+          "covered_ci": [
+            2.2,
+            2.8
+          ]
+        },
+        "electricity_pct": {
+          "missed": 0.2475,
+          "missed_ci": [
+            0.2179,
+            0.2771
+          ],
+          "covered": 0.2842,
+          "covered_ci": [
+            0.2605,
+            0.3078
+          ]
+        },
+        "improved_water_pct": {
+          "missed": 0.3465,
+          "missed_ci": [
+            0.3215,
+            0.3715
+          ],
+          "covered": 0.3978,
+          "covered_ci": [
+            0.37,
+            0.4256
+          ]
+        },
+        "improved_toilet_pct": {
+          "missed": 0.2723,
+          "missed_ci": [
+            0.252,
+            0.2925
+          ],
+          "covered": 0.3126,
+          "covered_ci": [
+            0.2763,
+            0.3488
+          ]
+        },
+        "head_primary_plus_pct": {
+          "missed": 0.297,
+          "missed_ci": [
+            0.2544,
+            0.3396
+          ],
+          "covered": 0.341,
+          "covered_ci": [
+            0.3106,
+            0.3714
+          ]
+        },
+        "distance_health_km": {
+          "missed": 1.15,
+          "missed_ci": [
+            0.44,
+            1.86
+          ],
+          "covered": 1.69,
+          "covered_ci": [
+            1.02,
+            2.35
+          ]
+        },
+        "owns_mobile_phone_pct": {
+          "missed": 0.3564,
+          "missed_ci": [
+            0.3094,
+            0.4034
+          ],
+          "covered": 0.4092,
+          "covered_ci": [
+            0.3827,
+            0.4357
+          ]
+        },
+        "agriculture_main_pct": {
+          "missed": 0.3025,
+          "missed_ci": [
+            0.2772,
+            0.3278
+          ],
+          "covered": 0.2509,
+          "covered_ci": [
+            0.2194,
+            0.2825
+          ]
+        }
+      }
+    },
+    {
+      "area": "Huye",
+      "n_poor_households": 87,
+      "n_missed_poor": 46,
+      "n_covered_poor": 41,
+      "small_cell": false,
+      "traits": {
+        "household_size": {
+          "missed": 6.07,
+          "missed_ci": [
+            5.85,
+            6.3
+          ],
+          "covered": 4.9,
+          "covered_ci": [
+            4.62,
+            5.18
+          ]
+        },
+        "electricity_pct": {
+          "missed": 0.495,
+          "missed_ci": [
+            0.4562,
+            0.5338
+          ],
+          "covered": 0.5683,
+          "covered_ci": [
+            0.5413,
+            0.5954
+          ]
+        },
+        "improved_water_pct": {
+          "missed": 0.693,
+          "missed_ci": [
+            0.6482,
+            0.7378
+          ],
+          "covered": 0.7957,
+          "covered_ci": [
+            0.7677,
+            0.8236
+          ]
+        },
+        "improved_toilet_pct": {
+          "missed": 0.5445,
+          "missed_ci": [
+            0.5173,
+            0.5717
+          ],
+          "covered": 0.6252,
+          "covered_ci": [
+            0.5732,
+            0.6771
+          ]
+        },
+        "head_primary_plus_pct": {
+          "missed": 0.594,
+          "missed_ci": [
+            0.561,
+            0.627
+          ],
+          "covered": 0.682,
+          "covered_ci": [
+            0.6381,
+            0.7259
+          ]
+        },
+        "distance_health_km": {
+          "missed": 1.43,
+          "missed_ci": [
+            0.81,
+            2.05
+          ],
+          "covered": 2.59,
+          "covered_ci": [
+            2.14,
+            3.04
+          ]
+        },
+        "owns_mobile_phone_pct": {
+          "missed": 0.7128,
+          "missed_ci": [
+            0.6823,
+            0.7433
+          ],
+          "covered": 0.8184,
+          "covered_ci": [
+            0.7945,
+            0.8422
+          ]
+        },
+        "agriculture_main_pct": {
+          "missed": 0.605,
+          "missed_ci": [
+            0.579,
+            0.631
+          ],
+          "covered": 0.5019,
+          "covered_ci": [
+            0.4782,
+            0.5255
+          ]
+        }
+      }
+    },
+    {
+      "area": "Musanze",
+      "n_poor_households": 195,
+      "n_missed_poor": 89,
+      "n_covered_poor": 106,
+      "small_cell": false,
+      "traits": {
+        "household_size": {
+          "missed": 5.17,
+          "missed_ci": [
+            4.87,
+            5.47
+          ],
+          "covered": 4.63,
+          "covered_ci": [
+            4.36,
+            4.89
+          ]
+        },
+        "electricity_pct": {
+          "missed": 0.4725,
+          "missed_ci": [
+            0.4278,
+            0.5172
+          ],
+          "covered": 0.5425,
+          "covered_ci": [
+            0.4994,
+            0.5855
+          ]
+        },
+        "improved_water_pct": {
+          "missed": 0.6615,
+          "missed_ci": [
+            0.6265,
+            0.6965
+          ],
+          "covered": 0.7595,
+          "covered_ci": [
+            0.7382,
+            0.7808
+          ]
+        },
+        "improved_toilet_pct": {
+          "missed": 0.5198,
+          "missed_ci": [
+            0.4866,
+            0.5529
+          ],
+          "covered": 0.5967,
+          "covered_ci": [
+            0.5669,
+            0.6265
+          ]
+        },
+        "head_primary_plus_pct": {
+          "missed": 0.567,
+          "missed_ci": [
+            0.5322,
+            0.6018
+          ],
+          "covered": 0.651,
+          "covered_ci": [
+            0.624,
+            0.678
+          ]
+        },
+        "distance_health_km": {
+          "missed": 2.09,
+          "missed_ci": [
+            1.45,
+            2.73
+          ],
+          "covered": 1.08,
+          "covered_ci": [
+            0.6,
+            1.57
+          ]
+        },
+        "owns_mobile_phone_pct": {
+          "missed": 0.6804,
+          "missed_ci": [
+            0.6429,
+            0.7179
+          ],
+          "covered": 0.7812,
+          "covered_ci": [
+            0.7428,
+            0.8196
+          ]
+        },
+        "agriculture_main_pct": {
+          "missed": 0.5775,
+          "missed_ci": [
+            0.5293,
+            0.6257
+          ],
+          "covered": 0.4791,
+          "covered_ci": [
+            0.4494,
+            0.5087
+          ]
+        }
+      }
+    }
+  ]
+}

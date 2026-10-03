@@ -1,0 +1,2 @@
+shap>=0.46
+geopandas>=0.15
