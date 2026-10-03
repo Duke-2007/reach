@@ -1,0 +1,45 @@
+{
+  "lang": {
+    "label": "English",
+    "short": "EN"
+  },
+  "app": {
+    "title": "Reach — Rwanda targeting audit & simulator",
+    "tagline": "District-level exclusion, leakage & targeting comparison for social protection in Rwanda"
+  },
+  "nav": {
+    "home": "Gap map",
+    "missed": "Missed vs covered",
+    "model": "Model",
+    "simulate": "Simulate rules",
+    "brief": "District brief",
+    "district_unknown": "district",
+    "menu_open": "Open menu",
+    "menu_close": "Close menu"
+  },
+  "footer": {
+    "line1": "Policy design tool based on EICV7 survey estimates at district level. Not a list of real households."
+  },
+  "format": {
+    "percent_whole": "{value}%",
+    "ci_parens": "({lo}–{hi})",
+    "small_cell": "Suppressed (small cell)",
+    "rwf_per": "{value} RWF / household",
+    "rwf_millions": "{value} M RWF"
+  },
+  "banner": {
+    "placeholder_title": "Placeholder data in use — do not quote these numbers publicly",
+    "placeholder_body": "These files contain synthetic, invented values: {which}. They are for UI layout only and will be replaced by real pipeline output before any publication.",
+    "disclosure_toggle": "View the embedded disclosure from the data file(s)",
+    "load_error_title": "Could not load the data files.",
+    "placeholder_chip": "placeholder"
+  },
+  "pages": {
+    "home_heading": "Gap map — exclusion, leakage and access by district",
+    "missed_heading": "Missed vs covered poor households — trait comparison",
+    "model_heading": "Poverty-risk model — performance, calibration & features",
+    "simulate_heading": "Simulate targeting rules under a fixed budget",
+    "brief_heading": "District brief: {district}",
+    "body_coming_soon": "Content will be added here. The layout, navigation and i18n foundation is in place."
+  }
+}

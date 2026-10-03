@@ -1,0 +1,45 @@
+{
+  "lang": {
+    "label": "TODO_TRANSLATE Kinyarwanda",
+    "short": "RW"
+  },
+  "app": {
+    "title": "TODO_TRANSLATE Reach — gushigikiriza ibitekerezo no guhuza amabara mu Rwanda",
+    "tagline": "TODO_TRANSLATE Igitekerezo cyo guhagarika abakene, guhagarika abatagakene, no guereranya amategeko yo gushigikiriza mu murere wa disturi"
+  },
+  "nav": {
+    "home": "TODO_TRANSLATE Akarata k’amahanga",
+    "missed": "TODO_TRANSLATE Abakene batagashigikirwa n’abarimo",
+    "model": "TODO_TRANSLATE Modeli yo gushigikiriza",
+    "simulate": "TODO_TRANSLATE Gueranya amategeko",
+    "brief": "TODO_TRANSLATE Itangazamakuru rya disturi",
+    "district_unknown": "TODO_TRANSLATE disturi",
+    "menu_open": "TODO_TRANSLATE Gufungura ibikurikiye",
+    "menu_close": "TODO_TRANSLATE Gufunga ibikurikiye"
+  },
+  "footer": {
+    "line1": "TODO_TRANSLATE Iyi ni igikoresho cyo guha ibitekerezo mu mategeko, iteganyijwe ku isesengura ry’ibikorwa bya EICV7 ku murere wa disturi. Ntabwo y’urutonde rw’umuryango w’umuntu wa nyuma."
+  },
+  "format": {
+    "percent_whole": "TODO_TRANSLATE {value}%",
+    "ci_parens": "TODO_TRANSLATE ({lo}–{hi})",
+    "small_cell": "TODO_TRANSLATE Bishishwe (ingabi nkuru)",
+    "rwf_per": "TODO_TRANSLATE {value} RWF / umuryango",
+    "rwf_millions": "TODO_TRANSLATE {value} M RWF"
+  },
+  "banner": {
+    "placeholder_title": "TODO_TRANSLATE Amakuru atari yo ku isesengura y’ibikorwa — ntuzatumizwe mu gushigikiriza ibitekerezo",
+    "placeholder_body": "TODO_TRANSLATE Aya mabara yahozeho n’ibitekerezo bisanzwe: {which}. Ntabwo hari ibitekerezo by’umuntu wa nyuma hafi.",
+    "disclosure_toggle": "TODO_TRANSLATE Kureba ibitekerezo bijanye n’amakuru",
+    "load_error_title": "TODO_TRANSLATE Ntibishobora kwibuka amakuru.",
+    "placeholder_chip": "TODO_TRANSLATE placeholder"
+  },
+  "pages": {
+    "home_heading": "TODO_TRANSLATE Akarata k’amahanga — guhagarika abakene, guhagarika abatagakene, no kugena ibikorwa ku murere wa disturi",
+    "missed_heading": "TODO_TRANSLATE Abakene batagashigikirwa n’abarimo — guereranya ibintu by’umuryango",
+    "model_heading": "TODO_TRANSLATE Modeli yo gushigikiriza ubushake — ibikorwa, ibitekerezo, n’ibintu bikoreshejwe",
+    "simulate_heading": "TODO_TRANSLATE Gueranya amategeko yo gushigikiriza igihe budget yose irashyigikiriwe",
+    "brief_heading": "TODO_TRANSLATE Itangazamakuru rya disturi: {district}",
+    "body_coming_soon": "TODO_TRANSLATE Ibitekerezo bijanye n’iyi ngiro bizajya bitangwa. Igitekerezo, ibikurikiye, n’ubwenge bw’ururimi rwose buhaze."
+  }
+}

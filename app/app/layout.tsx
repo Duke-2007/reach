@@ -4,6 +4,8 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 import { PlaceholderBanner } from "@/components/PlaceholderBanner";
+import { HeaderNav } from "@/components/HeaderNav";
+import { AppFooter } from "@/components/AppFooter";
 import {
   derivePlaceholderStatus,
   loadDistrictGaps,
@@ -78,7 +80,6 @@ async function PlaceholderDataBanner() {
   return <PlaceholderBanner status={status.data} />;
 }
 
-
 export default function RootLayout({
   children,
 }: {
@@ -89,9 +90,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-background text-foreground">
         <PlaceholderDataBanner />
+        <HeaderNav />
         <div className="flex min-h-0 flex-1 flex-col">{children}</div>
+        <AppFooter />
       </body>
     </html>
   );
