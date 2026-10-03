@@ -43,6 +43,7 @@ export function formatPercentWithCi(
 ): string {
   if (opts.smallCell) return opts.smallCellText ?? "Suppressed (small cell)";
   const pct = formatPercent(value, { digits: opts.digits });
+  if (!ci || !Array.isArray(ci) || ci.length !== 2) return pct;
   const ciStr = formatCi(ci, { digits: opts.digits });
   return ciStr ? `${pct} ${ciStr}` : pct;
 }

@@ -25,9 +25,13 @@ export interface DistrictRow {
   extreme_poverty_ci: Ci;
   coverage_poor: number;
   exclusion_error: number;
+  exclusion_error_ci?: Ci;
   leakage: number;
+  leakage_ci?: Ci;
   financial_access: number;
+  financial_access_ci?: Ci;
   triple_gap: number;
+  triple_gap_ci?: Ci;
   n_households: number;
   small_cell: boolean;
 }

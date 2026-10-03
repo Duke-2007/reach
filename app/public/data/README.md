@@ -40,9 +40,13 @@ Each `districts[]` row:
 | `extreme_poverty_ci` | array[lo, hi] | 95 % CI for `extreme_poverty_rate` |
 | `coverage_poor` | float ∈ [0,1] | Share of **poor** households receiving any support |
 | `exclusion_error` | float ∈ [0,1] | `1 − coverage_poor` (share of poor *not* reached) |
+| `exclusion_error_ci` | array[lo, hi] | 95 % CI for `exclusion_error` |
 | `leakage` | float ∈ [0,1] | Share of **non-poor** households receiving support |
+| `leakage_ci` | array[lo, hi] | 95 % CI for `leakage` |
 | `financial_access` | float ∈ [0,1] | Share of households with bank or mobile-money account |
+| `financial_access_ci` | array[lo, hi] | 95 % CI for `financial_access` |
 | `triple_gap` | float ∈ [0,1] | Composite index — see pipeline `05_simulate_and_export.py` for formula |
+| `triple_gap_ci` | array[lo, hi] | 95 % CI for `triple_gap` |
 | `n_households` | integer | Unweighted household count in the survey sample for this district |
 | `small_cell` | bool | `true` when `n_households < min_cell_size_flag` |
 

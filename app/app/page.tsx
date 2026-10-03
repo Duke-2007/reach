@@ -1,5 +1,7 @@
-import PageShell from "@/components/PageShell";
+import { GapMap } from "@/components/GapMap";
+import { loadDistrictGaps } from "@/lib/data-loader";
 
-export default function HomePage() {
-  return <PageShell titleKey="pages.home_heading" />;
+export default async function HomePage() {
+  const data = await loadDistrictGaps();
+  return <GapMap data={data} />;
 }

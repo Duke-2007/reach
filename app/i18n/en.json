@@ -41,5 +41,31 @@
     "simulate_heading": "Simulate targeting rules under a fixed budget",
     "brief_heading": "District brief: {district}",
     "body_coming_soon": "Content will be added here. The layout, navigation and i18n foundation is in place."
+  },
+  "map": {
+    "layer_poverty": "Poverty rate",
+    "layer_exclusion": "Exclusion error",
+    "layer_leakage": "Leakage",
+    "layer_financial": "Financial access",
+    "layer_financial_access": "Financial access",
+    "layer_triple": "Triple gap",
+    "takeaway_poverty": "National poverty rate is {national}%, ranging from {min}% to {max}% by district.",
+    "takeaway_exclusion": "On average, {national}% of poor households are missed, with {max}% in the highest district.",
+    "takeaway_leakage": "National leakage is {national}%, reaching {max}% in some districts.",
+    "takeaway_financial": "Financial access varies from {min}% to {max}% nationally.",
+    "takeaway_financial_access": "Financial access varies from {min}% to {max}% nationally.",
+    "takeaway_triple": "The triple gap affects {national}% of households on average, up to {max}% in some districts.",
+    "legend_low": "Low",
+    "legend_high": "High",
+    "hover_district": "District",
+    "hover_households": "Households surveyed",
+    "hover_small_sample": "Small sample, interpret with care",
+    "ranking_title": "Highest exclusion error",
+    "mismatch_warning": "District name mismatch detected between map and data. Some districts may not display correctly.",
+    "card_poverty": "Poverty rate",
+    "card_exclusion": "Exclusion error",
+    "card_leakage": "Leakage",
+    "card_access": "Financial access",
+    "card_triple": "Triple gap"
   }
 }

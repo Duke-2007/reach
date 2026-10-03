@@ -27,7 +27,23 @@
       "financial_access": 0.5772,
       "triple_gap": 0.1514,
       "n_households": 607,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.2869,
+        0.4202
+      ],
+      "leakage_ci": [
+        0.2825,
+        0.4075
+      ],
+      "financial_access_ci": [
+        0.4904,
+        0.661
+      ],
+      "triple_gap_ci": [
+        0.0568,
+        0.2057
+      ]
     },
     {
       "district": "Kicukiro",
@@ -47,7 +63,23 @@
       "financial_access": 0.6399,
       "triple_gap": 0.075,
       "n_households": 582,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.171,
+        0.2936
+      ],
+      "leakage_ci": [
+        0.0686,
+        0.2048
+      ],
+      "financial_access_ci": [
+        0.5886,
+        0.6998
+      ],
+      "triple_gap_ci": [
+        0,
+        0.1522
+      ]
     },
     {
       "district": "Nyarugenge",
@@ -67,7 +99,23 @@
       "financial_access": 0.5036,
       "triple_gap": 0.0751,
       "n_households": 559,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.1254,
+        0.2659
+      ],
+      "leakage_ci": [
+        0.0234,
+        0.1642
+      ],
+      "financial_access_ci": [
+        0.4133,
+        0.5885
+      ],
+      "triple_gap_ci": [
+        0.0081,
+        0.1329
+      ]
     },
     {
       "district": "Bugesera",
@@ -87,7 +135,23 @@
       "financial_access": 0.7343,
       "triple_gap": 0.1923,
       "n_households": 422,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.4415,
+        0.6062
+      ],
+      "leakage_ci": [
+        0.2369,
+        0.3463
+      ],
+      "financial_access_ci": [
+        0.6419,
+        0.8145
+      ],
+      "triple_gap_ci": [
+        0.1019,
+        0.2788
+      ]
     },
     {
       "district": "Gatsibo",
@@ -107,7 +171,23 @@
       "financial_access": 0.5964,
       "triple_gap": 0.2255,
       "n_households": 515,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.1153,
+        0.2908
+      ],
+      "leakage_ci": [
+        0.3258,
+        0.4723
+      ],
+      "financial_access_ci": [
+        0.5049,
+        0.6773
+      ],
+      "triple_gap_ci": [
+        0.1324,
+        0.3044
+      ]
     },
     {
       "district": "Kayonza",
@@ -127,7 +207,23 @@
       "financial_access": 0.522,
       "triple_gap": 0.1414,
       "n_households": 640,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.1156,
+        0.2531
+      ],
+      "leakage_ci": [
+        0.1407,
+        0.2666
+      ],
+      "financial_access_ci": [
+        0.468,
+        0.5836
+      ],
+      "triple_gap_ci": [
+        0.0863,
+        0.2053
+      ]
     },
     {
       "district": "Kirehe",
@@ -147,7 +243,23 @@
       "financial_access": 0.5705,
       "triple_gap": 0.1728,
       "n_households": 466,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.1108,
+        0.2608
+      ],
+      "leakage_ci": [
+        0.2355,
+        0.3645
+      ],
+      "financial_access_ci": [
+        0.5072,
+        0.6673
+      ],
+      "triple_gap_ci": [
+        0.0904,
+        0.2533
+      ]
     },
     {
       "district": "Ngoma",
@@ -167,7 +279,23 @@
       "financial_access": 0.7156,
       "triple_gap": 0.1944,
       "n_households": 405,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.2533,
+        0.3984
+      ],
+      "leakage_ci": [
+        0.3289,
+        0.4561
+      ],
+      "financial_access_ci": [
+        0.6161,
+        0.7976
+      ],
+      "triple_gap_ci": [
+        0.1166,
+        0.2786
+      ]
     },
     {
       "district": "Nyagatare",
@@ -187,7 +315,23 @@
       "financial_access": 0.3776,
       "triple_gap": 0.2696,
       "n_households": 397,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.0623,
+        0.2432
+      ],
+      "leakage_ci": [
+        0.2757,
+        0.3888
+      ],
+      "financial_access_ci": [
+        0.3118,
+        0.441
+      ],
+      "triple_gap_ci": [
+        0.2091,
+        0.3667
+      ]
     },
     {
       "district": "Rwamagana",
@@ -207,7 +351,23 @@
       "financial_access": 0.6008,
       "triple_gap": 0.1787,
       "n_households": 535,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.3257,
+        0.4852
+      ],
+      "leakage_ci": [
+        0.0723,
+        0.2249
+      ],
+      "financial_access_ci": [
+        0.5051,
+        0.6737
+      ],
+      "triple_gap_ci": [
+        0.1155,
+        0.241
+      ]
     },
     {
       "district": "Burera",
@@ -227,7 +387,23 @@
       "financial_access": 0.6265,
       "triple_gap": 0.149,
       "n_households": 578,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.2946,
+        0.4358
+      ],
+      "leakage_ci": [
+        0.0147,
+        0.1888
+      ],
+      "financial_access_ci": [
+        0.5565,
+        0.6875
+      ],
+      "triple_gap_ci": [
+        0.0491,
+        0.2245
+      ]
     },
     {
       "district": "Gakenke",
@@ -247,7 +423,23 @@
       "financial_access": 0.2569,
       "triple_gap": 0.3006,
       "n_households": 628,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.3077,
+        0.4146
+      ],
+      "leakage_ci": [
+        0.3388,
+        0.4757
+      ],
+      "financial_access_ci": [
+        0.1673,
+        0.328
+      ],
+      "triple_gap_ci": [
+        0.2474,
+        0.3697
+      ]
     },
     {
       "district": "Gicumbi",
@@ -267,7 +459,23 @@
       "financial_access": 0.8223,
       "triple_gap": 0.1935,
       "n_households": 338,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.3471,
+        0.5234
+      ],
+      "leakage_ci": [
+        0.1329,
+        0.3245
+      ],
+      "financial_access_ci": [
+        0.7717,
+        0.9083
+      ],
+      "triple_gap_ci": [
+        0.1094,
+        0.2703
+      ]
     },
     {
       "district": "Musanze",
@@ -287,7 +495,23 @@
       "financial_access": 0.3693,
       "triple_gap": 0.2963,
       "n_households": 414,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.2384,
+        0.3837
+      ],
+      "leakage_ci": [
+        0.1975,
+        0.3248
+      ],
+      "financial_access_ci": [
+        0.2966,
+        0.467
+      ],
+      "triple_gap_ci": [
+        0.2025,
+        0.3595
+      ]
     },
     {
       "district": "Rulindo",
@@ -307,7 +531,23 @@
       "financial_access": 0.8075,
       "triple_gap": 0.1545,
       "n_households": 471,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.3885,
+        0.5224
+      ],
+      "leakage_ci": [
+        0,
+        0.1513
+      ],
+      "financial_access_ci": [
+        0.7426,
+        0.8894
+      ],
+      "triple_gap_ci": [
+        0.0741,
+        0.2121
+      ]
     },
     {
       "district": "Gisagara",
@@ -327,7 +567,23 @@
       "financial_access": 0.5696,
       "triple_gap": 0.2286,
       "n_households": 437,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.1634,
+        0.3285
+      ],
+      "leakage_ci": [
+        0.3523,
+        0.5177
+      ],
+      "financial_access_ci": [
+        0.5196,
+        0.6358
+      ],
+      "triple_gap_ci": [
+        0.1776,
+        0.3251
+      ]
     },
     {
       "district": "Huye",
@@ -347,7 +603,23 @@
       "financial_access": 0.5736,
       "triple_gap": 0.1147,
       "n_households": 344,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.066,
+        0.2515
+      ],
+      "leakage_ci": [
+        0.0693,
+        0.1876
+      ],
+      "financial_access_ci": [
+        0.4797,
+        0.6709
+      ],
+      "triple_gap_ci": [
+        0.0604,
+        0.189
+      ]
     },
     {
       "district": "Kamonyi",
@@ -367,7 +639,23 @@
       "financial_access": 0.3848,
       "triple_gap": 0.1591,
       "n_households": 633,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.2831,
+        0.4246
+      ],
+      "leakage_ci": [
+        0.0101,
+        0.1548
+      ],
+      "financial_access_ci": [
+        0.311,
+        0.4623
+      ],
+      "triple_gap_ci": [
+        0.0958,
+        0.2527
+      ]
     },
     {
       "district": "Muhanga",
@@ -387,7 +675,23 @@
       "financial_access": 0.2688,
       "triple_gap": 0.1263,
       "n_households": 453,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.1126,
+        0.2444
+      ],
+      "leakage_ci": [
+        0.0,
+        0.1635
+      ],
+      "financial_access_ci": [
+        0.2087,
+        0.3344
+      ],
+      "triple_gap_ci": [
+        0.0265,
+        0.2088
+      ]
     },
     {
       "district": "Nyamagabe",
@@ -407,7 +711,23 @@
       "financial_access": 0.5336,
       "triple_gap": 0.2036,
       "n_households": 449,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.4695,
+        0.6173
+      ],
+      "leakage_ci": [
+        0.2223,
+        0.3396
+      ],
+      "financial_access_ci": [
+        0.4667,
+        0.613
+      ],
+      "triple_gap_ci": [
+        0.1421,
+        0.2646
+      ]
     },
     {
       "district": "Nyanza",
@@ -427,7 +747,23 @@
       "financial_access": 0.654,
       "triple_gap": 0.2488,
       "n_households": 522,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.281,
+        0.4161
+      ],
+      "leakage_ci": [
+        0.2802,
+        0.4369
+      ],
+      "financial_access_ci": [
+        0.561,
+        0.7075
+      ],
+      "triple_gap_ci": [
+        0.1869,
+        0.3322
+      ]
     },
     {
       "district": "Nyaruguru",
@@ -447,7 +783,23 @@
       "financial_access": 0.5031,
       "triple_gap": 0.1729,
       "n_households": 610,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.2897,
+        0.407
+      ],
+      "leakage_ci": [
+        0.1326,
+        0.308
+      ],
+      "financial_access_ci": [
+        0.4295,
+        0.5923
+      ],
+      "triple_gap_ci": [
+        0.0825,
+        0.2324
+      ]
     },
     {
       "district": "Ruhango",
@@ -467,7 +819,23 @@
       "financial_access": 0.5744,
       "triple_gap": 0.1896,
       "n_households": 422,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.086,
+        0.2124
+      ],
+      "leakage_ci": [
+        0.2397,
+        0.3843
+      ],
+      "financial_access_ci": [
+        0.4879,
+        0.6581
+      ],
+      "triple_gap_ci": [
+        0.0904,
+        0.2445
+      ]
     },
     {
       "district": "Karongi",
@@ -487,7 +855,23 @@
       "financial_access": 0.2852,
       "triple_gap": 0.2966,
       "n_households": 287,
-      "small_cell": true
+      "small_cell": true,
+      "exclusion_error_ci": [
+        0.2047,
+        0.3418
+      ],
+      "leakage_ci": [
+        0.1173,
+        0.2728
+      ],
+      "financial_access_ci": [
+        0.2257,
+        0.3576
+      ],
+      "triple_gap_ci": [
+        0.2255,
+        0.3605
+      ]
     },
     {
       "district": "Ngororero",
@@ -507,7 +891,23 @@
       "financial_access": 0.72,
       "triple_gap": 0.1808,
       "n_households": 474,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.3656,
+        0.5243
+      ],
+      "leakage_ci": [
+        0.27,
+        0.4353
+      ],
+      "financial_access_ci": [
+        0.6425,
+        0.7725
+      ],
+      "triple_gap_ci": [
+        0.0808,
+        0.2726
+      ]
     },
     {
       "district": "Nyabihu",
@@ -527,7 +927,23 @@
       "financial_access": 0.2843,
       "triple_gap": 0.3082,
       "n_households": 618,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.1862,
+        0.3809
+      ],
+      "leakage_ci": [
+        0.2568,
+        0.4075
+      ],
+      "financial_access_ci": [
+        0.21,
+        0.345
+      ],
+      "triple_gap_ci": [
+        0.2381,
+        0.3611
+      ]
     },
     {
       "district": "Nyamasheke",
@@ -547,7 +963,23 @@
       "financial_access": 0.2908,
       "triple_gap": 0.2064,
       "n_households": 579,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.2868,
+        0.455
+      ],
+      "leakage_ci": [
+        0.0141,
+        0.1666
+      ],
+      "financial_access_ci": [
+        0.218,
+        0.362
+      ],
+      "triple_gap_ci": [
+        0.1085,
+        0.3062
+      ]
     },
     {
       "district": "Rubavu",
@@ -567,7 +999,23 @@
       "financial_access": 0.5891,
       "triple_gap": 0.225,
       "n_households": 400,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.3183,
+        0.482
+      ],
+      "leakage_ci": [
+        0.2552,
+        0.3777
+      ],
+      "financial_access_ci": [
+        0.4907,
+        0.6681
+      ],
+      "triple_gap_ci": [
+        0.1479,
+        0.3124
+      ]
     },
     {
       "district": "Rusizi",
@@ -587,7 +1035,23 @@
       "financial_access": 0.4397,
       "triple_gap": 0.2681,
       "n_households": 441,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.3246,
+        0.4567
+      ],
+      "leakage_ci": [
+        0.0949,
+        0.2626
+      ],
+      "financial_access_ci": [
+        0.3818,
+        0.5377
+      ],
+      "triple_gap_ci": [
+        0.2141,
+        0.3274
+      ]
     },
     {
       "district": "Rutsiro",
@@ -607,7 +1071,23 @@
       "financial_access": 0.4594,
       "triple_gap": 0.124,
       "n_households": 317,
-      "small_cell": false
+      "small_cell": false,
+      "exclusion_error_ci": [
+        0.2164,
+        0.38
+      ],
+      "leakage_ci": [
+        0.0412,
+        0.159
+      ],
+      "financial_access_ci": [
+        0.3649,
+        0.5217
+      ],
+      "triple_gap_ci": [
+        0.0443,
+        0.205
+      ]
     }
   ],
   "national_averages": {

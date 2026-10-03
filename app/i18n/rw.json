@@ -8,8 +8,8 @@
     "tagline": "TODO_TRANSLATE Igitekerezo cyo guhagarika abakene, guhagarika abatagakene, no guereranya amategeko yo gushigikiriza mu murere wa disturi"
   },
   "nav": {
-    "home": "TODO_TRANSLATE Akarata k’amahanga",
-    "missed": "TODO_TRANSLATE Abakene batagashigikirwa n’abarimo",
+    "home": "TODO_TRANSLATE Akarata k'amahanga",
+    "missed": "TODO_TRANSLATE Abakene batagashigikirwa n'abarimo",
     "model": "TODO_TRANSLATE Modeli yo gushigikiriza",
     "simulate": "TODO_TRANSLATE Gueranya amategeko",
     "brief": "TODO_TRANSLATE Itangazamakuru rya disturi",
@@ -18,7 +18,7 @@
     "menu_close": "TODO_TRANSLATE Gufunga ibikurikiye"
   },
   "footer": {
-    "line1": "TODO_TRANSLATE Iyi ni igikoresho cyo guha ibitekerezo mu mategeko, iteganyijwe ku isesengura ry’ibikorwa bya EICV7 ku murere wa disturi. Ntabwo y’urutonde rw’umuryango w’umuntu wa nyuma."
+    "line1": "TODO_TRANSLATE Iyi ni igikoresho cyo guha ibitekerezo mu mategeko, iteganyijwe ku isesengura ry'ibikorwa bya EICV7 ku murere wa disturi. Ntabwo y'urutonde rw'umuryango w'umuntu wa nyuma."
   },
   "format": {
     "percent_whole": "TODO_TRANSLATE {value}%",
@@ -28,18 +28,44 @@
     "rwf_millions": "TODO_TRANSLATE {value} M RWF"
   },
   "banner": {
-    "placeholder_title": "TODO_TRANSLATE Amakuru atari yo ku isesengura y’ibikorwa — ntuzatumizwe mu gushigikiriza ibitekerezo",
-    "placeholder_body": "TODO_TRANSLATE Aya mabara yahozeho n’ibitekerezo bisanzwe: {which}. Ntabwo hari ibitekerezo by’umuntu wa nyuma hafi.",
-    "disclosure_toggle": "TODO_TRANSLATE Kureba ibitekerezo bijanye n’amakuru",
+    "placeholder_title": "TODO_TRANSLATE Amakuru atari yo ku isesengura y'ibikorwa — ntuzatumizwe mu gushigikiriza ibitekerezo",
+    "placeholder_body": "TODO_TRANSLATE Aya mabara yahozeho n'ibitekerezo bisanzwe: {which}. Ntabwo hari ibitekerezo by'umuntu wa nyuma hafi.",
+    "disclosure_toggle": "TODO_TRANSLATE Kureba ibitekerezo bijanye n'amakuru",
     "load_error_title": "TODO_TRANSLATE Ntibishobora kwibuka amakuru.",
     "placeholder_chip": "TODO_TRANSLATE placeholder"
   },
   "pages": {
-    "home_heading": "TODO_TRANSLATE Akarata k’amahanga — guhagarika abakene, guhagarika abatagakene, no kugena ibikorwa ku murere wa disturi",
-    "missed_heading": "TODO_TRANSLATE Abakene batagashigikirwa n’abarimo — guereranya ibintu by’umuryango",
-    "model_heading": "TODO_TRANSLATE Modeli yo gushigikiriza ubushake — ibikorwa, ibitekerezo, n’ibintu bikoreshejwe",
+    "home_heading": "TODO_TRANSLATE Akarata k'amahanga — guhagarika abakene, guhagarika abatagakene, no kugena ibikorwa ku murere wa disturi",
+    "missed_heading": "TODO_TRANSLATE Abakene batagashigikirwa n'abarimo — guereranya ibintu by'umuryango",
+    "model_heading": "TODO_TRANSLATE Modeli yo gushigikiriza ubushake — ibikorwa, ibitekerezo, n'ibintu bikoreshejwe",
     "simulate_heading": "TODO_TRANSLATE Gueranya amategeko yo gushigikiriza igihe budget yose irashyigikiriwe",
     "brief_heading": "TODO_TRANSLATE Itangazamakuru rya disturi: {district}",
-    "body_coming_soon": "TODO_TRANSLATE Ibitekerezo bijanye n’iyi ngiro bizajya bitangwa. Igitekerezo, ibikurikiye, n’ubwenge bw’ururimi rwose buhaze."
+    "body_coming_soon": "TODO_TRANSLATE Ibitekerezo bijanye n'iyi ngiro bizajya bitangwa. Igitekerezo, ibikurikiye, n'ubwenge bw'ururimi rwose buhaze."
+  },
+  "map": {
+    "layer_poverty": "TODO_TRANSLATE Poverty rate",
+    "layer_exclusion": "TODO_TRANSLATE Exclusion error",
+    "layer_leakage": "TODO_TRANSLATE Leakage",
+    "layer_financial": "TODO_TRANSLATE Financial access",
+    "layer_financial_access": "TODO_TRANSLATE Financial access",
+    "layer_triple": "TODO_TRANSLATE Triple gap",
+    "takeaway_poverty": "TODO_TRANSLATE National poverty rate is {national}%, ranging from {min}% to {max}% by district.",
+    "takeaway_exclusion": "TODO_TRANSLATE On average, {national}% of poor households are missed, with {max}% in the highest district.",
+    "takeaway_leakage": "TODO_TRANSLATE National leakage is {national}%, reaching {max}% in some districts.",
+    "takeaway_financial": "TODO_TRANSLATE Financial access varies from {min}% to {max}% nationally.",
+    "takeaway_financial_access": "TODO_TRANSLATE Financial access varies from {min}% to {max}% nationally.",
+    "takeaway_triple": "TODO_TRANSLATE The triple gap affects {national}% of households on average, up to {max}% in some districts.",
+    "legend_low": "TODO_TRANSLATE Low",
+    "legend_high": "TODO_TRANSLATE High",
+    "hover_district": "TODO_TRANSLATE District",
+    "hover_households": "TODO_TRANSLATE Households surveyed",
+    "hover_small_sample": "TODO_TRANSLATE Small sample, interpret with care",
+    "ranking_title": "TODO_TRANSLATE Highest exclusion error",
+    "mismatch_warning": "TODO_TRANSLATE District name mismatch detected between map and data. Some districts may not display correctly.",
+    "card_poverty": "TODO_TRANSLATE Poverty rate",
+    "card_exclusion": "TODO_TRANSLATE Exclusion error",
+    "card_leakage": "TODO_TRANSLATE Leakage",
+    "card_access": "TODO_TRANSLATE Financial access",
+    "card_triple": "TODO_TRANSLATE Triple gap"
   }
 }
