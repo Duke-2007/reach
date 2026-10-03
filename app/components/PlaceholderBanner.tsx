@@ -31,10 +31,10 @@ export function PlaceholderBanner({
     <div
       role="alert"
       aria-live="polite"
-      className="w-full border-b border-amber-500/40 bg-amber-50 px-4 py-3 text-amber-950 shadow-sm dark:border-amber-500/60 dark:bg-amber-950/70 dark:text-amber-100 sm:px-6"
+      className="w-full border-b border-amber-500/40 bg-amber-50 px-4 py-3 text-amber-950 shadow-sm dark:border-amber-500/60 dark:bg-amber-950/70 dark:text-amber-100 sm:px-6 min-w-0"
     >
-      <div className="mx-auto flex max-w-7xl flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
-        <div className="flex items-start gap-3">
+      <div className="mx-auto flex max-w-7xl flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4 min-w-0">
+        <div className="flex items-start gap-3 min-w-0">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -49,7 +49,7 @@ export function PlaceholderBanner({
             <line x1="12" y1="9" x2="12" y2="13" />
             <line x1="12" y1="17" x2="12.01" y2="17" />
           </svg>
-          <div>
+          <div className="min-w-0">
             <p className="text-sm font-semibold">
               Placeholder data in use — do not quote these numbers publicly
             </p>

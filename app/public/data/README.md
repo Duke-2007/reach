@@ -62,7 +62,7 @@ Top-level:
 | Field | Type | Notes |
 |---|---|---|
 | `placeholder`, `note` | — | Same disclosure pattern as above |
-| `areas` | string[] | `["national", "Gasabo", "Huye", "Musanze"]` — extend via pipeline. Lowercase `"national"` (not `"NATIONAL"`). |
+| `areas` | string[] | `["national", "Gasabo", "Huye", "Musanze"]` — extend via pipeline. Must use lowercase `"national"` (not `"NATIONAL"`). The `records[].area` field must match these strings exactly. |
 | `rules` | object[] | `{code:"A"\|"B"\|"C", label: string}` |
 | `share_scale_note` | string | Explains that `poor_reached`, `poor_reached_ci`, `extreme_poor_reached` are **shares in [0,1] of the area's poor households**, not counts |
 | `rule_A_note` | string | Rule A is 1 record/area at the single *observed* coverage; B and C cover budgets 1 %–50 % |
@@ -99,7 +99,7 @@ Top-level:
 |---|---|---|
 | `placeholder`, `note` | — | Same disclosure |
 | `comparison` | string | `missed poor households vs covered poor households` |
-| `areas` | string[] | `["national", "Gasabo", "Huye", "Musanze"]` |
+| `areas` | string[] | `["national", "Gasabo", "Huye", "Musanze"]` — must use lowercase `"national"` (not `"NATIONAL"`). The `by_area[].area` field must match these strings exactly. |
 | `traits_metadata` | object[] | `{key, label, type: "numeric" \| "proportion"}` for every trait |
 | `by_area` | object[] | Per-area results, see below |
 
@@ -120,7 +120,7 @@ Each `by_area[]` row:
 
 | Field | Type | Notes |
 |---|---|---|
-| `area` | string | `areas[]` entry |
+| `area` | string | `areas[]` entry — must match exactly (case-sensitive, lowercase "national") |
 | `n_poor_households` | integer | Weighted count of all poor households in the area |
 | `n_missed_poor` | integer | Weighted count of poor **not** receiving support |
 | `n_covered_poor` | integer | Weighted count of poor **receiving** support |

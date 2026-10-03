@@ -3,7 +3,7 @@
   "note": "PLACEHOLDER DATA FOR UI DEVELOPMENT ONLY. All numerical values are synthetic and invented with a fixed random seed. They MUST be replaced by the output of the pipeline scripts (pipeline/01-05) before any public use. These are NOT survey results and are NOT claimed to represent real households, districts, or any outcome of the EICV7 data.",
   "comparison": "missed poor households vs covered poor households",
   "areas": [
-    "NATIONAL",
+    "national",
     "Gasabo",
     "Huye",
     "Musanze"
@@ -52,7 +52,7 @@
   ],
   "by_area": [
     {
-      "area": "NATIONAL",
+      "area": "national",
       "n_poor_households": 4124,
       "n_missed_poor": 1933,
       "n_covered_poor": 2191,

@@ -1,5 +1,7 @@
-import PageShell from "@/components/PageShell";
+import { MissedPage } from "@/components/MissedPage";
+import { loadProfiles } from "@/lib/data-loader";
 
-export default function MissedPage() {
-  return <PageShell titleKey="pages.missed_heading" />;
+export default async function MissedRoute() {
+  const data = await loadProfiles();
+  return <MissedPage data={data} />;
 }

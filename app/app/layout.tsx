@@ -91,11 +91,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="min-h-full flex flex-col bg-background text-foreground min-w-0">
         <I18nProvider>
           <PlaceholderDataBanner />
           <HeaderNav />
-          <div className="flex min-h-0 flex-1 flex-col">{children}</div>
+          <div className="flex min-h-0 flex-1 flex-col min-w-0">{children}</div>
           <AppFooter />
         </I18nProvider>
       </body>

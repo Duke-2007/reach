@@ -67,11 +67,11 @@ function HeaderNavInner({ district }: { district?: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 text-slate-900 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-950/95 dark:text-slate-100">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 text-slate-900 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-950/95 dark:text-slate-100 min-w-0">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 min-w-0">
         <Link
           href="/"
-          className="flex items-center gap-2 font-semibold tracking-tight"
+          className="flex items-center gap-2 font-semibold tracking-tight min-w-0"
           onClick={() => setOpen(false)}
         >
           <svg
@@ -87,12 +87,12 @@ function HeaderNavInner({ district }: { district?: string }) {
             <path d="M3 3v18h18" />
             <path d="m7 14 4-4 4 3 5-7" />
           </svg>
-          <span>
+          <span className="truncate">
             Reach <span className="hidden font-normal opacity-60 sm:inline">— Rwanda targeting</span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-1 md:flex min-w-0" aria-label="Primary">
           {ROUTES.map((r) => {
             const active = isActive(r.key, pathname);
             const href =
@@ -102,7 +102,7 @@ function HeaderNavInner({ district }: { district?: string }) {
                 key={r.key}
                 href={href}
                 className={
-                  "rounded-md px-3 py-1.5 text-sm font-medium transition-colors " +
+                  "rounded-md px-3 py-1.5 text-sm font-medium transition-colors whitespace-nowrap " +
                   (active
                     ? "bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900"
                     : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800")
@@ -154,9 +154,9 @@ function HeaderNavInner({ district }: { district?: string }) {
       {open ? (
         <div
           id="mobile-nav"
-          className="border-t border-slate-200 bg-white px-4 pb-4 pt-2 dark:border-slate-800 dark:bg-slate-950 md:hidden sm:px-6"
+          className="border-t border-slate-200 bg-white px-4 pb-4 pt-2 dark:border-slate-800 dark:bg-slate-950 md:hidden sm:px-6 min-w-0"
         >
-          <nav aria-label="Primary (mobile)" className="flex flex-col gap-1">
+          <nav aria-label="Primary (mobile)" className="flex flex-col gap-1 min-w-0">
             {ROUTES.map((r) => {
               const active = isActive(r.key, pathname);
               const href =
