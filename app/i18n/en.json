@@ -98,5 +98,41 @@
     "card_leakage": "Leakage",
     "card_access": "Financial access",
     "card_triple": "Triple gap"
+  },
+  "model": {
+    "heading": "Poverty-risk model — performance, calibration & features",
+    "auc_label": "AUC (mean ± std across 5 folds)",
+    "budget_label": "Budget share",
+    "poor_reached_label": "Share of poor reached",
+    "exclusion_error_label": "Exclusion error",
+    "leakage_label": "Leakage",
+    "calibration_title": "Calibration: predicted vs observed poverty by decile",
+    "calibration_xaxis": "Mean predicted poverty risk",
+    "calibration_yaxis": "Mean observed poverty rate",
+    "calibration_diagonal": "Perfect calibration (diagonal)",
+    "calibration_decile": "Decile {n}",
+    "feature_importance_title": "Top 10 features by importance",
+    "feature": "Feature",
+    "importance": "Importance",
+    "direction": "Direction",
+    "limitations_title": "What this model can and cannot do",
+    "limitations_text": "This model was trained on a survey sample (EICV7) and works at district level. Its accuracy is imperfect and it does not identify real households. Receiving support can itself change a household's welfare. Use it as a policy design tool, not as a list of individuals.",
+    "comparison_title": "Model vs random vs observed targeting",
+    "comparison_not_available": "Observed targeting data is not available in model_metrics.json.",
+    "model": "Model-ranked targeting",
+    "random": "Random targeting",
+    "observed": "Observed targeting"
+  },
+  "features": {
+    "housing_roof_material": "Roof material",
+    "dependents_ratio": "Dependents ratio",
+    "head_education": "Head's education",
+    "has_electricity": "Has electricity",
+    "livelihood_agriculture": "Agriculture livelihood",
+    "mobile_money_access": "Mobile money",
+    "rural_flag": "Rural location",
+    "head_age": "Head's age",
+    "toilet_type": "Toilet type",
+    "safe_water_source": "Safe water source"
   }
 }

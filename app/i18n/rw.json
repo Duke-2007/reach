@@ -98,5 +98,41 @@
     "card_leakage": "TODO_TRANSLATE Leakage",
     "card_access": "TODO_TRANSLATE Financial access",
     "card_triple": "TODO_TRANSLATE Triple gap"
+  },
+  "model": {
+    "heading": "TODO_TRANSLATE Poverty-risk model — performance, calibration & features",
+    "auc_label": "TODO_TRANSLATE AUC (mean ± std across 5 folds)",
+    "budget_label": "TODO_TRANSLATE Budget share",
+    "poor_reached_label": "TODO_TRANSLATE Share of poor reached",
+    "exclusion_error_label": "TODO_TRANSLATE Exclusion error",
+    "leakage_label": "TODO_TRANSLATE Leakage",
+    "calibration_title": "TODO_TRANSLATE Calibration: predicted vs observed poverty by decile",
+    "calibration_xaxis": "TODO_TRANSLATE Mean predicted poverty risk",
+    "calibration_yaxis": "TODO_TRANSLATE Mean observed poverty rate",
+    "calibration_diagonal": "TODO_TRANSLATE Perfect calibration (diagonal)",
+    "calibration_decile": "TODO_TRANSLATE Decile {n}",
+    "feature_importance_title": "TODO_TRANSLATE Top 10 features by importance",
+    "feature": "TODO_TRANSLATE Feature",
+    "importance": "TODO_TRANSLATE Importance",
+    "direction": "TODO_TRANSLATE Direction",
+    "limitations_title": "TODO_TRANSLATE What this model can and cannot do",
+    "limitations_text": "TODO_TRANSLATE This model was trained on a survey sample (EICV7) and works at district level. Its accuracy is imperfect and it does not identify real households. Receiving support can itself change a household's welfare. Use it as a policy design tool, not as a list of individuals.",
+    "comparison_title": "TODO_TRANSLATE Model vs random vs observed targeting",
+    "comparison_not_available": "TODO_TRANSLATE Observed targeting data is not available in model_metrics.json.",
+    "model": "TODO_TRANSLATE Model-ranked targeting",
+    "random": "TODO_TRANSLATE Random targeting",
+    "observed": "TODO_TRANSLATE Observed targeting"
+  },
+  "features": {
+    "housing_roof_material": "TODO_TRANSLATE Roof material",
+    "dependents_ratio": "TODO_TRANSLATE Dependents ratio",
+    "head_education": "TODO_TRANSLATE Head's education",
+    "has_electricity": "TODO_TRANSLATE Has electricity",
+    "livelihood_agriculture": "TODO_TRANSLATE Agriculture livelihood",
+    "mobile_money_access": "TODO_TRANSLATE Mobile money",
+    "rural_flag": "TODO_TRANSLATE Rural location",
+    "head_age": "TODO_TRANSLATE Head's age",
+    "toilet_type": "TODO_TRANSLATE Toilet type",
+    "safe_water_source": "TODO_TRANSLATE Safe water source"
   }
 }

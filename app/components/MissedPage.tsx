@@ -29,7 +29,7 @@ interface BarWithWhiskerProps {
 }
 
 function BarWithWhisker({ fill, x, y, width, height, payload, dataKey }: BarWithWhiskerProps) {
-  const value = payload[dataKey];
+  const value = dataKey === "missed" ? payload.missed : payload.covered;
   const ci = dataKey === "missed" ? payload.missed_ci : payload.covered_ci;
   const [lower, upper] = ci;
 
@@ -266,14 +266,16 @@ function TraitChart({
               fill="#6366f1"
               name={t("missed.trait_missed")}
               aria-label={t("missed.chart_aria", { trait: trait.label })}
-              shape={(props: BarWithWhiskerProps) => <BarWithWhisker {...props} dataKey="missed" />}
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              shape={(props: any) => <BarWithWhisker {...props} dataKey="missed" />}
             />
             <Bar
               dataKey="covered"
               fill="#14b8a6"
               name={t("missed.trait_covered")}
               aria-label={t("missed.chart_aria", { trait: trait.label })}
-              shape={(props: BarWithWhiskerProps) => <BarWithWhisker {...props} dataKey="covered" />}
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              shape={(props: any) => <BarWithWhisker {...props} dataKey="covered" />}
             />
           </BarChart>
         </ResponsiveContainer>
