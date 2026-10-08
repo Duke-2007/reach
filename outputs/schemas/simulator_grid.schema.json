@@ -1,0 +1,78 @@
+{
+  "type": "object",
+  "required": [
+    "placeholder",
+    "areas",
+    "rules",
+    "records"
+  ],
+  "properties": {
+    "placeholder": {
+      "const": false
+    },
+    "note": {
+      "type": "string"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "area",
+          "budget_share",
+          "rule",
+          "poor_reached",
+          "poor_reached_ci",
+          "exclusion_error",
+          "leakage"
+        ],
+        "properties": {
+          "rule": {
+            "enum": [
+              "A",
+              "B",
+              "C"
+            ]
+          },
+          "budget_share": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "poor_reached": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "poor_reached_ci": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "exclusion_error": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "leakage": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    }
+  }
+}

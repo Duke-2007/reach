@@ -1,0 +1,507 @@
+{
+  "note": "Model results from EICV7 out-of-fold predictions; weighted; cluster-grouped CV.",
+  "best_model": "logistic",
+  "features_used": [
+    "s5aq1",
+    "s5aq2",
+    "s5aq7",
+    "s5cq1",
+    "s5cq3",
+    "s5cq14",
+    "s5cq16",
+    "s5cq20a",
+    "s5cq21",
+    "s5cq22a",
+    "s5cq25",
+    "s5cq26",
+    "s5dq1",
+    "s5dq2",
+    "s5dq3",
+    "s7aq4",
+    "head_marital",
+    "head_edu_cat",
+    "s5aq3",
+    "s5cq2a",
+    "s5cq2b",
+    "s7aq4a",
+    "s7aq4b",
+    "s7aq4c",
+    "s7aq4d",
+    "s7aq4e",
+    "s7aq4f",
+    "rooms_per_person",
+    "urban",
+    "hh_size",
+    "hh_size_ae",
+    "head_female",
+    "head_age",
+    "head_primary_plus",
+    "head_never_school",
+    "n_children",
+    "n_under5",
+    "n_elderly",
+    "n_adults",
+    "share_children",
+    "dependency_ratio",
+    "any_secondary_plus",
+    "no_adult_women",
+    "dist_km_district_hospital",
+    "dist_km_health_centre",
+    "dist_km_market",
+    "dist_km_road",
+    "dist_km_sector_office",
+    "dist_km_transport",
+    "dist_km_water"
+  ],
+  "features_dropped_missing": [
+    "dist_km_primary_school",
+    "dist_km_secondary_school"
+  ],
+  "models": {
+    "poor_logistic": {
+      "auc": 0.8191785242482004,
+      "auc_ci": [
+        0.8118068600874215,
+        0.8273986179272915
+      ],
+      "average_precision": 0.5690677425525289,
+      "prevalence": 0.23393094181824842
+    },
+    "poor_gboost": {
+      "auc": 0.8184734127185297,
+      "auc_ci": [
+        0.8111129486849198,
+        0.8273877215987677
+      ],
+      "average_precision": 0.5671943911557484,
+      "prevalence": 0.23393094181824842
+    },
+    "extreme_poor_logistic": {
+      "auc": 0.8387316289495363,
+      "auc_ci": [
+        0.8234430050087375,
+        0.8530324043351868
+      ],
+      "average_precision": 0.21370823178691284,
+      "prevalence": 0.04144013589400963
+    },
+    "extreme_poor_gboost": {
+      "auc": 0.828048925323493,
+      "auc_ci": [
+        0.8155791196298049,
+        0.8427073818544212
+      ],
+      "average_precision": 0.1978054951802489,
+      "prevalence": 0.04144013589400963
+    }
+  },
+  "folds": [
+    {
+      "target": "poor",
+      "model": "logistic",
+      "fold": 1,
+      "auc": 0.8385984320179338,
+      "average_precision": 0.6050318212369561,
+      "brier": 0.12972980237340803,
+      "n_households": 3011
+    },
+    {
+      "target": "poor",
+      "model": "logistic",
+      "fold": 2,
+      "auc": 0.8097478834284426,
+      "average_precision": 0.5479039764760378,
+      "brier": 0.139928051341409,
+      "n_households": 3013
+    },
+    {
+      "target": "poor",
+      "model": "logistic",
+      "fold": 3,
+      "auc": 0.8250272934063041,
+      "average_precision": 0.5530722385492237,
+      "brier": 0.13616357367639445,
+      "n_households": 3011
+    },
+    {
+      "target": "poor",
+      "model": "logistic",
+      "fold": 4,
+      "auc": 0.8082218355798407,
+      "average_precision": 0.5594241876470986,
+      "brier": 0.139043031630057,
+      "n_households": 3014
+    },
+    {
+      "target": "poor",
+      "model": "logistic",
+      "fold": 5,
+      "auc": 0.8145498321846422,
+      "average_precision": 0.5885121729073781,
+      "brier": 0.1379476946947894,
+      "n_households": 3005
+    },
+    {
+      "target": "poor",
+      "model": "gboost",
+      "fold": 1,
+      "auc": 0.8359268143693668,
+      "average_precision": 0.5988116935195185,
+      "brier": 0.1314224877302064,
+      "n_households": 3011
+    },
+    {
+      "target": "poor",
+      "model": "gboost",
+      "fold": 2,
+      "auc": 0.8177778919664056,
+      "average_precision": 0.5549724749909639,
+      "brier": 0.13723051293918737,
+      "n_households": 3013
+    },
+    {
+      "target": "poor",
+      "model": "gboost",
+      "fold": 3,
+      "auc": 0.8241701219658802,
+      "average_precision": 0.5582186386989759,
+      "brier": 0.13614976225519954,
+      "n_households": 3011
+    },
+    {
+      "target": "poor",
+      "model": "gboost",
+      "fold": 4,
+      "auc": 0.80173271061218,
+      "average_precision": 0.5480687065617791,
+      "brier": 0.1406597930494147,
+      "n_households": 3014
+    },
+    {
+      "target": "poor",
+      "model": "gboost",
+      "fold": 5,
+      "auc": 0.8138178762783985,
+      "average_precision": 0.5876921115849987,
+      "brier": 0.1372961926735949,
+      "n_households": 3005
+    },
+    {
+      "target": "extreme_poor",
+      "model": "logistic",
+      "fold": 1,
+      "auc": 0.8362033191230536,
+      "average_precision": 0.1889703594686707,
+      "brier": 0.033315838449319145,
+      "n_households": 3011
+    },
+    {
+      "target": "extreme_poor",
+      "model": "logistic",
+      "fold": 2,
+      "auc": 0.8388177981570812,
+      "average_precision": 0.22397583235342025,
+      "brier": 0.03633937271327132,
+      "n_households": 3013
+    },
+    {
+      "target": "extreme_poor",
+      "model": "logistic",
+      "fold": 3,
+      "auc": 0.844253674252645,
+      "average_precision": 0.22119200663408123,
+      "brier": 0.03376342806474858,
+      "n_households": 3011
+    },
+    {
+      "target": "extreme_poor",
+      "model": "logistic",
+      "fold": 4,
+      "auc": 0.8452909107851962,
+      "average_precision": 0.2062378678113061,
+      "brier": 0.0383317436452722,
+      "n_households": 3014
+    },
+    {
+      "target": "extreme_poor",
+      "model": "logistic",
+      "fold": 5,
+      "auc": 0.8290004743372359,
+      "average_precision": 0.2611275817973954,
+      "brier": 0.03782812905783115,
+      "n_households": 3005
+    },
+    {
+      "target": "extreme_poor",
+      "model": "gboost",
+      "fold": 1,
+      "auc": 0.8492551738007841,
+      "average_precision": 0.19372851133109253,
+      "brier": 0.03302278130432049,
+      "n_households": 3011
+    },
+    {
+      "target": "extreme_poor",
+      "model": "gboost",
+      "fold": 2,
+      "auc": 0.8172725954937121,
+      "average_precision": 0.22705568478738974,
+      "brier": 0.036665057095147766,
+      "n_households": 3013
+    },
+    {
+      "target": "extreme_poor",
+      "model": "gboost",
+      "fold": 3,
+      "auc": 0.8300282107381745,
+      "average_precision": 0.1934423838350091,
+      "brier": 0.03457123288005202,
+      "n_households": 3011
+    },
+    {
+      "target": "extreme_poor",
+      "model": "gboost",
+      "fold": 4,
+      "auc": 0.8142723788411186,
+      "average_precision": 0.17121376241345476,
+      "brier": 0.03923087866930264,
+      "n_households": 3014
+    },
+    {
+      "target": "extreme_poor",
+      "model": "gboost",
+      "fold": 5,
+      "auc": 0.8330087236928359,
+      "average_precision": 0.2637210991532421,
+      "brier": 0.037942754707524555,
+      "n_households": 3005
+    }
+  ],
+  "decision_metrics": [
+    {
+      "budget_share": 0.1,
+      "is_observed_coverage": false,
+      "model": {
+        "poor_reached": 0.2789191513830423,
+        "exclusion_error": 0.7210808486169578,
+        "leakage": 0.34752180225818224,
+        "extreme_poor_reached": 0.4591734879008233
+      },
+      "model_poor_reached_ci": [
+        0.2681841599185051,
+        0.2892286173630975
+      ],
+      "random": {
+        "poor_reached": 0.1,
+        "exclusion_error": 0.9,
+        "leakage": 0.7660690581817515
+      }
+    },
+    {
+      "budget_share": 0.2,
+      "is_observed_coverage": false,
+      "model": {
+        "poor_reached": 0.4883841603009085,
+        "exclusion_error": 0.5116158396990915,
+        "leakage": 0.42875916705846834,
+        "extreme_poor_reached": 0.6674281297090314
+      },
+      "model_poor_reached_ci": [
+        0.47455553255735566,
+        0.5015094116132741
+      ],
+      "random": {
+        "poor_reached": 0.2,
+        "exclusion_error": 0.8,
+        "leakage": 0.7660690581817515
+      }
+    },
+    {
+      "budget_share": 0.3,
+      "is_observed_coverage": false,
+      "model": {
+        "poor_reached": 0.6396380384540887,
+        "exclusion_error": 0.36036196154591127,
+        "leakage": 0.5012295708055232,
+        "extreme_poor_reached": 0.8020364387212076
+      },
+      "model_poor_reached_ci": [
+        0.6256900536160752,
+        0.6538793360348102
+      ],
+      "random": {
+        "poor_reached": 0.3,
+        "exclusion_error": 0.7,
+        "leakage": 0.7660690581817515
+      }
+    },
+    {
+      "budget_share": 0.4,
+      "is_observed_coverage": false,
+      "model": {
+        "poor_reached": 0.7614812559524013,
+        "exclusion_error": 0.23851874404759865,
+        "leakage": 0.5546649315452771,
+        "extreme_poor_reached": 0.8754461769042764
+      },
+      "model_poor_reached_ci": [
+        0.7496505578607826,
+        0.7750098407679438
+      ],
+      "random": {
+        "poor_reached": 0.4,
+        "exclusion_error": 0.6,
+        "leakage": 0.7660690581817515
+      }
+    },
+    {
+      "budget_share": 0.10058069195830838,
+      "is_observed_coverage": true,
+      "model": {
+        "poor_reached": 0.2803509447785084,
+        "exclusion_error": 0.7196490552214916,
+        "leakage": 0.34795874561235896,
+        "extreme_poor_reached": 0.4609559756501321
+      },
+      "model_poor_reached_ci": [
+        0.2689706104720856,
+        0.2909208001270736
+      ],
+      "random": {
+        "poor_reached": 0.10058069195830838,
+        "exclusion_error": 0.8994193080416917,
+        "leakage": 0.7660690581817515
+      }
+    }
+  ],
+  "observed_rule": {
+    "coverage": 0.10058069195830838,
+    "poor_reached": 0.14729551949302172,
+    "exclusion_error": 0.8527044805069783,
+    "leakage": 0.6574195411690599
+  },
+  "calibration": [
+    {
+      "decile": 1,
+      "predicted": 0.0027949122974208923,
+      "observed": 0.003064538462424347
+    },
+    {
+      "decile": 2,
+      "predicted": 0.022912708523861982,
+      "observed": 0.019325352931106998
+    },
+    {
+      "decile": 3,
+      "predicted": 0.056256694369759636,
+      "observed": 0.05450887335511349
+    },
+    {
+      "decile": 4,
+      "predicted": 0.09998947600553314,
+      "observed": 0.10453657704614105
+    },
+    {
+      "decile": 5,
+      "predicted": 0.1544834618678441,
+      "observed": 0.17827529816188473
+    },
+    {
+      "decile": 6,
+      "predicted": 0.2166294516368237,
+      "observed": 0.22833364279873675
+    },
+    {
+      "decile": 7,
+      "predicted": 0.2893669283401683,
+      "observed": 0.290410380352792
+    },
+    {
+      "decile": 8,
+      "predicted": 0.3784598396053789,
+      "observed": 0.36663925160564065
+    },
+    {
+      "decile": 9,
+      "predicted": 0.493937310571248,
+      "observed": 0.49469309026065084
+    },
+    {
+      "decile": 10,
+      "predicted": 0.6868866614958962,
+      "observed": 0.6585426167550839
+    }
+  ],
+  "feature_importance": [
+    {
+      "rank": 1,
+      "feature": "hh_size_ae",
+      "label": "Household size (adult equiv.)",
+      "importance_auc_drop": 0.15046046203648478,
+      "direction": "higher = more poverty"
+    },
+    {
+      "rank": 2,
+      "feature": "head_edu_cat",
+      "label": "Head's education",
+      "importance_auc_drop": 0.015622992384412431,
+      "direction": "categorical"
+    },
+    {
+      "rank": 3,
+      "feature": "s7aq4a",
+      "label": "Cattle",
+      "importance_auc_drop": 0.01375162244426246,
+      "direction": "higher = less poverty"
+    },
+    {
+      "rank": 4,
+      "feature": "s5dq3",
+      "label": "Floor material",
+      "importance_auc_drop": 0.010121729579188688,
+      "direction": "categorical"
+    },
+    {
+      "rank": 5,
+      "feature": "s5cq20a",
+      "label": "Internet at home",
+      "importance_auc_drop": 0.010060994395881246,
+      "direction": "categorical"
+    },
+    {
+      "rank": 6,
+      "feature": "s5cq22a",
+      "label": "Cooking fuel",
+      "importance_auc_drop": 0.00847941280192995,
+      "direction": "categorical"
+    },
+    {
+      "rank": 7,
+      "feature": "s5cq1",
+      "label": "Main water source",
+      "importance_auc_drop": 0.0076171069721188076,
+      "direction": "categorical"
+    },
+    {
+      "rank": 8,
+      "feature": "any_secondary_plus",
+      "label": "Anyone with secondary+",
+      "importance_auc_drop": 0.006887319095752302,
+      "direction": "higher = less poverty"
+    },
+    {
+      "rank": 9,
+      "feature": "s5cq14",
+      "label": "Connected to grid",
+      "importance_auc_drop": 0.005598665937163805,
+      "direction": "categorical"
+    },
+    {
+      "rank": 10,
+      "feature": "s5cq21",
+      "label": "Cook stove type",
+      "importance_auc_drop": 0.005155503303859254,
+      "direction": "categorical"
+    }
+  ]
+}

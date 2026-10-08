@@ -1,0 +1,76 @@
+{
+  "type": "object",
+  "required": [
+    "placeholder",
+    "note",
+    "districts",
+    "national_averages"
+  ],
+  "properties": {
+    "placeholder": {
+      "const": false
+    },
+    "note": {
+      "type": "string"
+    },
+    "districts": {
+      "type": "array",
+      "minItems": 30,
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "required": [
+          "district",
+          "poverty_rate",
+          "poverty_ci",
+          "exclusion_error",
+          "leakage",
+          "n_households",
+          "small_cell"
+        ],
+        "properties": {
+          "district": {
+            "type": "string"
+          },
+          "poverty_rate": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "poverty_ci": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "exclusion_error": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "leakage": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "small_cell": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

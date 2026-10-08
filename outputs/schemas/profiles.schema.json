@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "required": [
+    "placeholder",
+    "note",
+    "by_area",
+    "traits_metadata"
+  ],
+  "properties": {
+    "placeholder": {
+      "const": false
+    },
+    "note": {
+      "type": "string"
+    },
+    "by_area": {
+      "type": "array",
+      "minItems": 1
+    }
+  }
+}
