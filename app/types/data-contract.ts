@@ -65,12 +65,12 @@ export interface SimulatorRecordBase {
   budget_share: number;
   rule: RuleCode;
   rule_label: string;
-  poor_reached: number;
-  poor_reached_ci: Ci;
-  extreme_poor_reached: number;
-  exclusion_error: number;
-  leakage: number;
-  cost_per_poor_reached: number;
+  poor_reached: number | null;
+  poor_reached_ci: Ci | null;
+  extreme_poor_reached: number | null;
+  exclusion_error: number | null;
+  leakage: number | null;
+  cost_per_poor_reached: number | null;
 }
 
 export interface SimulatorRecordA extends SimulatorRecordBase {
@@ -84,13 +84,40 @@ export type SimulatorRecordBC =
 
 export type SimulatorRecord = SimulatorRecordA | SimulatorRecordBC;
 
+export interface AtObservedCoverage {
+  area: AreaKey | string;
+  rule: "B" | "C";
+  budget_share: number;
+  poor_reached: number;
+  poor_reached_ci: Ci;
+  observed_poor_reached: number;
+  gain_per_1000_poor: number;
+  gain_per_1000_poor_ci: Ci;
+  clear_gain: boolean;
+}
+
+export interface ScorecardPoint {
+  feature: string;
+  band_or_code: string | null;
+  points: number | null;
+  description: string | null;
+}
+
+export interface Scorecard {
+  features: string[];
+  points: ScorecardPoint[];
+  note?: string;
+}
+
 export interface SimulatorGrid extends PlaceholderMixin {
-  areas: AreaKey[];
+  areas: (AreaKey | string)[];
   rules: RuleMeta[];
   rule_A_note: string;
   share_scale_note?: string;
   n_records: number;
   records: SimulatorRecord[];
+  at_observed_coverage: AtObservedCoverage[];
+  scorecard: Scorecard;
 }
 
 // ---------- profiles.json ----------
