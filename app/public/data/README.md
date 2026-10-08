@@ -68,6 +68,7 @@ Top-level:
 | `rule_A_note` | string | Rule A is 1 record/area at the single *observed* coverage; B and C cover budgets 1 %–50 % |
 | `n_records` | integer | 4 areas × (1 A + 50 B + 50 C) = 404 in placeholder |
 | `records` | object[] | See row contract below |
+| `scorecard` | object | Scorecard feature labels and ordered point descriptions |
 
 Each `records[]` row — contract, order matters:
 
@@ -88,6 +89,13 @@ Each `records[]` row — contract, order matters:
 The UI should assume rows can be filtered by `area` then pivoted by `rule`. B and C are
 guaranteed to have one row each for every integer budget 1 % ≤ p ≤ 50 %. A has exactly
 one row per area.
+
+`scorecard` contains `features` (feature codes), optional `feature_labels` (map
+from feature code to display name), and `points` (rows in display order). Each
+`points[]` row has `feature`, `feature_label` (display name), `band_or_code`,
+`points`, and `description`. The UI uses `feature_label` first, then
+`feature_labels[feature]` as a fallback, renders `description` directly, and
+preserves the order of `points[]`.
 
 ---
 
