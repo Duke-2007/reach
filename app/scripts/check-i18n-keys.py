@@ -55,6 +55,19 @@ for code_dir in code_dirs:
             for match in matches:
                 t_keys.add(match)
 
+# These rule keys are assembled dynamically in SimulatePage.tsx, so the static
+# literal-key regex above cannot see them. Keep this list in sync with the UI.
+t_keys.update(
+    {
+        "simulate.rule_a_title",
+        "simulate.rule_a_desc",
+        "simulate.rule_b_title",
+        "simulate.rule_b_desc",
+        "simulate.rule_c_title",
+        "simulate.rule_c_desc",
+    }
+)
+
 # Check for missing keys
 missing_in_en = t_keys - en_keys
 missing_in_rw = t_keys - rw_keys

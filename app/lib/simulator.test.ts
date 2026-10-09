@@ -1,8 +1,5 @@
 // Unit tests for simulator.ts pure functions.
-// Run with: node --import tsx --test app/lib/simulator.test.ts
-// Fallback: node --test app/lib/simulator.test.js (after tsc)
-import test from "node:test";
-import assert from "node:assert/strict";
+import { describe, it, expect } from "vitest";
 
 import type {
   Ci,
@@ -127,95 +124,96 @@ function makeFakeGrid(): SimulatorGrid {
   };
 }
 
-test("normalizeBudgetPct clamps and rounds", () => {
-  assert.equal(normalizeBudgetPct(0), 1);
-  assert.equal(normalizeBudgetPct(1), 1);
-  assert.equal(normalizeBudgetPct(12.3), 12);
-  assert.equal(normalizeBudgetPct(12.6), 13);
-  assert.equal(normalizeBudgetPct(77), 50);
-  assert.equal(normalizeBudgetPct(NaN), 1);
+describe("simulator helpers", () => {
+it("normalizeBudgetPct clamps and rounds", () => {
+  expect(normalizeBudgetPct(0)).toBe(1);
+  expect(normalizeBudgetPct(1)).toBe(1);
+  expect(normalizeBudgetPct(12.3)).toBe(12);
+  expect(normalizeBudgetPct(12.6)).toBe(13);
+  expect(normalizeBudgetPct(77)).toBe(50);
+  expect(normalizeBudgetPct(NaN)).toBe(1);
 });
 
-test("budgetPctToShare returns fraction", () => {
-  assert.ok(Math.abs(budgetPctToShare(1) - 0.01) < 1e-9);
-  assert.ok(Math.abs(budgetPctToShare(50) - 0.5) < 1e-9);
+it("budgetPctToShare returns fraction", () => {
+  expect(Math.abs(budgetPctToShare(1) - 0.01)).toBeLessThan(1e-9);
+  expect(Math.abs(budgetPctToShare(50) - 0.5)).toBeLessThan(1e-9);
 });
 
-test("lookupRecord rule A ignores budgetPct and returns the single record", () => {
+it("lookupRecord rule A ignores budgetPct and returns the single record", () => {
   const grid = makeFakeGrid();
   const r = lookupRecord(grid, NATIONAL, "A", 25);
-  assert.ok(r);
-  assert.equal(r.rule, "A");
-  assert.equal(r.area, NATIONAL);
-  assert.equal(r.budget_share, 0.1006);
+  expect(r).toBeTruthy();
+  expect(r?.rule).toBe("A");
+  expect(r?.area).toBe(NATIONAL);
+  expect(r?.budget_share).toBe(0.1006);
 });
 
-test("lookupRecord rule B finds budget by share", () => {
+it("lookupRecord rule B finds budget by share", () => {
   const grid = makeFakeGrid();
   const r = lookupRecord(grid, NATIONAL, "B", 2);
-  assert.ok(r);
-  assert.equal(r.rule, "B");
-  assert.ok(Math.abs(r.budget_share - 0.02) < 1e-9);
+  expect(r).toBeTruthy();
+  expect(r?.rule).toBe("B");
+  expect(Math.abs((r?.budget_share ?? 0) - 0.02)).toBeLessThan(1e-9);
 });
 
-test("lookupRecord returns null for missing area/rule/budget combo", () => {
+it("lookupRecord returns null for missing area/rule/budget combo", () => {
   const grid = makeFakeGrid();
-  assert.equal(lookupRecord(grid, "Missing", "A", 1), null);
-  assert.equal(lookupRecord(grid, NATIONAL, "B", 49), null);
-  assert.equal(lookupRecord(grid, NATIONAL, "C", 1), null);
+  expect(lookupRecord(grid, "Missing", "A", 1)).toBeNull();
+  expect(lookupRecord(grid, NATIONAL, "B", 49)).toBeNull();
+  expect(lookupRecord(grid, NATIONAL, "C", 1)).toBeNull();
 });
 
-test("lookupRecord handles empty/null grid gracefully", () => {
+it("lookupRecord handles empty/null grid gracefully", () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  assert.equal(lookupRecord(null as any, NATIONAL, "A", 1), null);
+  expect(lookupRecord(null as any, NATIONAL, "A", 1)).toBeNull();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  assert.equal(lookupRecord({ records: [] } as any, NATIONAL, "A", 1), null);
+  expect(lookupRecord({ records: [] } as any, NATIONAL, "A", 1)).toBeNull();
 });
 
-test("getAreaRuleARecord returns rule A or null", () => {
+it("getAreaRuleARecord returns rule A or null", () => {
   const grid = makeFakeGrid();
   const a = getAreaRuleARecord(grid, NATIONAL);
-  assert.ok(a);
-  assert.equal(a.actual_coverage, 0.1006);
-  assert.equal(getAreaRuleARecord(grid, "Bugesera"), null);
+  expect(a).toBeTruthy();
+  expect(a?.actual_coverage).toBe(0.1006);
+  expect(getAreaRuleARecord(grid, "Bugesera")).toBeNull();
 });
 
-test("getAtObservedCoverage returns matching entries", () => {
+it("getAtObservedCoverage returns matching entries", () => {
   const grid = makeFakeGrid();
   const b = getAtObservedCoverage(grid, NATIONAL, "B");
-  assert.ok(b);
-  assert.equal(b.clear_gain, true);
+  expect(b).toBeTruthy();
+  expect(b?.clear_gain).toBe(true);
   const c = getAtObservedCoverage(grid, NATIONAL, "C");
-  assert.ok(c);
-  assert.equal(c.clear_gain, false);
-  assert.equal(getAtObservedCoverage(grid, "Bugesera", "B"), null);
+  expect(c).toBeTruthy();
+  expect(c?.clear_gain).toBe(false);
+  expect(getAtObservedCoverage(grid, "Bugesera", "B")).toBeNull();
 });
 
-test("formatNumber with null returns fallback", () => {
-  assert.equal(formatNumber(null, 2, "-"), "-");
-  assert.equal(formatNumber(undefined, 2, "-"), "-");
-  assert.equal(formatNumber(NaN, 2, "-"), "-");
+it("formatNumber with null returns fallback", () => {
+  expect(formatNumber(null, 2, "-")).toBe("-");
+  expect(formatNumber(undefined, 2, "-")).toBe("-");
+  expect(formatNumber(NaN, 2, "-")).toBe("-");
 });
 
-test("formatNumber rounds to digits", () => {
-  assert.equal(formatNumber(0.1473, 2, "-"), "0.15");
-  assert.equal(formatNumber(1.005, 2, "-"), Number((1.005).toFixed(2)) === 1.01 ? "1.01" : (1.005).toFixed(2));
+it("formatNumber rounds to digits", () => {
+  expect(formatNumber(0.1473, 2, "-")).toBe("0.15");
+  expect(formatNumber(1.005, 2, "-")).toBe(Number((1.005).toFixed(2)) === 1.01 ? "1.01" : (1.005).toFixed(2));
 });
 
-test("formatCiForDisplay returns empty string for invalid CI", () => {
-  assert.equal(formatCiForDisplay(null, false, 2), "");
-  assert.equal(formatCiForDisplay(undefined, false, 2), "");
-  assert.equal(formatCiForDisplay([1] as unknown as Ci, false, 2), "");
-  assert.equal(formatCiForDisplay([NaN, 0.5], false, 2), "");
+it("formatCiForDisplay returns empty string for invalid CI", () => {
+  expect(formatCiForDisplay(null, false, 2)).toBe("");
+  expect(formatCiForDisplay(undefined, false, 2)).toBe("");
+  expect(formatCiForDisplay([1] as unknown as Ci, false, 2)).toBe("");
+  expect(formatCiForDisplay([NaN, 0.5], false, 2)).toBe("");
 });
 
-test("formatCiForDisplay formats percent and numeric", () => {
+it("formatCiForDisplay formats percent and numeric", () => {
   const ci: Ci = [0.102, 0.204];
-  assert.equal(formatCiForDisplay(ci, true, 1), "(10.2%–20.4%)");
-  assert.equal(formatCiForDisplay(ci, false, 3), "(0.102–0.204)");
+  expect(formatCiForDisplay(ci, true, 1)).toBe("(10.2%–20.4%)");
+  expect(formatCiForDisplay(ci, false, 3)).toBe("(0.102–0.204)");
 });
 
-test("buildScenarioCsvRows produces 2-column CSV with actual coverage only for rule A", () => {
+it("buildScenarioCsvRows produces 2-column CSV with actual coverage only for rule A", () => {
   const grid = makeFakeGrid();
   const labels = {
     setting: "Setting",
@@ -234,11 +232,12 @@ test("buildScenarioCsvRows produces 2-column CSV with actual coverage only for r
     rowActual: "Actual coverage",
   };
   const csvA = buildScenarioCsvRows(grid, NATIONAL, "A", 1, labels);
-  assert.match(csvA, /^Setting,Value/);
-  assert.match(csvA, /Actual coverage,0\.100600/);
+  expect(csvA).toMatch(/^Setting,Value/);
+  expect(csvA).toMatch(/Actual coverage,0\.100600/);
 
   const csvB = buildScenarioCsvRows(grid, NATIONAL, "B", 2, labels);
-  assert.doesNotMatch(csvB, /Actual coverage/);
-  assert.match(csvB, /^Setting,Value/);
-  assert.match(csvB, /(Rule code,B|"Rule code",B)/);
+  expect(csvB).not.toMatch(/Actual coverage/);
+  expect(csvB).toMatch(/^Setting,Value/);
+  expect(csvB).toMatch(/(Rule code,B|"Rule code",B)/);
+});
 });

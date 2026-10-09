@@ -17,7 +17,6 @@ import type {
   AtObservedCoverage,
   Ci,
   RuleCode,
-  ScorecardPoint,
   SimulatorGrid,
   SimulatorRecord,
   SimulatorRecordA,
@@ -42,40 +41,6 @@ function dashOr(v: string, nullText: string): string {
   return v;
 }
 
-function getScorecardFeatureLabel(
-  feature: string,
-  t: (k: string) => string,
-  nullText: string,
-): string {
-  const key = `scorecard_features.${feature}`;
-  const tr = t(key);
-  return tr === key || tr === `[${key}]` ? nullText : tr;
-}
-
-function getScorecardBandLabel(
-  feature: string,
-  band: string | null,
-  description: string | null,
-  t: (k: string) => string,
-  nullText: string,
-): string {
-  if (band == null || description == null) return nullText;
-  const key = `scorecard_bands.${feature}.${band}`;
-  const translated = t(key);
-  return translated === key || translated === `[${key}]`
-    ? nullText
-    : `${band} — ${translated}`;
-}
-
-function groupByFeature(points: ScorecardPoint[]): Record<string, ScorecardPoint[]> {
-  const out: Record<string, ScorecardPoint[]> = {};
-  for (const p of points) {
-    if (!out[p.feature]) out[p.feature] = [];
-    out[p.feature].push(p);
-  }
-  return out;
-}
-
 type ChartRow = {
   budget_share: number;
   budget_pct: number;
@@ -98,7 +63,11 @@ function ChartCustomTooltip({
   payload?: Array<{
     dataKey: string;
     value: number | string;
-    payload?: ChartRow & { ruleA_x?: number; ruleA_y?: number };
+    payload?: ChartRow & {
+      ruleA_x?: number;
+      ruleA_y?: number;
+      ruleA_ci?: Ci | null;
+    };
     name?: string;
   }>;
   label?: number | string;
@@ -106,7 +75,7 @@ function ChartCustomTooltip({
 }) {
   if (!active || !payload || payload.length === 0) return null;
   const row = payload[0]?.payload as
-    | (ChartRow & { ruleA_x?: number; ruleA_y?: number })
+    | (ChartRow & { ruleA_x?: number; ruleA_y?: number; ruleA_ci?: Ci | null })
     | undefined;
   const budgetPctVal =
     row?.ruleA_x != null
@@ -128,7 +97,7 @@ function ChartCustomTooltip({
     let color = "#6366f1";
     if (p.dataKey === "ruleC_100") color = "#0d9488";
     if (p.dataKey === "random_100") color = "#94a3b8";
-    if (p.dataKey === "ruleA") color = "#f59e0b";
+    if (p.dataKey === "ruleA_value") color = "#f59e0b";
     const dv = Number(p.value);
     const text = Number.isFinite(dv) ? `${dv.toFixed(1)}%` : String(p.value);
     let extra = "";
@@ -142,6 +111,12 @@ function ChartCustomTooltip({
       const [lo, hi] = row.ruleC_ci;
       if (Number.isFinite(lo) && Number.isFinite(hi)) {
         extra = ` ${formatCi([lo, hi], { digits: 1, wrap: true })}`;
+      }
+    }
+    if (row && p.dataKey === "ruleA_value" && row.ruleA_ci) {
+      const [lo, hi] = row.ruleA_ci;
+      if (Number.isFinite(lo) && Number.isFinite(hi)) {
+        extra = ` ${formatCi([lo * 100, hi * 100], { digits: 1, wrap: true })}`;
       }
     }
     lines.push({ color, name: p.name ?? String(p.dataKey), value: text, extra });
@@ -185,10 +160,10 @@ function ChartRuleADot(props: { cx?: number; cy?: number }) {
     <circle
       cx={cx}
       cy={cy}
-      r={6}
-      fill="#fff7ed"
+      r={7}
+      fill="none"
       stroke="#d97706"
-      strokeWidth={2}
+      strokeWidth={3}
     />
   );
 }
@@ -263,7 +238,7 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
         random: s, // random targeting = budget share
       };
     });
-    let a: { budget_share: number; value: number } | null = null;
+    let a: { budget_share: number; value: number; ci: Ci | null } | null = null;
     if (
       ruleARecord &&
       ruleARecord.actual_coverage != null &&
@@ -272,6 +247,7 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
       a = {
         budget_share: ruleARecord.actual_coverage,
         value: ruleARecord.poor_reached,
+        ci: ruleARecord.poor_reached_ci ?? null,
       };
     }
     return { linesData: rows, ruleAPoint: a, maxBudgetX: 0.5 };
@@ -292,11 +268,7 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
   );
 
   // Scorecard grouped by feature
-  const scorecardByFeature = useMemo(
-    () => groupByFeature(data.scorecard?.points ?? []),
-    [data],
-  );
-  const scorecardFeaturesOrder = data.scorecard?.features ?? [];
+  const scorecardPoints = data.scorecard?.points ?? [];
 
   const handleDownload = useCallback(() => {
     const scenarioBudgetPct =
@@ -306,7 +278,7 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
     const labels = {
       setting: t("simulate.download_header_setting"),
       value: t("simulate.download_header_value"),
-      ruleLabel: t(`simulate.rule_${selectedRule}_title`),
+      ruleLabel: t(`simulate.rule_${selectedRule.toLowerCase()}_title`),
       rowArea: t("simulate.download_row_area"),
       rowRule: t("simulate.download_row_rule"),
       rowRuleLabel: t("simulate.download_row_rule_label"),
@@ -346,13 +318,7 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
     nullSafe(v, digits, true);
   const fmtGain = (v: number | null | undefined) => {
     if (v == null || !Number.isFinite(v)) return nullText;
-    return formatNumber(v, 1, nullText);
-  };
-  const fmtGainCi = (ci: Ci | undefined | null) => {
-    if (!Array.isArray(ci) || ci.length !== 2) return nullText;
-    const [lo, hi] = ci;
-    if (!Number.isFinite(lo) || !Number.isFinite(hi)) return nullText;
-    return `(${formatNumber(lo, 1, nullText)}–${formatNumber(hi, 1, nullText)})`;
+    return formatNumber(v, 0, nullText);
   };
 
   return (
@@ -494,7 +460,6 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
         <ResultCard
           label={t("simulate.result_extreme_poor_reached")}
           value={fmtPct(activeRecord?.extreme_poor_reached, 1)}
-          suffix={ciSuffix(null)}
         />
         <ResultCard
           label={t("simulate.result_exclusion_error")}
@@ -504,15 +469,16 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
         <ResultCard
           label={t("simulate.result_leakage")}
           value={fmtPct(activeRecord?.leakage, 1)}
-          suffix={ciSuffix(null)}
         />
         <ResultCard
           label={t("simulate.result_cost")}
           value={nullSafeCost(activeRecord?.cost_per_poor_reached)}
-          suffix={ciSuffix(null, false)}
           full
         />
       </section>
+      <p className="-mt-4 mb-6 text-xs text-slate-500 dark:text-slate-400">
+        {t("simulate.interval_note")}
+      </p>
 
       <section className="mb-6 rounded-md border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900 min-w-0">
         <h2 className="mb-3 text-sm font-semibold text-slate-900 dark:text-slate-100">
@@ -546,23 +512,9 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
                 </li>
               );
             }
-            if (!entry.clear_gain) {
-              return (
-                <li
-                  key={rule}
-                  className="rounded-md border border-indigo-200/60 bg-white/60 p-3 text-xs dark:border-indigo-900/50 dark:bg-slate-900/40"
-                >
-                  <p className="font-semibold text-indigo-900 dark:text-indigo-200">
-                    {t(`simulate.rule_${rule}_short`)}
-                  </p>
-                  <p className="mt-1 text-indigo-900/80 dark:text-indigo-200/80">
-                    {t("simulate.callout_no_gain", { gain: fmtGain(entry.gain_per_1000_poor), ci: fmtGainCi(entry.gain_per_1000_poor_ci) })}
-                  </p>
-                </li>
-              );
-            }
             const gain = fmtGain(entry.gain_per_1000_poor);
-            const ci = fmtGainCi(entry.gain_per_1000_poor_ci);
+            const [lo, hi] = entry.gain_per_1000_poor_ci ?? [null, null];
+            const coverage = fmtPct(entry.budget_share, 1);
             return (
               <li
                 key={rule}
@@ -572,11 +524,18 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
                   {t(`simulate.rule_${rule}_short`)}
                 </p>
                 <p className="mt-1 text-indigo-900/90 dark:text-indigo-200/90">
-                  {t(`simulate.callout_gain_no_rule${rule === "B" ? "B" : "C"}`, {
+                  {t(`simulate.callout_gain_no_rule${rule}`, {
                     gain,
-                    ci,
+                    lo: fmtGain(lo),
+                    hi: fmtGain(hi),
+                    coverage,
                   })}
                 </p>
+                {!entry.clear_gain ? (
+                  <p className="mt-1 text-xs font-medium text-indigo-900 dark:text-indigo-200">
+                    {t("simulate.callout_no_gain")}
+                  </p>
+                ) : null}
               </li>
             );
           })}
@@ -606,8 +565,7 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
               </tr>
             </thead>
             <tbody>
-              {scorecardFeaturesOrder.length === 0 &&
-                (data.scorecard?.points ?? []).length === 0 && (
+              {scorecardPoints.length === 0 && (
                   <tr>
                     <td
                       colSpan={3}
@@ -617,13 +575,9 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
                     </td>
                   </tr>
                 )}
-              {scorecardFeaturesOrder.map((feat, idx) => {
-                const rows = scorecardByFeature[feat] ?? [];
-                if (rows.length === 0) return null;
-                const featureLabel = getScorecardFeatureLabel(feat, t, nullText);
-                return rows.map((pt, rowIdx) => (
+              {scorecardPoints.map((pt, idx) => (
                   <tr
-                    key={`${feat}-${rowIdx}`}
+                    key={`${pt.feature}-${pt.band_or_code ?? idx}-${idx}`}
                     className={
                       "border-b border-slate-100 last:border-b-0 dark:border-slate-800 " +
                       (idx % 2 === 0
@@ -631,16 +585,13 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
                         : "bg-slate-50 dark:bg-slate-950/40")
                     }
                   >
-                    {rowIdx === 0 ? (
-                      <td
-                        className="break-words px-2 py-2 align-top font-medium text-slate-800 dark:text-slate-200"
-                        rowSpan={rows.length}
-                      >
-                        {featureLabel}
-                      </td>
-                    ) : null}
+                    <td className="break-words px-2 py-2 align-top font-medium text-slate-800 dark:text-slate-200">
+                      {pt.feature_label ??
+                        data.scorecard?.feature_labels?.[pt.feature] ??
+                        nullText}
+                    </td>
                     <td className="break-words px-2 py-2 align-top text-slate-700 dark:text-slate-300">
-                      {getScorecardBandLabel(feat, pt.band_or_code, pt.description, t, nullText)}
+                      {pt.description ?? nullText}
                     </td>
                     <td className="break-words px-1 py-2 align-top text-right tabular-nums text-slate-900 dark:text-slate-100">
                       {pt.points == null
@@ -650,8 +601,7 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
                           : String(pt.points)}
                     </td>
                   </tr>
-                ));
-              })}
+                ))}
             </tbody>
           </table>
         </div>
@@ -702,7 +652,7 @@ function ReachChart({
   t,
 }: {
   linesData: ChartRow[];
-  ruleAPoint: { budget_share: number; value: number } | null;
+  ruleAPoint: { budget_share: number; value: number; ci: Ci | null } | null;
   selectedBudgetX: number;
   maxX: number;
   t: TFn;
@@ -711,9 +661,12 @@ function ReachChart({
     ? [
         {
           x: ruleAPoint.budget_share * 100,
+          budget_pct_100: ruleAPoint.budget_share * 100,
           y: ruleAPoint.value * 100,
+          ruleA_value: ruleAPoint.value * 100,
           ruleA_x: ruleAPoint.budget_share * 100,
           ruleA_y: ruleAPoint.value * 100,
+          ruleA_ci: ruleAPoint.ci,
         },
       ]
     : [];
@@ -818,7 +771,7 @@ function ReachChart({
             />
             {aScatter.length > 0 ? (
               <Scatter
-                dataKey="ruleA"
+                dataKey="ruleA_value"
                 data={aScatter}
                 name={t("simulate.chart_legend_observed")}
                 fill="#f59e0b"

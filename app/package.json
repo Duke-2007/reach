@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "vitest run lib/lookupRecord.test.ts"
+    "test": "vitest run"
   },
   "dependencies": {
     "maplibre-gl": "^5.0.0",

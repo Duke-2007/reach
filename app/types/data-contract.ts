@@ -98,6 +98,7 @@ export interface AtObservedCoverage {
 
 export interface ScorecardPoint {
   feature: string;
+  feature_label?: string | null;
   band_or_code: string | null;
   points: number | null;
   description: string | null;
@@ -105,6 +106,7 @@ export interface ScorecardPoint {
 
 export interface Scorecard {
   features: string[];
+  feature_labels?: Record<string, string>;
   points: ScorecardPoint[];
   note?: string;
 }
