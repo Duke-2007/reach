@@ -1,28 +1,17 @@
 #!/usr/bin/env python3
-"""
-Check that all t("...") keys in the code exist in both en.json and rw.json.
-"""
-
+"""Check literal and registered dynamic translation keys against both dictionaries."""
 import json
 import re
 import sys
 from pathlib import Path
 
-# Get the app directory
 app_dir = Path(__file__).parent.parent
-
-# Load i18n files
-en_file = app_dir / "i18n" / "en.json"
-rw_file = app_dir / "i18n" / "rw.json"
-
-with open(en_file, "r", encoding="utf-8") as f:
+with (app_dir / "i18n" / "en.json").open(encoding="utf-8") as f:
     en_data = json.load(f)
-
-with open(rw_file, "r", encoding="utf-8") as f:
+with (app_dir / "i18n" / "rw.json").open(encoding="utf-8") as f:
     rw_data = json.load(f)
 
 def get_all_keys(obj, prefix=""):
-    """Recursively get all keys from a nested object."""
     keys = set()
     if isinstance(obj, dict):
         for key, value in obj.items():
@@ -33,59 +22,73 @@ def get_all_keys(obj, prefix=""):
 
 en_keys = get_all_keys(en_data)
 rw_keys = get_all_keys(rw_data)
-
-# Find all t("...") calls in the code
-code_dirs = [
-    app_dir / "app",
-    app_dir / "components",
-    app_dir / "hooks",
-    app_dir / "lib",
-]
-
 t_keys = set()
-t_pattern = re.compile(r't\(["\']([a-zA-Z_][a-zA-Z0-9_.]*)["\']')
+unknown_dynamic = set()
+code_dirs = [app_dir / "app", app_dir / "components", app_dir / "hooks", app_dir / "lib"]
+literal_t = re.compile(r'\bt\(["\']([a-zA-Z_][a-zA-Z0-9_.]*)["\']')
+template_t = re.compile(r'\bt\(\s*`([^`]*)`')
+
+# Variable domains correspond to the finite unions used by these UI controls.
+# The checker expands each dynamic call family, so a missing sibling key fails CI.
+dynamic_families = {
+    "nav.*": [f"nav.{x}" for x in ("home", "missed", "model", "simulate", "brief")],
+    "map.layer_*": [f"map.layer_{x}" for x in ("poverty", "exclusion", "leakage", "financial", "triple")],
+    "map.takeaway_*": [f"map.takeaway_{x}" for x in ("poverty", "exclusion", "leakage", "financial", "triple")],
+    "map.*": [f"map.{kind}_{x}" for kind in ("layer", "takeaway") for x in ("poverty", "exclusion", "leakage", "financial", "triple")],
+    "simulate.rule_*_title": [f"simulate.rule_{x}_title" for x in ("a", "b", "c")],
+    "simulate.rule_*_desc": [f"simulate.rule_{x}_desc" for x in ("a", "b", "c")],
+    "simulate.rule_*_short": [f"simulate.rule_{x}_short" for x in ("A", "B", "C")],
+    "simulate.callout_gain_no_rule*": [f"simulate.callout_gain_no_rule{x}" for x in ("B", "C")],
+    "brief.metric_*": [f"brief.metric_{x}" for x in ("poverty_rate", "exclusion_error", "leakage", "financial_access", "triple_gap")],
+    "brief.meaning_*": [f"brief.meaning_{x}" for x in ("above", "below", "similar")],
+    "brief.*": [f"brief.{x}" for x in ("action_targeting", "action_access", "action_screening", "action_small_cell", "action_monitor", "action_outreach", "action_evaluate", "action_review", "action_review2", "action_review3")],
+    "profiles.trait_*": [f"profiles.trait_{x}" for x in ("household_size", "electricity_pct", "improved_water_pct", "improved_toilet_pct", "head_primary_plus_pct", "distance_health_km", "owns_livestock_pct", "head_female_pct")],
+}
+# Also validate keys passed through the missed-page trait-to-insight lookup table.
+lookup_keys = {
+    "missed.insight_household_size_higher_missed", "missed.insight_household_size_higher_covered",
+    "missed.insight_electricity_higher_missed", "missed.insight_electricity_higher_covered",
+    "missed.insight_water_higher_missed", "missed.insight_water_higher_covered",
+    "missed.insight_toilet_higher_missed", "missed.insight_toilet_higher_covered",
+    "missed.insight_education_higher_missed", "missed.insight_education_higher_covered",
+    "missed.insight_distance_higher_missed", "missed.insight_distance_higher_covered",
+    "missed.insight_phone_higher_missed", "missed.insight_phone_higher_covered",
+    "missed.insight_agriculture_higher_missed", "missed.insight_agriculture_higher_covered",
+}
 
 for code_dir in code_dirs:
     if not code_dir.exists():
         continue
     for file_path in code_dir.rglob("*.tsx"):
-        with open(file_path, "r", encoding="utf-8") as f:
-            content = f.read()
-            matches = t_pattern.findall(content)
-            for match in matches:
-                t_keys.add(match)
+        content = file_path.read_text(encoding="utf-8")
+        t_keys.update(literal_t.findall(content))
+        for template in template_t.findall(content):
+            normalized = re.sub(r"\$\{[^}]+\}", "*", template)
+            family = dynamic_families.get(normalized)
+            if family is None:
+                unknown_dynamic.add(f"{file_path.relative_to(app_dir)}: {template}")
+            else:
+                t_keys.update(family)
 
-# These rule keys are assembled dynamically in SimulatePage.tsx, so the static
-# literal-key regex above cannot see them. Keep this list in sync with the UI.
-t_keys.update(
-    {
-        "simulate.rule_a_title",
-        "simulate.rule_a_desc",
-        "simulate.rule_b_title",
-        "simulate.rule_b_desc",
-        "simulate.rule_c_title",
-        "simulate.rule_c_desc",
-    }
-)
+# Catch references embedded in lookup objects, such as t(keys.higher_missed).
+for code_dir in code_dirs:
+    if code_dir.exists():
+        for file_path in code_dir.rglob("*.tsx"):
+            content = file_path.read_text(encoding="utf-8")
+            t_keys.update(re.findall(r'["\'](missed\.insight_[a-zA-Z0-9_.]+)["\']', content))
+t_keys.update(lookup_keys)
 
-# Check for missing keys
-missing_in_en = t_keys - en_keys
-missing_in_rw = t_keys - rw_keys
-
-if missing_in_en:
+missing_en = sorted(t_keys - en_keys)
+missing_rw = sorted(t_keys - rw_keys)
+if unknown_dynamic:
+    print("ERROR: Unregistered dynamic translation template(s):")
+    print("\n".join(f"  - {item}" for item in sorted(unknown_dynamic)))
+if missing_en:
     print("ERROR: Keys missing from en.json:")
-    for key in sorted(missing_in_en):
-        print(f"  - {key}")
-    print()
-
-if missing_in_rw:
+    print("\n".join(f"  - {key}" for key in missing_en))
+if missing_rw:
     print("ERROR: Keys missing from rw.json:")
-    for key in sorted(missing_in_rw):
-        print(f"  - {key}")
-    print()
-
-if missing_in_en or missing_in_rw:
+    print("\n".join(f"  - {key}" for key in missing_rw))
+if unknown_dynamic or missing_en or missing_rw:
     sys.exit(1)
-else:
-    print("OK: All t(...) keys found in both en.json and rw.json")
-    sys.exit(0)
+print("OK: All literal and registered dynamic translation keys found in both dictionaries")
