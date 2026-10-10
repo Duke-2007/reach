@@ -8,24 +8,24 @@
     "tagline": "TODO_TRANSLATE Igitekerezo cyo guhagarika abakene, guhagarika abatagakene, no guereranya amategeko yo gushigikiriza mu murere wa disturi"
   },
   "nav": {
-    "home": "TODO_TRANSLATE Akarata k'amahanga",
+    "home": "Ikarita y’uduce tutagerwaho n’ubufasha",
     "missed": "TODO_TRANSLATE Abakene batagashigikirwa n'abarimo",
     "model": "TODO_TRANSLATE Modeli yo gushigikiriza",
     "simulate": "TODO_TRANSLATE Gueranya amategeko",
     "brief": "TODO_TRANSLATE Itangazamakuru rya disturi",
-    "district_unknown": "TODO_TRANSLATE disturi",
-    "menu_open": "TODO_TRANSLATE Gufungura ibikurikiye",
+    "district_unknown": "Akarere",
+    "menu_open": "Fungura menu",
     "menu_close": "TODO_TRANSLATE Gufunga ibikurikiye"
   },
   "footer": {
     "line1": "TODO_TRANSLATE Iyi ni igikoresho cyo guha ibitekerezo mu mategeko, iteganyijwe ku isesengura ry'ibikorwa bya EICV7 ku murere wa disturi. Ntabwo y'urutonde rw'umuryango w'umuntu wa nyuma."
   },
   "format": {
-    "percent_whole": "TODO_TRANSLATE {value}%",
-    "ci_parens": "TODO_TRANSLATE ({lo}–{hi})",
-    "small_cell": "TODO_TRANSLATE Bishishwe (ingabi nkuru)",
+    "percent_whole": "{value}%",
+    "ci_parens": "({lo}–{hi})",
+    "small_cell": "Nta mibare igaragazwa (ingo ni nke cyane)",
     "rwf_per": "TODO_TRANSLATE {value} RWF / umuryango",
-    "rwf_millions": "TODO_TRANSLATE {value} M RWF"
+    "rwf_millions": "{value} M RWF"
   },
   "banner": {
     "placeholder_title": "TODO_TRANSLATE Amakuru atari yo ku isesengura y'ibikorwa — ntuzatumizwe mu gushigikiriza ibitekerezo",
@@ -70,8 +70,8 @@
     "insight_agriculture_higher_missed": "TODO_TRANSLATE A higher share of missed poor households have agriculture as their main livelihood ({missed} vs {covered}).",
     "insight_agriculture_higher_covered": "TODO_TRANSLATE A higher share of covered poor households have agriculture as their main livelihood ({covered} vs {missed}).",
     "units_persons": "TODO_TRANSLATE persons",
-    "units_km": "TODO_TRANSLATE km",
-    "units_percent": "TODO_TRANSLATE %",
+    "units_km": "km",
+    "units_percent": "%",
     "no_estimate": "TODO_TRANSLATE No estimate available"
   },
   "map": {
@@ -125,7 +125,8 @@
     "observed": "TODO_TRANSLATE Observed targeting",
     "observed_coverage_note": "TODO_TRANSLATE The three points compare reach at the programme’s observed coverage of {coverage}% of households. The lines show model and random targeting across budget levels.",
     "model_at_coverage": "TODO_TRANSLATE Model at observed coverage",
-    "random_at_coverage": "TODO_TRANSLATE Random at observed coverage"
+    "random_at_coverage": "TODO_TRANSLATE Random at observed coverage",
+    "calibration_n_households": "TODO_TRANSLATE Households"
   },
   "features": {
     "housing_roof_material": "TODO_TRANSLATE Roof material",
@@ -144,7 +145,7 @@
     "area_label": "TODO_TRANSLATE Area",
     "area_national": "TODO_TRANSLATE National",
     "budget_label": "TODO_TRANSLATE Budget (share of households supported)",
-    "budget_value": "TODO_TRANSLATE {value}%",
+    "budget_value": "{value}%",
     "rule_label": "TODO_TRANSLATE Targeting rule",
     "rule_A_title": "TODO_TRANSLATE A — Observed / current targeting",
     "rule_A_desc": "TODO_TRANSLATE Actual programme coverage as recorded in the survey; a single record per area.",
@@ -164,7 +165,7 @@
     "result_leakage": "TODO_TRANSLATE Leakage",
     "result_cost": "TODO_TRANSLATE Cost per poor household reached",
     "result_cost_value": "TODO_TRANSLATE {value} cost units",
-    "null_value": "TODO_TRANSLATE —",
+    "null_value": "—",
     "chart_title": "TODO_TRANSLATE Share of poor reached vs budget share by rule",
     "chart_xaxis": "TODO_TRANSLATE Budget share",
     "chart_yaxis": "TODO_TRANSLATE Share of poor reached",
@@ -190,7 +191,7 @@
     "scorecard_points": "TODO_TRANSLATE Points",
     "scorecard_note": "TODO_TRANSLATE A household's score is the sum of its points; higher score = higher poverty risk.",
     "download_label": "TODO_TRANSLATE Download this scenario (CSV)",
-    "download_filename": "TODO_TRANSLATE reach_simulate_{area}_rule{rule}_budget{budget}.csv",
+    "download_filename": "reach_simulate_{area}_rule{rule}_budget{budget}.csv",
     "download_header_setting": "TODO_TRANSLATE Setting",
     "download_header_value": "TODO_TRANSLATE Value",
     "download_row_area": "TODO_TRANSLATE Area",
@@ -321,7 +322,10 @@
     "action_outreach": "TODO_TRANSLATE Review local enrolment and service-access barriers with community partners.",
     "action_evaluate": "TODO_TRANSLATE Track whether programme reach and household welfare change over time.",
     "action_review2": "TODO_TRANSLATE Monitor coverage as new data arrives.",
-    "action_review3": "TODO_TRANSLATE Review local enrolment and service-access barriers with community partners."
+    "action_review3": "TODO_TRANSLATE Review local enrolment and service-access barriers with community partners.",
+    "action_screening_both": "TODO_TRANSLATE Test the scorecard as a screening aid alongside existing criteria: both model-ranked and scorecard targeting clearly improve reach at observed coverage.",
+    "action_screening_model": "TODO_TRANSLATE Test model-ranked targeting as a screening aid alongside existing criteria: it clearly improves reach at observed coverage.",
+    "action_screening_scorecard": "TODO_TRANSLATE Test the scorecard as a screening aid alongside existing criteria: it clearly improves reach at observed coverage."
   },
   "profiles": {
     "trait_owns_livestock_pct": "TODO_TRANSLATE Households owning livestock",

@@ -125,7 +125,8 @@
     "observed": "Observed targeting",
     "observed_coverage_note": "The three points compare reach at the programme’s observed coverage of {coverage}% of households. The lines show model and random targeting across budget levels.",
     "model_at_coverage": "Model at observed coverage",
-    "random_at_coverage": "Random at observed coverage"
+    "random_at_coverage": "Random at observed coverage",
+    "calibration_n_households": "Households"
   },
   "features": {
     "housing_roof_material": "Roof material",
@@ -321,7 +322,10 @@
     "action_outreach": "Review local enrolment and service-access barriers with community partners.",
     "action_evaluate": "Track whether programme reach and household welfare change over time.",
     "action_review2": "Monitor coverage as new data arrives.",
-    "action_review3": "Review local enrolment and service-access barriers with community partners."
+    "action_review3": "Review local enrolment and service-access barriers with community partners.",
+    "action_screening_both": "Test the scorecard as a screening aid alongside existing criteria: both model-ranked and scorecard targeting clearly improve reach at observed coverage.",
+    "action_screening_model": "Test model-ranked targeting as a screening aid alongside existing criteria: it clearly improves reach at observed coverage.",
+    "action_screening_scorecard": "Test the scorecard as a screening aid alongside existing criteria: it clearly improves reach at observed coverage."
   },
   "profiles": {
     "trait_owns_livestock_pct": "Households owning livestock",
