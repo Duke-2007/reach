@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "required": [
+    "placeholder",
+    "budget_share",
+    "groups"
+  ],
+  "properties": {
+    "placeholder": {
+      "const": false
+    },
+    "budget_share": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "groups": {
+      "type": "array",
+      "minItems": 9,
+      "items": {
+        "type": "object",
+        "required": [
+          "dimension",
+          "group",
+          "reach_A",
+          "reach_B",
+          "reach_C"
+        ]
+      }
+    }
+  }
+}

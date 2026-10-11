@@ -1,0 +1,35 @@
+[
+  {
+    "feature_set": "all features (as in 03_model)",
+    "n_features": 50,
+    "auc": 0.8191785242482004,
+    "auc_ci": [
+      0.8120311403585597,
+      0.8258106668643573
+    ],
+    "poor_reached_at_observed_coverage": 0.2803509447785084,
+    "observed_coverage": 0.10058069195830838
+  },
+  {
+    "feature_set": "without size / composition",
+    "n_features": 40,
+    "auc": 0.7733769338738659,
+    "auc_ci": [
+      0.7657478065386171,
+      0.781004669900262
+    ],
+    "poor_reached_at_observed_coverage": 0.2314699832349014,
+    "observed_coverage": 0.10058069195830838
+  },
+  {
+    "feature_set": "housing, water, energy, livestock only",
+    "n_features": 26,
+    "auc": 0.7615718780174744,
+    "auc_ci": [
+      0.7531192718136253,
+      0.7687701652533628
+    ],
+    "poor_reached_at_observed_coverage": 0.21750136903456072,
+    "observed_coverage": 0.10058069195830838
+  }
+]

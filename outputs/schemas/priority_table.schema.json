@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "required": [
+    "placeholder",
+    "national",
+    "districts"
+  ],
+  "properties": {
+    "placeholder": {
+      "const": false
+    },
+    "districts": {
+      "type": "array",
+      "minItems": 30,
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "required": [
+          "district",
+          "rank_missed",
+          "poor_missed",
+          "poor_missed_ci",
+          "exclusion_error",
+          "small_cell"
+        ],
+        "properties": {
+          "exclusion_error": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "poverty_rate": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "triple_gap": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "small_cell": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

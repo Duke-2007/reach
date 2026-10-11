@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "required": [
+    "placeholder",
+    "data",
+    "poverty",
+    "support",
+    "headline",
+    "model",
+    "rules_at_observed_coverage"
+  ],
+  "properties": {
+    "placeholder": {
+      "const": false
+    }
+  }
+}

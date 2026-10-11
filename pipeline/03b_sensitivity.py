@@ -50,6 +50,7 @@ def main():
             "without size / composition": [c for c in cat + num if c not in SIZE_VARS],
             "housing, water, energy, livestock only": housing}
     print(f"{'feature set':42s}{'n':>4s}  {'AUC (95% CI)':>24s}  {'poor reached @ ' + format(obs_cov, '.1%'):>20s}")
+    results = []
     for name, cols in sets.items():
         c_, n_ = [c for c in cols if c in cat], [c for c in cols if c in num]
         p = np.zeros(len(df))
@@ -60,8 +61,13 @@ def main():
         auc = m.wauc(y, p, w)
         boots = [m.wauc(y, p, w * M[b][cl]) for b in range(100)]
         reach = rule_metrics(p, y, w, obs_cov)["poor_reached"]
+        results.append({"feature_set": name, "n_features": len(cols), "auc": float(auc),
+                        "auc_ci": [float(np.percentile(boots, 2.5)), float(np.percentile(boots, 97.5))],
+                        "poor_reached_at_observed_coverage": float(reach), "observed_coverage": obs_cov})
         print(f"{name:42s}{len(cols):4d}  {auc:.3f} ({np.percentile(boots, 2.5):.3f}-{np.percentile(boots, 97.5):.3f})"
               f"{reach:20.1%}")
+    (m.ROOT / "outputs").mkdir(exist_ok=True)
+    (m.ROOT / "outputs" / "sensitivity.json").write_text(json.dumps(results, indent=2))
 
 
 if __name__ == "__main__":
