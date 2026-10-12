@@ -20,4 +20,12 @@ Top level: `placeholder`, `note`, `comparison`, `areas`, `traits_metadata`, `by_
 
 Top level includes `placeholder`, `note`, `model_spec`, `validation_design`, `by_fold`, `overall`, `decision_metrics_by_budget_pct`, `calibration`, `feature_importance_top10`, `pooled_auc_roc`, `pooled_auc_roc_ci`, and `comparison_at_observed_coverage`. Feature-importance entries include `rank`, `feature`, human-readable `label`, `type`, `importance`, and `direction`. `comparison_at_observed_coverage` has `budget_share` and `observed`, `model`, and `random` poor-reach/exclusion/leakage estimates.
 
+## `priority_table.json`
+
+Top level: `placeholder`, `note`, `national`, and `districts`. The national row and 30 district rows contain survey-weighted poor-household totals, poor households with no support (`poor_missed`) with 95% intervals, exclusion error, poverty rate, triple-gap share, and Rule B/Rule C gains per 1,000 poor households with intervals and clear-gain flags. `small_cell` marks estimates requiring care. Counts are survey estimates and the priority table rounds displayed counts to the nearest 100.
+
+## `equity.json`
+
+Top level: `placeholder`, `note`, `budget_share`, `n_boot`, and `groups`. Each group row describes its share of all poor households, observed reach (`reach_A`), Rule B and Rule C reach, each with 95% intervals, plus Rule B gain per 1,000 poor households with interval and clear-gain flag. `small_cell` marks groups requiring care. Shares and reach fields are proportions.
+
 `districts.geojson` supplies map boundaries and is also fetched by the gap map. Keep exported JSON aggregated; never publish raw microdata here.

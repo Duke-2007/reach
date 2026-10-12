@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "required": [
+    "placeholder",
+    "note",
+    "at_observed_coverage"
+  ],
+  "properties": {
+    "placeholder": {
+      "const": false
+    },
+    "at_observed_coverage": {
+      "type": "array",
+      "minItems": 62
+    }
+  }
+}

@@ -5,6 +5,8 @@
                        missed, exclusion error, triple gap, poverty rate, with 95% intervals,
                        small-sample flags and the clear/unclear gain of rules B and C
   equity.json          do the rules reach poor households equally across groups? (03c_equity.py)
+  brief_targeting.json a slim copy of simulator_grid.json's at_observed_coverage section, so the
+                       district brief does not have to load the 800 KB simulator file
   method_facts.json    every number the "Method and limits" page quotes, so the page reads
                        them from the results instead of having them typed in
 
@@ -141,10 +143,14 @@ SCHEMAS = {
     "equity": {"type": "object", "required": ["placeholder", "budget_share", "groups"], "properties": {
         "placeholder": {"const": False}, "budget_share": share,
         "groups": {"type": "array", "minItems": 9, "items": {"type": "object", "required": ["dimension", "group", "reach_A", "reach_B", "reach_C"]}}}},
+    "brief_targeting": {"type": "object", "required": ["placeholder", "note", "at_observed_coverage"], "properties": {
+        "placeholder": {"const": False}, "at_observed_coverage": {"type": "array", "minItems": 62}}},
     "method_facts": {"type": "object", "required": ["placeholder", "data", "poverty", "support", "headline", "model", "rules_at_observed_coverage"],
                      "properties": {"placeholder": {"const": False}}},
 }
-files = {"priority_table": priority, "equity": equity, "method_facts": facts}
+sim_note = json.loads((APP / "simulator_grid.json").read_text(encoding="utf-8"))["note"]
+brief_targeting = {"placeholder": False, "note": sim_note, "at_observed_coverage": sim["at_observed_coverage"]}
+files = {"priority_table": priority, "equity": equity, "method_facts": facts, "brief_targeting": brief_targeting}
 print(f"{'file':16s}{'size':>9s}   checks")
 for name, obj in files.items():
     obj = clean(obj)
