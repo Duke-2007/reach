@@ -13,3 +13,7 @@
 11. **Assumed units.** Distances to services are assumed to be in metres.
 12. **Data vintage.** EICV7 refers to 2023-24; conditions and programme coverage may have changed.
 13. **Cost** is expressed in units of one household supported; it is not a monetary estimate.
+14. **Equity.** Ranking by poverty risk does not reach every group equally. At the programmes' coverage, observed targeting already reaches female-headed poor households (20.7%) better than male-headed ones (12.6%), while the scorecard reaches 21.7% of them, about the same as today, so it would give them almost no extra reach. In the Northern Province the gain of the model over observed targeting is not clear (+37 per 1,000, 95% CI -8 to +99). The scorecard should be tested alongside existing criteria, not used in their place.
+15. **Group results are national picks.** The equity table applies one national ranking and looks at who is reached; it does not re-optimise the rule for each group or province.
+16. **No user validation yet.** The tool has not been tested with district planners or programme staff, and no operational evaluation exists.
+

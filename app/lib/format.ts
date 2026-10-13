@@ -48,6 +48,17 @@ export function formatPercentWithCi(
   return ciStr ? `${pct} ${ciStr}` : pct;
 }
 
+export function formatPercentInterval(
+  value: number | null | undefined,
+  ci: Ci | null | undefined,
+  digits = 1,
+): string {
+  if (value == null || !Number.isFinite(value)) return "—";
+  const pct = (n: number) => `${Number((n * 100).toFixed(digits)).toFixed(digits)}%`;
+  if (!Array.isArray(ci) || ci.length !== 2 || !ci.every(Number.isFinite)) return pct(value);
+  return `${pct(value)} (${pct(ci[0])}-${pct(ci[1])})`;
+}
+
 export function formatCount(
   value: number | null | undefined,
   opts: { smallCell?: boolean; smallCellText?: string } = {},

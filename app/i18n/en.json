@@ -1,7 +1,16 @@
 {
   "lang": {
     "label": "English",
-    "short": "EN"
+    "short": "EN",
+    "switcher": "Language selection"
+  },
+  "common": {
+    "skip_to_content": "Skip to content",
+    "loading": "Loading data…",
+    "error_title": "Something went wrong",
+    "error_body": "The data could not be loaded. Try again.",
+    "retry": "Try again",
+    "no_data": "No data is available."
   },
   "app": {
     "title": "Reach — Rwanda targeting audit & simulator",
@@ -12,13 +21,24 @@
     "missed": "Missed vs covered",
     "model": "Model",
     "simulate": "Simulate rules",
+    "priority": "Priority districts",
     "brief": "District brief",
     "district_unknown": "district",
     "menu_open": "Open menu",
     "menu_close": "Close menu"
   },
   "footer": {
-    "line1": "Policy design tool based on EICV7 survey estimates at district level. Not a list of real households."
+    "line1": "Policy design tool based on EICV7 survey estimates at district level. Not a list of real households.",
+    "method_link": "Method and limits"
+  },
+  "home_landing": {
+    "title": "Where do poor households miss out on support, and what would reach more of them?",
+    "exclusion_label": "Exclusion error (95% interval)",
+    "gain_label": "Rule B gain per 1,000 poor households at {budget_share} coverage (95% interval)",
+    "auc_label": "Model AUC; without size variables",
+    "auc_value": "{auc}; {without_size_auc}",
+    "simulator_button": "Open the simulator",
+    "priority_button": "See priority districts"
   },
   "format": {
     "percent_whole": "{value}%",
@@ -39,10 +59,13 @@
     "missed_heading": "Missed vs covered poor households — trait comparison",
     "model_heading": "Poverty-risk model — performance, calibration & features",
     "simulate_heading": "Simulate targeting rules under a fixed budget",
+    "priority_heading": "Priority districts",
+    "method_heading": "Method and limits",
     "brief_heading": "District brief: {district}",
     "body_coming_soon": "Content will be added here. The layout, navigation and i18n foundation is in place."
   },
   "missed": {
+    "no_data_page": "No profile data is available.",
     "district_label": "District",
     "district_national": "National",
     "no_data": "No data available for this district",
@@ -50,8 +73,8 @@
     "trait_missed": "Missed",
     "trait_covered": "Covered",
     "insignificant": "The difference is not clearly significant (confidence intervals overlap).",
-    "higher_missed": "Missed poor households have higher {trait} ({missed} vs {covered}).",
-    "higher_covered": "Covered poor households have higher {trait} ({covered} vs {missed}).",
+    "higher_missed": "Missed poor households have a higher share of {trait} ({missed} vs {covered}).",
+    "higher_covered": "Covered poor households have a higher share of {trait} ({covered} vs {missed}).",
     "similar": "Missed and covered poor households have similar {trait} ({missed} vs {covered}).",
     "insight_household_size_higher_missed": "Missed poor households have a larger mean household size ({missed} vs {covered} persons).",
     "insight_household_size_higher_covered": "Covered poor households have a larger mean household size ({covered} vs {missed} persons).",
@@ -75,6 +98,10 @@
     "no_estimate": "No estimate available"
   },
   "map": {
+    "no_data": "No map data is available.",
+    "loading": "Loading map data…",
+    "geojson_error": "The map data could not be loaded.",
+    "map_aria": "District map with the selected indicator",
     "layer_poverty": "Poverty rate",
     "layer_exclusion": "Exclusion error",
     "layer_leakage": "Leakage",
@@ -92,7 +119,8 @@
     "hover_district": "District",
     "hover_households": "Households surveyed",
     "hover_small_sample": "Small sample, interpret with care",
-    "ranking_title": "Highest exclusion error",
+    "ranking_title": "Top districts for the selected indicator",
+    "rank_entry": "Rank {rank}: {district}, {indicator} {value}",
     "mismatch_warning": "District name mismatch detected between map and data. Some districts may not display correctly.",
     "card_poverty": "Poverty rate",
     "card_exclusion": "Exclusion error",
@@ -101,6 +129,7 @@
     "card_triple": "Triple gap"
   },
   "model": {
+    "no_data": "No model data is available for this chart.",
     "heading": "Poverty-risk model — performance, calibration & features",
     "auc_label": "AUC (mean ± std across 5 folds)",
     "budget_label": "Budget share",
@@ -126,7 +155,8 @@
     "observed_coverage_note": "The three points compare reach at the programme’s observed coverage of {coverage}% of households. The lines show model and random targeting across budget levels.",
     "model_at_coverage": "Model at observed coverage",
     "random_at_coverage": "Random at observed coverage",
-    "calibration_n_households": "Households"
+    "calibration_n_households": "Households",
+    "show_data_table": "Show data as a table"
   },
   "features": {
     "housing_roof_material": "Roof material",
@@ -141,6 +171,7 @@
     "safe_water_source": "Safe water source"
   },
   "simulate": {
+    "no_data": "No simulator data is available.",
     "heading": "Simulate targeting rules under a fixed budget",
     "area_label": "Area",
     "area_national": "National",
@@ -181,8 +212,8 @@
     "callout_title": "Same budget, better reach",
     "callout_subtitle": "Compared with the current programme (rule A) at its actual coverage:",
     "callout_gain": "Rule {rule} reaches {gain} more poor households per 1,000 ({ci}).",
-    "callout_gain_no_ruleB": "Rule B reaches about {gain} more poor households for every 1,000 poor households (95% CI {lo} to {hi}), at the programme's own coverage of {coverage}% of households.",
-    "callout_gain_no_ruleC": "Rule C reaches about {gain} more poor households for every 1,000 poor households (95% CI {lo} to {hi}), at the programme's own coverage of {coverage}% of households.",
+    "callout_gain_no_ruleB": "Rule B reaches about {gain} more poor households for every 1,000 poor households (95% CI {lo} to {hi}), at the programme's own coverage of {coverage} of households.",
+    "callout_gain_no_ruleC": "Rule C reaches about {gain} more poor households for every 1,000 poor households (95% CI {lo} to {hi}), at the programme's own coverage of {coverage} of households.",
     "callout_no_gain": "The difference is not clearly significant.",
     "callout_clear": "Rule {rule}: {gain} per 1,000 more poor households ({ci})",
     "scorecard_title": "Scorecard (rule C)",
@@ -199,8 +230,8 @@
     "download_row_rule_label": "Rule label",
     "download_row_budget": "Budget share",
     "download_row_poor_reached": "Share of poor reached",
-    "download_row_poor_reached_lo": "Share of poor reached (95% CI lower",
-    "download_row_poor_reached_hi": "Share of poor reached (95% CI upper",
+    "download_row_poor_reached_lo": "Share of poor reached (95% CI lower)",
+    "download_row_poor_reached_hi": "Share of poor reached (95% CI upper)",
     "download_row_extreme_poor_reached": "Share of extremely poor reached",
     "download_row_exclusion_error": "Exclusion error",
     "download_row_leakage": "Leakage",
@@ -213,12 +244,57 @@
     "result_ci_suffix": "95% CI: {value}",
     "interval_note": "Intervals are estimated for the share of poor reached (and exclusion error)."
   },
+  "priority": {
+    "rank": "Rank", "district": "District", "province": "Province", "poor_households": "Poor households (weighted)", "poor_missed": "Poor households with no support (95% interval)", "exclusion": "Exclusion error (95% interval)", "triple_gap": "Triple-gap share (95% interval)", "poverty": "Poverty rate (95% interval)", "gain_b": "Rule B gain per 1,000 poor (95% interval)", "gain_c": "Rule C gain per 1,000 poor (95% interval)", "not_clear": "not clear", "national": "National", "small_cell": "Small sample", "small_cell_note": "Small-sample estimates should be interpreted with care.", "province_filter": "Province", "all_provinces": "All provinces", "download_csv": "Download CSV", "ranking_note": "Districts are ranked by the number of poor households with no support, not by the rate, so large districts rank high.", "rounding_note": "Weighted household counts are survey estimates rounded to the nearest 100."
+  },
+  "equity": {
+    "title": "Who is reached?", "description": "Each rule picks households nationwide up to the programmes' actual coverage ({budget_share} of households); the table shows the share of each group's poor households that is reached.", "dimension": "Dimension", "group": "Group", "share": "Share of all poor households", "observed": "Observed targeting (95% interval)", "rule_b": "Rule B (95% interval)", "rule_c": "Rule C (95% interval)", "gain_b": "Rule B gain per 1,000 poor (95% interval)", "not_clear": "not clear", "small_cell": "Small sample", "interval_note": "Intervals are 95% design-based confidence intervals.", "gain_not_clear": "Gain not clear for: {groups}", "none": "none", "interpretation_note": "Ranking by poverty risk does not reach every group equally. Where observed targeting already reaches a group better than average, the rules add little. Test the scorecard alongside existing criteria, not as a replacement."
+  },
+  "method": {
+    "what_title": "What Reach is",
+    "what_body": "Reach is a policy design tool that audits which poor households are missed by social protection support in Rwanda. It compares existing targeting with model-ranked and transparent scorecard rules using weighted survey estimates, not household records.",
+    "data_title": "The data",
+    "data_body": "{n_households} households in {n_districts} districts, {n_strata} strata and {n_clusters} clusters, from the {survey} survey. Rates, shares and weighted counts are survey-weighted so they describe Rwanda, not only the sample; sample sizes are unweighted counts. Persons: {persons_poor} poor, {persons_extreme_poor} extremely poor.",
+    "read_title": "How to read the numbers",
+    "read_body": "Every estimate has a 95% interval. If two intervals overlap, the difference is not clear. The small-sample badge means fewer than 30 poor households or fewer than 10 supported households.",
+    "findings_title": "What we found",
+    "exclusion": "Exclusion error: {value}",
+    "leakage": "Leakage: {value}",
+    "rule_findings": "At the programmes’ own coverage ({budget_share}), observed targeting reaches {observed} of poor households. Rule B reaches {b_reached_interval} (gain {b_gain} per 1,000 poor households, 95% interval {b_interval}); the scorecard reaches {c_reached_interval} (gain {c_gain}, 95% interval {c_interval}). Rule B clearly beats observed targeting in {b_districts} of {n_districts} districts and Rule C in {c_districts}.",
+    "robust_title": "Is it robust?",
+    "auc": "Model AUC: {auc} (95% interval {ci}).",
+    "sensitivity_label": "Model feature set",
+    "sensitivity_auc": "AUC (95% interval)",
+    "sensitivity_reach": "Poor households reached at observed coverage",
+    "sensitivity_1": "All features",
+    "sensitivity_2": "Without size / composition variables",
+    "sensitivity_3": "Housing, water, energy and livestock only",
+    "limits_title": "Limits",
+    "limit_district": "Results are available at district level only.",
+    "limit_programme_counts": "Programme counts are small, so “any support” is the headline measure.",
+    "limit_extreme_poverty": "Extreme poverty estimates are noisy by district.",
+    "limit_reverse_causality": "Support can raise consumption, so exclusion can be understated and leakage overstated.",
+    "limit_survey_label": "Programmes select households by their own criteria; the rules are judged against the survey’s poverty label.",
+    "limit_individuals": "The tool cannot identify real households.",
+    "limit_financial_inclusion": "Financial inclusion is measured generously: any household member counts, and mobile money is included.",
+    "definitions_title": "Definitions",
+    "definition_any_support_label": "Any support",
+    "definition_any_support": "Receipt of direct support, classic public works, expanded public works, or nutrition-sensitive direct support.",
+    "definition_exclusion_error_label": "Exclusion error",
+    "definition_exclusion_error": "The share of poor households that receive no support.",
+    "definition_leakage_label": "Leakage",
+    "definition_leakage": "The share of supported households that are not poor.",
+    "definition_triple_gap_label": "Triple gap",
+    "definition_triple_gap": "The share of households that are poor, receive no support, and have no access to formal financial services.",
+    "definition_financially_excluded_label": "Financially excluded",
+    "definition_financially_excluded": "No household member has a formal financial account or access to a financial service; mobile money is counted as access."
+  },
   "scorecard_features": {
     "hh_size_ae": "Adult-equivalent household size",
     "head_edu_cat": "Head's education category",
-    "s7aq4a": "Land owned (hectares)",
+    "s7aq4a": "Cattle owned (number)",
     "s5dq3": "Floor material",
-    "s5cq20a": "Has electricity",
+    "s5cq20a": "Internet connection at home",
     "s5cq22a": "Main cooking fuel"
   },
   "scorecard_bands": {
@@ -239,9 +315,9 @@
       "6": "Tertiary"
     },
     "s7aq4a": {
-      "-1": "Blank / not applicable",
-      "1": "0.0 to below 1.0",
-      "2": "1.0 or more"
+      "-1": "None owned (no livestock)",
+      "1": "0 cattle (owns other livestock)",
+      "2": "1 or more cattle"
     },
     "s5dq3": {
       "1": "Beaten earth",
@@ -273,6 +349,8 @@
     }
   },
   "brief": {
+    "index_title": "District briefs",
+    "index_body": "Choose a district to open its policy brief. Districts are listed by the number of poor households with no support.",
     "open_brief": "Open district brief",
     "picker_label": "District",
     "picker_prompt": "Choose a district",
@@ -294,7 +372,7 @@
     "meaning_title": "What this means",
     "meaning_above": "In {district}, the estimated exclusion error is {district_value}, above the national benchmark of {national_value}; the district interval does not include that benchmark.",
     "meaning_below": "In {district}, the estimated exclusion error is {district_value}, below the national benchmark of {national_value}; the district interval does not include that benchmark.",
-    "meaning_similar": "In {district}, the exclusion-error interval includes the national benchmark ({national_value}), so the difference is not clear.",
+    "meaning_similar": "In {district}, the district and national 95% exclusion-error intervals overlap, so the difference is not clear (district value: {district_value}; national value: {national_value}).",
     "actions_title": "Recommended actions",
     "action_targeting": "Review the targeting criteria: exclusion error is clearly above the national benchmark.",
     "action_access": "Pair support with savings groups or mobile-money access: the triple-gap share is clearly above the national benchmark.",

@@ -1,7 +1,7 @@
-import { MissedPage } from "@/components/MissedPage";
+import { LazyMissedPage } from "@/components/LazyPages";
 import { loadProfiles } from "@/lib/data-loader";
 
 export default async function MissedRoute() {
   const data = await loadProfiles();
-  return <MissedPage data={data} />;
+  return <LazyMissedPage data={data} />;
 }

@@ -21,6 +21,7 @@ RAW_FILES = [
     "CS_S9D1_Direct_Support",
     "CS_S9D2_Classic_Public_Work",
     "CS_S9D3_Expanded_Public_Work",
+    "CS_S9D4_NSDS",
     "CS_S9D5_Financial_Services",
     "CS_S10A1_A2_credits",
     "CS_S10C_Savings",

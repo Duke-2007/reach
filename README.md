@@ -28,10 +28,34 @@ Reach measures both, district by district, from NISR's EICV7 household survey. I
 | Model | How well can poverty be predicted from easy-to-observe traits, and how is it validated? |
 | Simulate rules | At a given budget, how many poor households does each rule reach? |
 | District brief | A printable one-page summary for a district with three recommended actions |
+| Priority districts | Which districts have the most poor households with no support? A sortable table with intervals |
+| Method and limits | What data and methods were used, how to read the intervals, and what the numbers cannot tell you |
+
 
 The app is mobile first, available in English and Kinyarwanda, and reads small aggregated files (no server).
 
 ## Main results (Rwanda, "any support", households, 95% intervals)
+
+
+### Equity check
+
+At the programmes' own coverage (10.1% of households) each rule picks households nationwide. The table shows the share of each group's **poor** households that is reached (95% intervals in `docs/` and in the app).
+
+| Group | Share of poor households | Observed | Model (B) | Scorecard (C) | Gain of B per 1,000 poor households (95% CI) |
+|---|---|---|---|---|---|
+| Urban | 17% | 9.7% | 25.4% | 18.6% | +157 (+112 to +203) |
+| Rural | 83% | 15.8% | 28.6% | 26.7% | +128 (+111 to +146) |
+| Female-headed | 26% | 20.7% | 26.0% | 21.7% | +54 (+17 to +89) |
+| Male-headed | 74% | 12.6% | 28.8% | 26.6% | +161 (+140 to +179) |
+| Eastern Province | 26% | 8.1% | 27.7% | 25.4% | +196 (+166 to +232) |
+| Kigali City | 5% | 5.3% | 18.9% | 16.7% | +136 (+66 to +215) |
+| Northern Province | 11% | 18.8% | 22.5% | 25.6% | +37 (-8 to +99), not clear |
+| Southern Province | 30% | 16.5% | 29.9% | 26.6% | +134 (+97 to +162) |
+| Western Province | 28% | 19.0% | 30.1% | 25.0% | +111 (+76 to +143) |
+
+Current coverage is uneven: the Eastern Province holds 26% of poor households but the programmes reach 8.1% of them. Observed targeting already reaches female-headed poor households better (20.7%) than male-headed ones (12.6%), and the scorecard would give them almost no extra reach (21.7%). For this reason Reach recommends testing the scorecard **alongside** existing criteria, not replacing them.
+
+---
 
 | Measure | Result |
 |---|---|
@@ -68,6 +92,9 @@ These figures describe how well each rule reaches households that are poor by th
    # Windows PowerShell:  .venv\Scripts\Activate.ps1      Git Bash / Linux / macOS:  source .venv/Scripts/activate  (or .venv/bin/activate)
    pip install -r requirements.txt
    ```
+  For the exact package versions used (Python 3.14.8 on Windows with Git Bash): `pip install -r requirements-lock.txt`.
+   For the web app use Node 24.21.0 and `npm ci`.
+
 3. **Rebuild every published table** with one command (stops at the first error and runs the tests at the end):
    ```
    bash pipeline/run_all.sh
@@ -93,6 +120,7 @@ Random seeds are fixed (42); the bootstrap uses 200 replicates.
 3. Predict poverty with weighted logistic regression and gradient boosting, using no consumption variables, validated by cross-validation grouped by cluster.
 4. Simulate rules A, B and C at budgets from 1% to 50% with out-of-fold predictions and a design-based bootstrap.
 5. Export aggregated JSON; the static web app and printable district brief read it.
+
 
 Details: [docs/methodology.md](docs/methodology.md).
 

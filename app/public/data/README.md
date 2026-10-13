@@ -1,6 +1,6 @@
 # App data exports
 
-The frontend consumes four aggregated JSON exports from this directory. The current exports are real pipeline outputs (`placeholder: false`); the `note` fields describe their survey source and methods. The UI displays the placeholder disclosure only when an export sets `placeholder: true`. These district and national summaries are survey estimates, not household lists.
+The frontend consumes aggregated JSON exports from this directory. The current exports are real pipeline outputs (`placeholder: false`); the `note` fields describe their survey source and methods. The UI displays the placeholder disclosure only when an export sets `placeholder: true`. These district and national summaries are survey estimates, not household lists.
 
 ## `district_gaps.json`
 
@@ -27,5 +27,13 @@ Top level: `placeholder`, `note`, `national`, and `districts`. The national row 
 ## `equity.json`
 
 Top level: `placeholder`, `note`, `budget_share`, `n_boot`, and `groups`. Each group row describes its share of all poor households, observed reach (`reach_A`), Rule B and Rule C reach, each with 95% intervals, plus Rule B gain per 1,000 poor households with interval and clear-gain flag. `small_cell` marks groups requiring care. Shares and reach fields are proportions.
+
+## `method_facts.json`
+
+Top level: `placeholder`, `note`, `data`, `poverty`, `support`, `headline`, `model`, and `rules_at_observed_coverage`. It aggregates the survey sample and design counts; household and person poverty; programme coverage; national exclusion, leakage and financial-exclusion estimates; model AUC and sensitivity results; and observed-versus-rule B/C reach and gains at actual programme coverage. Rates are proportions and intervals are 95% confidence intervals. The Method and limits page and home summary use these exported values directly; do not duplicate figures in interface copy.
+
+## `method_facts.json`
+
+Top level: `placeholder`, `note`, `data`, `poverty`, `support`, `headline`, `model`, and `rules_at_observed_coverage`. It aggregates the survey sample and design counts; household and person poverty; programme coverage; national exclusion, leakage and financial-exclusion estimates; model AUC and sensitivity results; and observed-versus-rule B/C reach and gains at actual programme coverage. Rates are proportions and intervals are 95% confidence intervals. The Method and limits page and home summary use these exported values directly; do not duplicate figures in interface copy.
 
 `districts.geojson` supplies map boundaries and is also fetched by the gap map. Keep exported JSON aggregated; never publish raw microdata here.

@@ -20,7 +20,9 @@ import type {
   SimulatorGrid,
   SimulatorRecord,
   SimulatorRecordA,
+  Equity,
 } from "@/types/data-contract";
+import EquitySection from "@/components/EquitySection";
 import { formatCi } from "@/lib/format";
 import {
   budgetPctToShare,
@@ -168,7 +170,7 @@ function ChartRuleADot(props: { cx?: number; cy?: number }) {
   );
 }
 
-export function SimulatePage({ data }: { data: SimulatorGrid }) {
+export default function SimulatePage({ data, equity }: { data: SimulatorGrid; equity: Equity }) {
   const { t } = useT();
 
   const defaultArea = useMemo(
@@ -321,6 +323,10 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
     return formatNumber(v, 0, nullText);
   };
 
+  if (data.records.length === 0) {
+    return <p role="status" className="text-sm text-slate-700 dark:text-slate-300">{t("simulate.no_data")}</p>;
+  }
+
   return (
     <div className="mx-auto w-full max-w-7xl flex-1 px-4 py-10 sm:px-6 sm:py-14 min-w-0">
       <h1 className="mb-6 max-w-4xl text-2xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-50 sm:text-3xl">
@@ -382,6 +388,7 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
             aria-valuemax={50}
             aria-valuenow={selectedRule === "A" ? undefined : displayBudget}
             aria-disabled={selectedRule === "A"}
+            aria-label={t("simulate.budget_label")}
           />
         </div>
 
@@ -541,6 +548,8 @@ export function SimulatePage({ data }: { data: SimulatorGrid }) {
           })}
         </ul>
       </section>
+
+      <EquitySection data={equity} />
 
       <section className="rounded-md border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900 min-w-0">
         <h2 className="mb-2 text-sm font-semibold text-slate-900 dark:text-slate-100">

@@ -31,7 +31,7 @@ template_t = re.compile(r'\bt\(\s*`([^`]*)`')
 # Variable domains correspond to the finite unions used by these UI controls.
 # The checker expands each dynamic call family, so a missing sibling key fails CI.
 dynamic_families = {
-    "nav.*": [f"nav.{x}" for x in ("home", "missed", "model", "simulate", "brief")],
+    "nav.*": [f"nav.{x}" for x in ("home", "missed", "model", "simulate", "priority", "brief")],
     "map.layer_*": [f"map.layer_{x}" for x in ("poverty", "exclusion", "leakage", "financial", "triple")],
     "map.takeaway_*": [f"map.takeaway_{x}" for x in ("poverty", "exclusion", "leakage", "financial", "triple")],
     "map.*": [f"map.{kind}_{x}" for kind in ("layer", "takeaway") for x in ("poverty", "exclusion", "leakage", "financial", "triple")],
@@ -41,7 +41,7 @@ dynamic_families = {
     "simulate.callout_gain_no_rule*": [f"simulate.callout_gain_no_rule{x}" for x in ("B", "C")],
     "brief.metric_*": [f"brief.metric_{x}" for x in ("poverty_rate", "exclusion_error", "leakage", "financial_access", "triple_gap")],
     "brief.meaning_*": [f"brief.meaning_{x}" for x in ("above", "below", "similar")],
-    "brief.*": [f"brief.{x}" for x in ("action_targeting", "action_access", "action_screening", "action_small_cell", "action_monitor", "action_outreach", "action_evaluate", "action_review", "action_review2", "action_review3")],
+    "brief.*": [f"brief.{x}" for x in ("action_targeting", "action_access", "action_screening_both", "action_screening_model", "action_screening_scorecard", "action_small_cell", "action_monitor", "action_outreach", "action_evaluate", "action_review", "action_review2", "action_review3")],
     "profiles.trait_*": [f"profiles.trait_{x}" for x in ("household_size", "electricity_pct", "improved_water_pct", "improved_toilet_pct", "head_primary_plus_pct", "distance_health_km", "owns_livestock_pct", "head_female_pct")],
 }
 # Also validate keys passed through the missed-page trait-to-insight lookup table.

@@ -81,9 +81,9 @@ function BarWithWhisker({ fill, x, y, width, height, payload, dataKey }: BarWith
   );
 }
 
-export function MissedPage({ data }: { data: Profiles }) {
+export default function MissedPage({ data }: { data: Profiles }) {
   const { t } = useT();
-  const defaultArea = data.by_area[0]?.area ?? "";
+  const defaultArea = data.areas[0] ?? "";
   const [selectedArea, setSelectedArea] = useState(defaultArea);
 
   const areaData = data.by_area.find((a) => a.area === selectedArea);
@@ -96,8 +96,12 @@ export function MissedPage({ data }: { data: Profiles }) {
     );
   }
 
+  if (data.traits_metadata.length === 0) {
+    return <p role="status" className="text-sm text-slate-700 dark:text-slate-300">{t("missed.no_data_page")}</p>;
+  }
+
   return (
-    <div className="flex flex-col gap-6 min-w-0">
+    <div className="flex w-full max-w-full flex-col gap-6 overflow-x-clip min-w-0">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between min-w-0">
         <label htmlFor="district-select" className="text-sm font-medium text-slate-700 dark:text-slate-300 whitespace-nowrap">
           {t("missed.district_label")}
@@ -106,11 +110,11 @@ export function MissedPage({ data }: { data: Profiles }) {
           id="district-select"
           value={selectedArea}
           onChange={(e) => setSelectedArea(e.target.value)}
-          className="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 min-w-0 max-w-full"
+        className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 min-w-0 max-w-full sm:w-auto"
         >
-          {data.by_area.map((area) => (
-            <option key={area.area} value={area.area}>
-              {area.area === "national" ? t("missed.district_national") : area.area}
+          {data.areas.map((area) => (
+            <option key={area} value={area}>
+              {area === "national" ? t("missed.district_national") : area}
             </option>
           ))}
         </select>
@@ -124,7 +128,7 @@ export function MissedPage({ data }: { data: Profiles }) {
           return (
             <TraitChart
               key={trait.key}
-              trait={trait}
+              trait={{ ...trait, label: t(`profiles.trait_${trait.key}`) }}
               comparison={comparison}
             />
           );
@@ -142,21 +146,42 @@ function TraitChart({
   comparison: TraitComparison;
 }) {
   const { t } = useT();
+  const isProportion = trait.type === "proportion" || trait.type === "percent";
+  const formatValue = (value: number | null) => value == null
+    ? "—"
+    : isProportion ? `${Math.round(value * 100)}%` : value.toFixed(1);
+  const formatInterval = (ci: [number, number] | null) => ci
+    ? `(${formatValue(ci[0])}–${formatValue(ci[1])})`
+    : "—";
+
+  if (
+    comparison.missed == null || comparison.covered == null ||
+    !comparison.missed_ci || !comparison.covered_ci
+  ) {
+    return (
+      <div className="rounded-md border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+        <h3 className="text-sm font-semibold">{t(`profiles.trait_${trait.key}`)}</h3>
+        <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">{t("missed.trait_missed")}: {formatValue(comparison.missed)} <span>{formatInterval(comparison.missed_ci)}</span></p>
+        <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{t("missed.trait_covered")}: {formatValue(comparison.covered)} <span>{formatInterval(comparison.covered_ci)}</span></p>
+      </div>
+    );
+  }
+
+  const missedCi = comparison.missed_ci;
+  const coveredCi = comparison.covered_ci;
 
   const chartData = [
     {
       name: t("missed.chart_aria", { trait: trait.label }),
       missed: comparison.missed,
       covered: comparison.covered,
-      missed_ci: comparison.missed_ci,
-      covered_ci: comparison.covered_ci,
+      missed_ci: missedCi,
+      covered_ci: coveredCi,
     },
   ];
 
-  const isProportion = trait.type === "proportion";
-
   // Calculate x-axis domain to include the largest upper bound
-  const maxUpper = Math.max(comparison.missed_ci[1], comparison.covered_ci[1]);
+  const maxUpper = Math.max(missedCi[1], coveredCi[1]);
   const xDomain = [0, maxUpper * 1.05]; // Add 5% padding
 
   const valueFormatter = (value: number) => {
@@ -166,7 +191,7 @@ function TraitChart({
     return value.toFixed(1);
   };
 
-  const ciOverlap = !(comparison.missed_ci[1] < comparison.covered_ci[0] || comparison.covered_ci[1] < comparison.missed_ci[0]);
+  const ciOverlap = !(missedCi[1] < coveredCi[0] || coveredCi[1] < missedCi[0]);
 
   const insightKeyMap: Record<string, { higher_missed: string; higher_covered: string }> = {
     household_size: {
@@ -209,12 +234,14 @@ function TraitChart({
   } else if (comparison.missed > comparison.covered) {
     const keys = insightKeyMap[trait.key] || { higher_missed: "missed.higher_missed" };
     insight = t(keys.higher_missed, {
+      trait: trait.label.toLocaleLowerCase(),
       missed: valueFormatter(comparison.missed),
       covered: valueFormatter(comparison.covered),
     });
   } else {
     const keys = insightKeyMap[trait.key] || { higher_covered: "missed.higher_covered" };
     insight = t(keys.higher_covered, {
+      trait: trait.label.toLocaleLowerCase(),
       covered: valueFormatter(comparison.covered),
       missed: valueFormatter(comparison.missed),
     });
@@ -223,7 +250,7 @@ function TraitChart({
   return (
     <div className="rounded-md border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900 min-w-0">
       <h3 className="mb-3 text-sm font-semibold text-slate-900 dark:text-slate-100 truncate">{trait.label}</h3>
-      <div className="h-[200px] w-full min-w-0">
+      <div className="h-[200px] w-full min-w-0" role="img" aria-label={t("missed.chart_aria", { trait: trait.label })}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={chartData}
@@ -246,7 +273,7 @@ function TraitChart({
             />
             <Tooltip
               formatter={(value: number, name: string) => {
-                const ci = name === "missed" ? comparison.missed_ci : comparison.covered_ci;
+                const ci = name === "missed" ? missedCi : coveredCi;
                 const ciLower = isProportion ? Math.round(ci[0] * 100) : ci[0].toFixed(1);
                 const ciUpper = isProportion ? Math.round(ci[1] * 100) : ci[1].toFixed(1);
                 return [

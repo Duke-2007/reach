@@ -1,10 +1,14 @@
 import type {
   AllDataFiles,
   DistrictGaps,
+  BriefTargeting,
   ModelMetrics,
   PlaceholderStatus,
   Profiles,
   SimulatorGrid,
+  PriorityTable,
+  Equity,
+  MethodFacts,
 } from "@/types/data-contract";
 
 const IS_SERVER = typeof window === "undefined";
@@ -51,23 +55,28 @@ export async function loadSimulatorGrid(): Promise<SimulatorGrid> {
   return loadJson<SimulatorGrid>("simulator_grid");
 }
 
+export async function loadPriorityTable(): Promise<PriorityTable> {
+  return loadJson<PriorityTable>("priority_table");
+}
+
+export async function loadEquity(): Promise<Equity> {
+  return loadJson<Equity>("equity");
+}
+
+export async function loadMethodFacts(): Promise<MethodFacts> {
+  return loadJson<MethodFacts>("method_facts");
+}
+
+export async function loadBriefTargeting(): Promise<BriefTargeting> {
+  return loadJson<BriefTargeting>("brief_targeting");
+}
+
 export async function loadProfiles(): Promise<Profiles> {
   return loadJson<Profiles>("profiles");
 }
 
 export async function loadModelMetrics(): Promise<ModelMetrics> {
   return loadJson<ModelMetrics>("model_metrics");
-}
-
-export async function loadAllData(): Promise<AllDataFiles> {
-  const [district_gaps, simulator_grid, profiles, model_metrics] =
-    await Promise.all([
-      loadDistrictGaps(),
-      loadSimulatorGrid(),
-      loadProfiles(),
-      loadModelMetrics(),
-    ]);
-  return { district_gaps, simulator_grid, profiles, model_metrics };
 }
 
 export function derivePlaceholderStatus(

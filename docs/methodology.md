@@ -6,10 +6,13 @@ The unit is the **household**. The base table is the EICV7 poverty file (15,054 
 ## 2. Survey design and confidence intervals
 Strata come from the household file (`strata_id`, complete there and checked to be constant within a household); the poverty file has no strata column. The sample has 60 strata and 1,674 clusters.
 
-- Intervals use **Taylor linearisation** for a stratified, clustered sample (clusters resampled with replacement within strata, no finite-population correction).
+- **District and national estimates** (gap tables, financial inclusion, missed-versus-covered profiles) use **Taylor linearisation** for a stratified, clustered sample, treating clusters as drawn with replacement within strata and ignoring the finite-population correction.
 - For sub-populations (a district, "poor households", "supported households") the estimate is a ratio over the whole sample with zeros outside the domain; the variance is computed over the whole sample, not on a filtered table.
-- Intervals for proportions use the logit scale so they stay inside [0, 1].
-- Model and simulator intervals use a **design-based bootstrap**: clusters are resampled within strata (200 replicates, seed 42) and the survey weights are multiplied by the draw counts.
+- Intervals for proportions are computed on the logit scale so they stay inside [0, 1].
+- **Model, simulator and equity intervals** use a **design-based bootstrap**: clusters are resampled with replacement within strata (200 replicates, seed 42) and the survey weights are multiplied by the draw counts.
+- Counts of sampled households (for example 15,054 households, or about 480 per district) are **unweighted**. All rates, shares and weighted counts are survey-weighted.
+
+---
 
 ## 3. The four-box table
 For each area, support outcome and poverty definition (poor, extremely poor):
@@ -56,6 +59,8 @@ Budget is the share of all households in the area that can be supported (1% to 5
 - **Rule C, scorecard:** the six most important features; numeric features are cut into quintile bands; points are the rounded logistic coefficients (largest = 10); a household's score is the sum of its points. Scores are also out-of-fold (fitted within each fold).
 
 For each rule and budget the simulator reports the share of poor and extremely poor households reached, exclusion error, leakage and cost per poor household reached (cost of supporting one household = 1 unit). Rules B and C are compared with A at A's actual coverage, with a bootstrap interval for the difference.
+6b. Equity check
+`pipeline/03c_equity.py` asks whether each rule reaches poor households equally across groups: urban and rural, female- and male-headed households, and the five provinces. The national budget is set to the programmes' actual coverage (the weighted share of all households with any support). Rule A is the observed support; rules B and C pick households nationwide by out-of-fold risk or scorecard points, taking the last household fractionally so the budget is met exactly. For every group the reach is the weighted share of the group's poor households that is selected. Intervals come from the same design-based bootstrap (clusters resampled within strata, 200 replicates, seed 42), and the gain of B or C over A is computed inside each replicate and expressed per 1,000 poor households of the group. Groups with fewer than 30 poor households are flagged.
 
 ## 7. Aggregation and publication
 Only aggregated results are exported: district and national tables, model diagnostics, simulator records and the scorecard. A schema check and a scan for household-level keys run before export.

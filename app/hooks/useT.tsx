@@ -47,6 +47,16 @@ function resolveByPath(obj: unknown, path: string): string | undefined {
   return typeof cur === "string" ? cur : undefined;
 }
 
+export function resolveTranslation(lang: Lang, key: string): string {
+  const fallback = resolveByPath(DICTS[DEFAULT_LANG], key) ?? `[${key}]`;
+  const translated = resolveByPath(DICTS[lang], key) ?? fallback;
+  const selected =
+    lang === "rw" && translated.includes("TODO_TRANSLATE")
+      ? fallback
+      : translated;
+  return selected.replaceAll("TODO_TRANSLATE", "");
+}
+
 function interpolate(
   template: string,
   values?: Record<string, string | number>,
@@ -103,11 +113,10 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
 
   const t = useCallback<I18nCtx["t"]>(
     (key, values) => {
-      const fallback = resolveByPath(DICTS[DEFAULT_LANG], key) ?? `[${key}]`;
-      const str = resolveByPath(dict, key) ?? fallback;
+      const str = resolveTranslation(lang, key);
       return interpolate(str, values);
     },
-    [dict],
+    [lang],
   );
 
   const value = useMemo<I18nCtx>(

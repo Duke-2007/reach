@@ -2,6 +2,40 @@ export type AreaKey = "national" | "Gasabo" | "Huye" | "Musanze";
 
 export type RuleCode = "A" | "B" | "C";
 
+export interface PriorityDistrictRow {
+  district: string; province: string; poor_households: number; poor_missed: number;
+  poor_missed_ci: Ci; exclusion_error: number; exclusion_error_ci: Ci;
+  poverty_rate: number; poverty_ci: Ci; triple_gap: number; triple_gap_ci: Ci;
+  small_cell: boolean; gain_b_per_1000: number; gain_b_ci: Ci; gain_b_clear: boolean;
+  gain_c_per_1000: number; gain_c_ci: Ci; gain_c_clear: boolean; rank_missed?: number;
+}
+export interface PriorityTable { placeholder: boolean; note: string; national: PriorityDistrictRow; districts: PriorityDistrictRow[]; }
+export interface EquityGroup {
+  dimension: string; group: string; share_of_poor_households: number; reach_A: number; reach_A_ci: Ci;
+  reach_B: number; reach_B_ci: Ci; reach_C: number; reach_C_ci: Ci;
+  gain_B_per_1000: number; gain_B_ci: Ci; gain_B_clear: boolean; small_cell: boolean;
+}
+export interface Equity { placeholder: boolean; note: string; budget_share: number; groups: EquityGroup[]; }
+
+export interface MethodSensitivity {
+  feature_set: string;
+  n_features: number;
+  auc: number | null;
+  auc_ci: Ci | null;
+  poor_reached_at_observed_coverage: number | null;
+  observed_coverage: number | null;
+}
+export interface MethodFacts {
+  placeholder: boolean;
+  note: string;
+  data: { survey: string; n_households: number; n_districts: number; n_strata: number; n_clusters: number };
+  poverty: { households_poor: number | null; households_poor_ci: Ci | null; persons_poor: number | null; persons_extreme_poor: number | null };
+  support: { households_reached: number | null; by_programme: Record<string, number | null> };
+  headline: { coverage_poor: number | null; coverage_poor_ci: Ci | null; exclusion_error: number | null; exclusion_error_ci: Ci | null; leakage: number | null; leakage_ci: Ci | null; financially_excluded_all: number | null; financially_excluded_poor: number | null; financially_excluded_poor_ci: Ci | null };
+  model: { best_model: string; auc: number | null; auc_ci: Ci | null; n_features: number; sensitivity: MethodSensitivity[] | null };
+  rules_at_observed_coverage: { budget_share: number | null; observed_poor_reached: number | null; B: { poor_reached: number | null; poor_reached_ci: Ci | null; gain_per_1000: number | null; gain_ci: Ci | null }; C: { poor_reached: number | null; poor_reached_ci: Ci | null; gain_per_1000: number | null; gain_ci: Ci | null }; districts_where_B_clearly_better: number; districts_where_C_clearly_better: number };
+}
+
 export type Ci<T = number> = [T, T];
 
 export interface PlaceholderMixin {
@@ -14,6 +48,7 @@ export interface SurveyDesign {
   weight_column: string;
   cluster_column: string;
   strata_column_used: boolean;
+  strata_column?: string;
   note: string;
 }
 
@@ -122,8 +157,12 @@ export interface SimulatorGrid extends PlaceholderMixin {
   scorecard: Scorecard;
 }
 
+export interface BriefTargeting extends PlaceholderMixin {
+  at_observed_coverage: AtObservedCoverage[];
+}
+
 // ---------- profiles.json ----------
-export type TraitType = "numeric" | "proportion";
+export type TraitType = "numeric" | "proportion" | "percent";
 
 export interface TraitMeta {
   key: string;
@@ -132,10 +171,10 @@ export interface TraitMeta {
 }
 
 export interface TraitComparison {
-  missed: number;
-  missed_ci: Ci;
-  covered: number;
-  covered_ci: Ci;
+  missed: number | null;
+  missed_ci: Ci | null;
+  covered: number | null;
+  covered_ci: Ci | null;
 }
 
 export interface ProfileByArea {
@@ -149,7 +188,7 @@ export interface ProfileByArea {
 
 export interface Profiles extends PlaceholderMixin {
   comparison: string;
-  areas: AreaKey[];
+  areas: string[];
   traits_metadata: TraitMeta[];
   by_area: ProfileByArea[];
 }
@@ -214,6 +253,7 @@ export type FeatureType = "binary" | "categorical" | "ordinal" | "numeric";
 export interface FeatureImportance {
   rank: number;
   feature: string;
+  label: string;
   type: FeatureType;
   importance: number;
   direction: string;
@@ -227,6 +267,23 @@ export interface ModelMetrics extends PlaceholderMixin {
   decision_metrics_by_budget_pct: DecisionPoint[];
   calibration: Calibration;
   feature_importance_top10: FeatureImportance[];
+  pooled_auc_roc: number;
+  pooled_auc_roc_ci: Ci;
+  comparison_at_observed_coverage: {
+    budget_share: number;
+    observed: TargetingComparisonPoint & { coverage: number };
+    model: TargetingComparisonPoint & {
+      extreme_poor_reached: number;
+      poor_reached_ci: Ci;
+    };
+    random: TargetingComparisonPoint;
+  };
+}
+
+export interface TargetingComparisonPoint {
+  poor_reached: number;
+  exclusion_error: number;
+  leakage: number;
 }
 
 // ---------- All bundles ----------

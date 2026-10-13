@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Local headless-browser profile data is generated vendor code, not app source.
+    ".edge-layout-profile/**",
   ]),
 ]);
 

@@ -7,12 +7,10 @@ import { PlaceholderBanner } from "@/components/PlaceholderBanner";
 import { HeaderNav } from "@/components/HeaderNav";
 import { AppFooter } from "@/components/AppFooter";
 import { I18nProvider } from "@/hooks/useT";
+import { SkipLink } from "@/components/SkipLink";
 import {
   derivePlaceholderStatus,
   loadDistrictGaps,
-  loadModelMetrics,
-  loadProfiles,
-  loadSimulatorGrid,
 } from "@/lib/data-loader";
 
 const geistSans = Geist({
@@ -41,21 +39,10 @@ async function PlaceholderDataBanner() {
     | undefined;
 
   try {
-    const [district_gaps, simulator_grid, profiles, model_metrics] =
-      await Promise.all([
-        loadDistrictGaps(),
-        loadSimulatorGrid(),
-        loadProfiles(),
-        loadModelMetrics(),
-      ]);
+    const district_gaps = await loadDistrictGaps();
     status = {
       kind: "ok",
-      data: derivePlaceholderStatus({
-        district_gaps,
-        simulator_grid,
-        profiles,
-        model_metrics,
-      }),
+      data: derivePlaceholderStatus({ district_gaps }),
     };
   } catch (err) {
     status = {
@@ -93,9 +80,10 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground min-w-0">
         <I18nProvider>
+          <SkipLink />
           <PlaceholderDataBanner />
           <HeaderNav />
-          <div className="flex min-h-0 flex-1 flex-col min-w-0">{children}</div>
+          <div id="main-content" tabIndex={-1} className="flex min-h-0 flex-1 flex-col min-w-0">{children}</div>
           <AppFooter />
         </I18nProvider>
       </body>

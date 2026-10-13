@@ -7,8 +7,7 @@ import { type Lang, useT } from "@/hooks/useT";
 
 type Route = {
   href: string;
-  key: "home" | "missed" | "model" | "simulate" | "brief";
-  dynamic?: boolean;
+  key: "home" | "missed" | "model" | "simulate" | "priority" | "brief";
 };
 
 const ROUTES: Route[] = [
@@ -16,7 +15,8 @@ const ROUTES: Route[] = [
   { href: "/missed", key: "missed" },
   { href: "/model", key: "model" },
   { href: "/simulate", key: "simulate" },
-  { href: "/brief/national", key: "brief", dynamic: true },
+  { href: "/priority", key: "priority" },
+  { href: "/brief", key: "brief" },
 ];
 
 function isActive(key: Route["key"], pathname: string | null): boolean {
@@ -35,7 +35,7 @@ function LangSwitcher() {
   return (
     <div
       role="group"
-      aria-label={t("lang.label")}
+      aria-label={t("lang.switcher")}
       className="inline-flex overflow-hidden rounded-lg border border-slate-300 text-sm font-medium text-slate-700 dark:border-slate-600 dark:text-slate-200"
     >
       {options.map((opt) => {
@@ -61,7 +61,7 @@ function LangSwitcher() {
   );
 }
 
-function HeaderNavInner({ district }: { district?: string }) {
+function HeaderNavInner() {
   const pathname = usePathname();
   const { t } = useT();
   const [open, setOpen] = useState(false);
@@ -88,15 +88,14 @@ function HeaderNavInner({ district }: { district?: string }) {
             <path d="m7 14 4-4 4 3 5-7" />
           </svg>
           <span className="truncate">
-            Reach <span className="hidden font-normal opacity-60 sm:inline">— Rwanda targeting</span>
+            Reach <span className="hidden font-normal opacity-60 lg:inline">— Rwanda targeting</span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex min-w-0" aria-label="Primary">
+        <nav className="hidden items-center gap-1 2xl:flex min-w-0" aria-label="Primary">
           {ROUTES.map((r) => {
             const active = isActive(r.key, pathname);
-            const href =
-              r.key === "brief" && district ? `/brief/${district.toLowerCase()}` : r.href;
+            const href = r.href;
             return (
               <Link
                 key={r.key}
@@ -123,7 +122,7 @@ function HeaderNavInner({ district }: { district?: string }) {
           aria-controls="mobile-nav"
           aria-label={open ? t("nav.menu_close") : t("nav.menu_open")}
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800 md:hidden"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800 2xl:hidden"
         >
           <svg
             viewBox="0 0 24 24"
@@ -154,13 +153,12 @@ function HeaderNavInner({ district }: { district?: string }) {
       {open ? (
         <div
           id="mobile-nav"
-          className="border-t border-slate-200 bg-white px-4 pb-4 pt-2 dark:border-slate-800 dark:bg-slate-950 md:hidden sm:px-6 min-w-0"
+          className="border-t border-slate-200 bg-white px-4 pb-4 pt-2 dark:border-slate-800 dark:bg-slate-950 2xl:hidden sm:px-6 min-w-0"
         >
           <nav aria-label="Primary (mobile)" className="flex flex-col gap-1 min-w-0">
             {ROUTES.map((r) => {
               const active = isActive(r.key, pathname);
-              const href =
-                r.key === "brief" && district ? `/brief/${district.toLowerCase()}` : r.href;
+              const href = r.href;
               return (
                 <Link
                   key={r.key}
@@ -190,6 +188,6 @@ function HeaderNavInner({ district }: { district?: string }) {
   );
 }
 
-export function HeaderNav({ district }: { district?: string }) {
-  return <HeaderNavInner district={district} />;
+export function HeaderNav() {
+  return <HeaderNavInner />;
 }

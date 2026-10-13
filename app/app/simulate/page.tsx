@@ -1,7 +1,7 @@
-import { SimulatePage } from "@/components/SimulatePage";
-import { loadSimulatorGrid } from "@/lib/data-loader";
+import { LazySimulatePage } from "@/components/LazyPages";
+import { loadEquity, loadSimulatorGrid } from "@/lib/data-loader";
 
 export default async function SimulateRoute() {
-  const data = await loadSimulatorGrid();
-  return <SimulatePage data={data} />;
+  const [data, equity] = await Promise.all([loadSimulatorGrid(), loadEquity()]);
+  return <LazySimulatePage data={data} equity={equity} />;
 }

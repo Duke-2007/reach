@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import maplibregl, { type GeoJSONSource } from "maplibre-gl";
+import Link from "next/link";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useT } from "@/hooks/useT";
 import type { DistrictGaps, DistrictRow } from "@/types/data-contract";
@@ -34,13 +35,14 @@ interface DistrictWithData extends DistrictRow {
   shapeName: string;
 }
 
-export function GapMap({ data }: { data: DistrictGaps }) {
+export default function GapMap({ data }: { data: DistrictGaps }) {
   const { t } = useT();
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const [selectedLayer, setSelectedLayer] = useState<LayerKey>("poverty_rate");
   const [selectedDistrict, setSelectedDistrict] = useState<DistrictWithData | null>(null);
   const [geoJson, setGeoJson] = useState<GeoJson | null>(null);
+  const [mapStatus, setMapStatus] = useState<"loading" | "ready" | "empty" | "error">("loading");
   const [districtsWithData, setDistrictsWithData] = useState<DistrictWithData[]>([]);
   const [mismatch, setMismatch] = useState<string[]>([]);
 
@@ -48,7 +50,12 @@ export function GapMap({ data }: { data: DistrictGaps }) {
     async function loadGeoJson() {
       try {
         const response = await fetch("/data/districts.geojson");
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const geo: GeoJson = await response.json();
+        if (!geo.features.length || !data.districts.length) {
+          setMapStatus("empty");
+          return;
+        }
         setGeoJson(geo);
 
         const dataMap = new Map(
@@ -87,8 +94,10 @@ export function GapMap({ data }: { data: DistrictGaps }) {
         });
 
         setDistrictsWithData(matched);
+        if (!matched.length) setMapStatus("empty");
       } catch (err) {
         console.error("Failed to load GeoJSON:", err);
+        setMapStatus("error");
       }
     }
 
@@ -119,6 +128,7 @@ export function GapMap({ data }: { data: DistrictGaps }) {
 
     map.on("load", () => {
       if (!geoJson) return;
+      setMapStatus("ready");
 
       const dataValueMap = new Map(
         districtsWithData.map((d) => [d.shapeName, d[selectedLayer]]),
@@ -201,6 +211,7 @@ export function GapMap({ data }: { data: DistrictGaps }) {
         map.getCanvas().style.cursor = "";
       });
     });
+    map.on("error", () => setMapStatus("error"));
 
     return () => {
       if (mapRef.current) {
@@ -267,8 +278,12 @@ export function GapMap({ data }: { data: DistrictGaps }) {
     }
   };
 
-  const topExclusion = [...districtsWithData]
-    .sort((a, b) => b.exclusion_error - a.exclusion_error)
+  if (data.districts.length === 0) {
+    return <p role="status" className="text-sm text-slate-700 dark:text-slate-300">{t("map.no_data")}</p>;
+  }
+
+  const topRanked = [...districtsWithData]
+    .sort((a, b) => b[selectedLayer] - a[selectedLayer])
     .slice(0, 10);
 
   const national = data.national_averages[selectedLayer] * 100;
@@ -297,6 +312,7 @@ export function GapMap({ data }: { data: DistrictGaps }) {
                 type="button"
                 onClick={() => handleLayerChange(layer)}
                 aria-pressed={selectedLayer === layer}
+                aria-label={t(`map.layer_${layer.replace("_rate", "").replace("_error", "").replace("_financial_access", "financial").replace("_gap", "")}`)}
                 className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
                   selectedLayer === layer
                     ? "bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900"
@@ -308,7 +324,12 @@ export function GapMap({ data }: { data: DistrictGaps }) {
             ))}
           </div>
 
-          <div ref={mapContainer} className="h-[400px] w-full rounded-md border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-900" />
+          <div className="relative">
+            <div ref={mapContainer} role="img" aria-label={t("map.map_aria")} className="h-[400px] w-full rounded-md border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-900" />
+            {mapStatus === "loading" ? <p role="status" className="absolute inset-0 grid place-items-center rounded-md bg-slate-100 text-sm text-slate-700 dark:bg-slate-900 dark:text-slate-300">{t("map.loading")}</p> : null}
+            {mapStatus === "empty" ? <p role="status" className="absolute inset-0 grid place-items-center rounded-md bg-slate-100 p-4 text-center text-sm text-slate-700 dark:bg-slate-900 dark:text-slate-300">{t("map.no_data")}</p> : null}
+            {mapStatus === "error" ? <p role="alert" className="absolute inset-0 grid place-items-center rounded-md bg-slate-100 p-4 text-center text-sm text-slate-700 dark:bg-slate-900 dark:text-slate-300">{t("map.geojson_error")}</p> : null}
+          </div>
 
           <div className="mt-2 flex items-center justify-between text-sm text-slate-600 dark:text-slate-400">
             <span>{t("map.legend_low")}</span>
@@ -320,26 +341,31 @@ export function GapMap({ data }: { data: DistrictGaps }) {
         <div className="w-full lg:w-80">
           <h3 className="mb-3 text-sm font-semibold text-slate-900 dark:text-slate-100">{t("map.ranking_title")}</h3>
           <ul className="space-y-1">
-            {topExclusion.map((district, idx) => (
-              <li key={district.shapeName}>
-                <button
-                  type="button"
-                  onClick={() => handleRankingClick(district)}
-                  className={`w-full rounded-md px-3 py-2 text-left text-sm transition-colors ${
-                    selectedDistrict?.shapeName === district.shapeName
-                      ? "bg-slate-200 dark:bg-slate-800"
-                      : "hover:bg-slate-100 dark:hover:bg-slate-800/50"
-                  }`}
-                >
-                  <span className="font-medium text-slate-900 dark:text-slate-100">
-                    {idx + 1}. {district.shapeName}
-                  </span>
-                  <span className="ml-2 text-slate-600 dark:text-slate-400">
-                    {formatPercent(district.exclusion_error)}
-                  </span>
-                </button>
-              </li>
-            ))}
+            {topRanked.map((district, idx) => {
+              const indicatorLabel = t(`map.layer_${selectedLayer.replace("_rate", "").replace("_error", "").replace("_financial_access", "financial").replace("_gap", "")}`);
+              const indicatorValue = formatPercent(district[selectedLayer]);
+              return (
+                <li key={district.shapeName}>
+                  <button
+                    type="button"
+                    onClick={() => handleRankingClick(district)}
+                    aria-label={t("map.rank_entry", { rank: idx + 1, district: district.shapeName, indicator: indicatorLabel, value: indicatorValue })}
+                    className={`w-full rounded-md px-3 py-2 text-left text-sm transition-colors ${
+                      selectedDistrict?.shapeName === district.shapeName
+                        ? "bg-slate-200 dark:bg-slate-800"
+                        : "hover:bg-slate-100 dark:hover:bg-slate-800/50"
+                    }`}
+                  >
+                    <span className="font-medium text-slate-900 dark:text-slate-100">
+                      {idx + 1}. {district.shapeName}
+                    </span>
+                    <span className="ml-2 text-slate-600 dark:text-slate-400">
+                      {indicatorValue}
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
@@ -354,6 +380,9 @@ export function GapMap({ data }: { data: DistrictGaps }) {
               <p className="text-sm text-slate-600 dark:text-slate-400">
                 {t("map.hover_households")}: {formatCount(selectedDistrict.n_households)}
               </p>
+              <Link href={`/brief/${encodeURIComponent(selectedDistrict.district)}`} className="mt-1 inline-block text-sm font-medium text-indigo-700 underline dark:text-indigo-300">
+                {t("brief.open_brief")}
+              </Link>
             </div>
             {selectedDistrict.small_cell && (
               <span className="rounded-full border border-amber-300 bg-amber-50 px-2 py-1 text-xs font-medium text-amber-900 dark:border-amber-700 dark:bg-amber-950/50 dark:text-amber-100">
