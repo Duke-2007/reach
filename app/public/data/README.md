@@ -8,6 +8,10 @@ Top level: `placeholder`, `note`, `survey_design`, `n_districts`, `districts`, `
 
 `survey_design` contains `weight_column`, `cluster_column`, `strata_column_used`, optional `strata_column`, and `note`. Each district row contains its name, poverty and extreme-poverty rates with 95% CIs, poor-household coverage, exclusion error and CI, leakage and CI, financial access and CI, triple-gap share and CI, unweighted `n_households`, and `small_cell`. `national_averages` gives the seven corresponding rates without CIs. The current file contains 30 districts. Match map features by district name, case-insensitively.
 
+## `district_routes.json`
+
+Top level: `origin`, `attribution`, and `routes`. `origin` gives the Kigali city-centre name and coordinates. `routes` is keyed by district name and each entry contains a district `centre` as `[longitude, latitude]`, `straight_km`, optional `road_km`, optional `duration_min`, and an optional road `route` as a list of `[longitude, latitude]` points. Nullable road fields indicate that route data is unavailable; the interface still shows the straight-line distance. Road distance and duration are approximate and are displayed with the file's attribution. This static export is read locally by the map; the app does not call a routing or geocoding service.
+
 ## `simulator_grid.json`
 
 Top level: `placeholder`, `note`, `areas`, `rules`, `rule_A_note`, `share_scale_note`, `n_records`, `records`, `at_observed_coverage`, and `scorecard`. `areas` currently includes national and all 30 districts. Rule A rows represent observed targeting and carry `actual_coverage`; rules B and C contain results by budget share. `poor_reached`, its CI, `exclusion_error`, and `leakage` are shares. `at_observed_coverage` compares B/C against observed targeting for each area and includes `gain_per_1000_poor`, its CI, and `clear_gain`. Scorecard points include feature labels, bands, scores, and descriptions. The current export has 3,131 records.
