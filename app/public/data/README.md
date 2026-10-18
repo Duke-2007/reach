@@ -41,3 +41,5 @@ Top level: `placeholder`, `note`, `data`, `poverty`, `support`, `headline`, `mod
 Top level: `placeholder`, `note`, `data`, `poverty`, `support`, `headline`, `model`, and `rules_at_observed_coverage`. It aggregates the survey sample and design counts; household and person poverty; programme coverage; national exclusion, leakage and financial-exclusion estimates; model AUC and sensitivity results; and observed-versus-rule B/C reach and gains at actual programme coverage. Rates are proportions and intervals are 95% confidence intervals. The Method and limits page and home summary use these exported values directly; do not duplicate figures in interface copy.
 
 `districts.geojson` supplies map boundaries and is also fetched by the gap map. Keep exported JSON aggregated; never publish raw microdata here.
+
+`rwanda_mask.geojson` contains a `mask` feature that covers the world with Rwanda cut out, an `outline` feature for Rwanda's boundary, and `properties.max_bounds` with padded camera limits in `[[west, south], [east, north]]` order. The Gap map uses it to keep the view within Rwanda and hide the road basemap outside the country.
