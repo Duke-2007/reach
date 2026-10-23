@@ -30,8 +30,8 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
-ERROR_LOG.md 
-CHANGELOG.md 
-app/AGENTS.md 
-app/CLAUDE.md 
-app/.edge-layout-profile/ 
+ERROR_LOG.md
+CHANGELOG.md
+app/AGENTS.md
+app/CLAUDE.md
+app/.edge-layout-profile/
