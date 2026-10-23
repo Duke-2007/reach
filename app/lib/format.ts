@@ -82,3 +82,30 @@ export function formatRwf(
   }
   return `${Math.round(value).toLocaleString("en-RW")} RWF / household`;
 }
+
+function formatKilometres(value: number | null | undefined): string {
+  if (value == null || !Number.isFinite(value)) return "—";
+  return Number(value.toFixed(1)).toFixed(1);
+}
+
+export function formatDuration(value: number | null | undefined): string {
+  if (value == null || !Number.isFinite(value)) return "—";
+  const totalMinutes = Math.max(0, Math.round(value));
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+  if (hours === 0) return `${minutes} min`;
+  if (minutes === 0) return `${hours} h`;
+  return `${hours} h ${minutes} min`;
+}
+
+export function formatRouteDistances(
+  roadKm: number | null | undefined,
+  durationMin: number | null | undefined,
+  straightKm: number | null | undefined,
+): { roadKm: string; duration: string; straightKm: string } {
+  return {
+    roadKm: formatKilometres(roadKm),
+    duration: formatDuration(durationMin),
+    straightKm: formatKilometres(straightKm),
+  };
+}

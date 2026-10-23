@@ -89,6 +89,37 @@ export interface DistrictGaps extends PlaceholderMixin {
   min_cell_size_flag: number;
 }
 
+// ---------- district_routes.json ----------
+export interface DistrictRoute {
+  centre: [number, number];
+  straight_km: number;
+  road_km: number | null;
+  duration_min: number | null;
+  route: [number, number][] | null;
+}
+
+export interface DistrictRoutes {
+  origin: { name: string; lon: number; lat: number };
+  attribution: string;
+  routes: Record<string, DistrictRoute>;
+}
+
+export type MapBounds = [[number, number], [number, number]];
+export type GeoJsonBbox = [west: number, south: number, east: number, north: number];
+
+export interface RwandaMaskFeature {
+  type: "Feature";
+  properties: { kind: "mask" | "outline"; [key: string]: unknown };
+  geometry: { type: string; coordinates: unknown };
+}
+
+export interface RwandaMaskData {
+  type: "FeatureCollection";
+  bbox: GeoJsonBbox;
+  properties: { max_bounds: MapBounds; [key: string]: unknown };
+  features: RwandaMaskFeature[];
+}
+
 // ---------- simulator_grid.json ----------
 export interface RuleMeta {
   code: RuleCode;

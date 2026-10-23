@@ -17,3 +17,5 @@ The data is used for statistical and scientific purposes only, for reporting agg
 
 ## Published figures used for checking
 National poverty 27.4% and extreme poverty 5.4% (persons), and poverty of 39.8% in 2017, from NISR EICV7 reports. The pipeline reproduces 27.4% and 5.4% from the microdata.
+
+Routes: OSRM (FOSSGIS demo server), precomputed once; road data (c) OpenStreetMap contributors, ODbL. Optional road basemap: OpenFreeMap, OpenMapTiles, OpenStreetMap contributors.
