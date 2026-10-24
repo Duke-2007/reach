@@ -1,142 +1,131 @@
 # Reach
 
-**A targeting audit and simulator for social protection and financial inclusion in Rwanda.**
+Reach audits social protection targeting and compares poverty-based screening rules in Rwanda.
+
 Entry for the NISR 2026 Big Data Hackathon, Track 2 (Financial Inclusion and Poverty Reduction).
 
-- Repository: [TODO: public GitHub link]
-- Live app: [TODO: Vercel link]
-- Team: [TODO: names]
+## Links
 
-## What it is
+- Live app: [reach-rho-two.vercel.app](https://reach-rho-two.vercel.app/)
+- Repository: [Duke-2007/reach](https://github.com/Duke-2007/reach)
+- Team: Hirwa Raenne Duke and Dukeze Maria Clenie
 
-Rwanda has cut poverty sharply (39.8% in 2017 to 27.4% in 2024, published NISR figures), so the households that are still poor are harder to find, and targeting mistakes matter more. Two mistakes define the problem:
+## The problem
 
-- **Exclusion error:** a poor household gets no support.
-- **Leakage:** a household that is not poor gets support.
+Some poor households receive no support, while some supported households are not poor. Reach measures these targeting gaps using Rwanda's EICV7 household survey. It also compares alternative screening rules at the same support budget.
 
-Reach measures both, district by district, from NISR's EICV7 household survey. It then lets a planner test better targeting rules under a fixed budget and see the result with honest uncertainty ranges.
+## Decision and users
 
-**Who uses it:** district planners and social-protection programme managers.
-**The decision it supports:** how to screen and prioritise households when only a fixed share of households can be supported.
+District planners and social-protection programme managers can use Reach to examine targeting gaps and compare how poverty-ranked rules might change who is reached under a fixed budget. The results support discussion and policy design; they do not identify households.
 
-## What the user sees
+## Pages
 
-| Screen | Question it answers |
+| Route | Question it answers |
 |---|---|
-| Gap map | Where is the gap? Poverty, households missed, leakage, financial access and the "triple gap" for each of the 30 districts |
-| Missed vs covered | Who is missed? Traits of poor households with and without support |
-| Model | How well can poverty be predicted from easy-to-observe traits, and how is it validated? |
-| Simulate rules | At a given budget, how many poor households does each rule reach? |
-| District brief | A printable one-page summary for a district with three recommended actions |
-| Priority districts | Which districts have the most poor households with no support? A sortable table with intervals |
-| Method and limits | What data and methods were used, how to read the intervals, and what the numbers cannot tell you |
-
-
-The app is mobile first, available in English and Kinyarwanda, and reads small aggregated files (no server).
-
-## Main results (Rwanda, "any support", households, 95% intervals)
-
-
-### Equity check
-
-At the programmes' own coverage (10.1% of households) each rule picks households nationwide. The table shows the share of each group's **poor** households that is reached (95% intervals in `docs/` and in the app).
-
-| Group | Share of poor households | Observed | Model (B) | Scorecard (C) | Gain of B per 1,000 poor households (95% CI) |
-|---|---|---|---|---|---|
-| Urban | 17% | 9.7% | 25.4% | 18.6% | +157 (+112 to +203) |
-| Rural | 83% | 15.8% | 28.6% | 26.7% | +128 (+111 to +146) |
-| Female-headed | 26% | 20.7% | 26.0% | 21.7% | +54 (+17 to +89) |
-| Male-headed | 74% | 12.6% | 28.8% | 26.6% | +161 (+140 to +179) |
-| Eastern Province | 26% | 8.1% | 27.7% | 25.4% | +196 (+166 to +232) |
-| Kigali City | 5% | 5.3% | 18.9% | 16.7% | +136 (+66 to +215) |
-| Northern Province | 11% | 18.8% | 22.5% | 25.6% | +37 (-8 to +99), not clear |
-| Southern Province | 30% | 16.5% | 29.9% | 26.6% | +134 (+97 to +162) |
-| Western Province | 28% | 19.0% | 30.1% | 25.0% | +111 (+76 to +143) |
-
-Current coverage is uneven: the Eastern Province holds 26% of poor households but the programmes reach 8.1% of them. Observed targeting already reaches female-headed poor households better (20.7%) than male-headed ones (12.6%), and the scorecard would give them almost no extra reach (21.7%). For this reason Reach recommends testing the scorecard **alongside** existing criteria, not replacing them.
-
----
-
-| Measure | Result |
-|---|---|
-| Poor households | 23.4% (22.6%-24.2%). Persons: 27.4% poor and 5.4% extremely poor, matching the published EICV7 figures |
-| Poor households that receive support | 14.7% (13.6%-16.0%) |
-| **Exclusion error** (poor households with no support) | **85.3%** (84.0%-86.4%) |
-| **Leakage** (supported households that are not poor) | **65.7%** (63.2%-68.2%) |
-| Support programmes reach | 10.1% of all households |
-
-At the programmes' own coverage (10.1% of households), the share of poor households reached is:
-
-| Rule | Poor households reached | Gain over observed, per 1,000 poor households |
-|---|---|---|
-| A. Observed targeting | 14.7% (13.6%-15.9%) | - |
-| B. Model-ranked (out-of-fold risk) | 28.0% (26.9%-29.1%) | +133 (118 to 149) |
-| C. Simple scorecard (6 features, integer points) | 25.3% (24.3%-26.4%) | +106 (91 to 122) |
-
-Rule B clearly beats observed targeting in 23 of the 30 districts, and rule C in 21 of 30; in the others the district samples are too small to tell. The model's weighted AUC is 0.819 (0.812-0.827) from out-of-fold predictions, and 0.773 even without any household-size variable.
-
-These figures describe how well each rule reaches households that are poor by the consumption-based poverty line used in the survey. The programmes target by their own criteria, so the comparison shows what a poverty-ranked rule could add, not that the programmes are badly run. See [docs/limitations.md](docs/limitations.md).
+| `/` | How do poverty and targeting gaps vary across districts? |
+| `/missed` | What traits distinguish poor households with and without support? |
+| `/model` | How well does the model rank poverty risk, and how was it checked? |
+| `/simulate` | How do targeting rules compare at different support budgets? |
+| `/priority` | Which districts have the most poor households without support? |
+| `/brief` | What does a district summary show, and what actions could be considered? |
+| `/method` | How were the estimates made, and what are their limits? |
 
 ## Data
 
-- NISR EICV7 2023-24 cross-sectional sample (catalog ID 119). The raw microdata is **not** in this repository and must not be redistributed (NISR terms). Only aggregated results are published here.
-- District boundaries: geoBoundaries (gbOpen, Rwanda ADM2), CC BY 4.0.
-- Full list of files, access conditions and citations: [docs/data-sources.md](docs/data-sources.md).
+The survey is the National Institute of Statistics of Rwanda (NISR), *Rwanda Integrated Household Living Conditions Survey (EICV7) 2023-2024, Cross-Sectional Sample*, [NISR Microdata Catalog](https://microdata.statistics.gov.rw/index.php/catalog), study `RWA-NISR-EICV7-2023-2024-v01` (catalog ID 119). Raw microdata is not redistributed. The repository contains aggregated files in `outputs/` and `app/public/data/`.
 
-## How to reproduce
+District boundaries are from geoBoundaries, Rwanda ADM2, under CC BY 4.0. Road data is from OpenStreetMap contributors under ODbL. Road routes are precomputed with OSRM using the FOSSGIS demo server. See [data sources and conditions](docs/data-sources.md).
 
-1. **Get the data.** Request EICV7 (catalog 119) from the NISR microdata catalog and place the `.dta` files in `data/raw/` (sub-folders are fine). Never commit them.
-2. **Python environment** (Python 3.12 or newer):
-   ```
-   python -m venv .venv
-   # Windows PowerShell:  .venv\Scripts\Activate.ps1      Git Bash / Linux / macOS:  source .venv/Scripts/activate  (or .venv/bin/activate)
-   pip install -r requirements.txt
-   ```
-  For the exact package versions used (Python 3.14.8 on Windows with Git Bash): `pip install -r requirements-lock.txt`.
-   For the web app use Node 24.21.0 and `npm ci`.
+## Headline results
 
-3. **Rebuild every published table** with one command (stops at the first error and runs the tests at the end):
-   ```
-   bash pipeline/run_all.sh
-   ```
-   Or run the steps in order:
-   `01_load_clean.py`, `01b_add_features.py`, `02_weighted_gaps.py`, `02b_financial_inclusion.py`, `03_model.py`, `04_simulate.py`, `05_export.py`.
-   `00_inspect.py` lists every file, column and label (metadata only); `03b_sensitivity.py` re-fits the model without household-size variables.
-4. **Run the tests:** `python -m pytest tests -q` (Python) and `cd app && npm test` (web app).
-5. **Start the app:**
-   ```
-   cd app
-   npm install
-   npm run dev
-   ```
-   Open http://localhost:3000. `05_export.py` writes the data files the app reads into `app/public/data/`.
+The app reports district-level targeting results for **any support**, with 95% design-based intervals. The values below summarize Rwanda nationally unless stated otherwise.
 
-Random seeds are fixed (42); the bootstrap uses 200 replicates.
+- Poor households: 23.4% (95% CI 22.6% to 24.2%).
+- Persons (point estimates; no interval is recorded in the source file): 27.4% poor and 5.4% extremely poor in EICV7 (2023-2024).
+- Poor households receiving any support: 14.7% (95% CI 13.6% to 16.0%).
+- Exclusion error among poor households: 85.3% (95% CI 84.0% to 86.4%).
+- Leakage among supported households: 65.7% (95% CI 63.2% to 68.2%).
+- Any support reaches 10.1% of households.
+- At the observed support budget, rule B gains 133 poor households reached per 1,000 (95% CI 118 to 149); rule C gains 106 (95% CI 91 to 122).
+- Rule B clearly beats observed targeting in 23 of 30 districts; rule C does so in 21 of 30.
+- Out-of-fold model AUC is 0.819 (95% CI 0.812 to 0.827); it is 0.773 without household-size and composition variables.
 
-## Method in brief
+The Eastern Province holds 26% of poor households, and current programmes reach 8.1% of its poor households. For female-headed poor households, reach is 20.7% under current targeting and 21.7% under the scorecard, so the scorecard adds little for this group.
 
-1. Label each surveyed household: poor or not, supported or not (four boxes).
-2. Weight every count with the survey weight and compute design-based confidence intervals (60 strata, 1,674 clusters).
-3. Predict poverty with weighted logistic regression and gradient boosting, using no consumption variables, validated by cross-validation grouped by cluster.
-4. Simulate rules A, B and C at budgets from 1% to 50% with out-of-fold predictions and a design-based bootstrap.
-5. Export aggregated JSON; the static web app and printable district brief read it.
+## How to run the app
 
+```sh
+cd app
+npm ci
+npm run dev
+```
 
-Details: [docs/methodology.md](docs/methodology.md).
+For development, open the local address printed by Next.js. The app reads the aggregated JSON files in `app/public/data/`.
+
+### Production build
+
+```sh
+cd app
+npm ci
+npm run build
+npm run start
+```
+
+The `npm run build` command must finish before `npm run start`.
+
+## How to rebuild the data
+
+The pipeline needs the NISR microdata files in `data/raw/`. Obtain access through the NISR Microdata Catalog and follow its conditions of use. Never commit or redistribute the raw files.
+
+Install Python dependencies from the repository root with `pip install -r requirements.txt` (or use the pinned versions in `requirements-lock.txt`). Then run:
+
+```sh
+bash pipeline/run_all.sh
+```
+
+This runs the numbered pipeline scripts, writes aggregated exports to `outputs/` and `app/public/data/`, and runs the Python test suite.
+
+The routes step calls the OSRM demo server, so it needs internet access. The precomputed route file is already in outputs/.
+
+## Tests
+
+From the repository root, run the Python suite:
+
+```sh
+python -m pytest tests -q
+```
+
+For the web app, run these commands from `app/`:
+
+```sh
+python scripts/check-i18n-keys.py
+npx tsc --noEmit
+npm run lint
+npm test
+npm run build
+```
 
 ## Limitations
 
-District level only; programme-level estimates are small, so "any support" is the headline; extreme-poverty estimates are noisy by district; receiving support can raise a household's consumption; the tool is a policy design aid, not a list of real households. See [docs/limitations.md](docs/limitations.md).
+- Results are for districts; the survey does not support household-level identification or sector-level claims.
+- Rules B and C are judged against the survey poverty label, which the model is trained to predict, so the comparison favours them by design. It shows what a poverty-ranked rule could add, not that the programmes are badly run.
+- Programme-specific estimates can be noisy, so the headline measure is any support.
+- Extreme-poverty estimates are noisy at district level.
+- Support may change household welfare, and programmes use eligibility criteria beyond the survey poverty line.
+- The app has not been validated with district planners or programme staff.
 
-## AI tools disclosure
+See [the full limitations](docs/limitations.md).
 
-AI assistants were used to plan, write and review code and documentation. The tools and what they were used for are listed in [docs/ai-use-disclosure.md](docs/ai-use-disclosure.md).
+## AI tools
 
-## Impact
+Claude, Trae, Devin and Codex assisted with planning, writing and reviewing code and documentation. See the [AI use disclosure](docs/ai-use-disclosure.md).
 
-See [docs/impact.md](docs/impact.md).
+## NISR submission checklist
 
-## Originality, IP and licence
+| Item | Repository status |
+|---|---|
+| ReadMe | This README explains the data, dashboard and user interactions. |
+| Scripts | `pipeline/run_all.sh` rebuilds the aggregated data and runs the Python tests. |
+| Data | Aggregated exports are in `outputs/` and `app/public/data/`; raw survey microdata is not redistributed. |
 
-This is original work by the team named above, written for the NISR 2026 Big Data Hackathon. Under the terms of the competition, rights in the submission are assigned to NISR. [TODO: check this sentence and the code licence against the competition rules PDF before submitting.]
-Boundary data: geoBoundaries, CC BY 4.0. Survey data: © NISR, used under the National Data Archive terms of use.
+<!-- RECORDING LINK: add after recording is pushed -->
