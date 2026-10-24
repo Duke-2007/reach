@@ -6,9 +6,9 @@ Entry for the NISR 2026 Big Data Hackathon, Track 2 (Financial Inclusion and Pov
 
 ## Links
 
-- Live app: [reach-rho-two.vercel.app](https://reachrw.vercel.app/)
+- Live app: [reachrw.vercel.app](https://reachrw.vercel.app/)
 - Repository: [Duke-2007/reach](https://github.com/Duke-2007/reach)
-- Team: Hirwa Raenne Duke and Dukeze Maria Clenie
+- Team: HIRWA RAENNE DUKE and AIMEE CLENIE DUKUZEMARIYA
 
 ## The problem
 
