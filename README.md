@@ -6,7 +6,7 @@ Entry for the NISR 2026 Big Data Hackathon, Track 2 (Financial Inclusion and Pov
 
 ## Links
 
-- Live app: [reach-rho-two.vercel.app](https://reach-rho-two.vercel.app/)
+- Live app: [reach-rho-two.vercel.app](https://reachrw.vercel.app/)
 - Repository: [Duke-2007/reach](https://github.com/Duke-2007/reach)
 - Team: Hirwa Raenne Duke and Dukeze Maria Clenie
 
@@ -128,4 +128,4 @@ Claude, Trae, Devin and Codex assisted with planning, writing and reviewing code
 | Scripts | `pipeline/run_all.sh` rebuilds the aggregated data and runs the Python tests. |
 | Data | Aggregated exports are in `outputs/` and `app/public/data/`; raw survey microdata is not redistributed. |
 
-<!-- RECORDING LINK: add after recording is pushed -->
+<!-- RECORDING LINK: - Screen recording: [demo/reach-demo.webm](demo/reach-demo.webm) -->
