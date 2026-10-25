@@ -103,14 +103,14 @@ function addDistrictLayers(
     type: "line",
     source: "selected-road-route",
     layout: { visibility: "none", "line-cap": "round", "line-join": "round" },
-    paint: { "line-color": "#ffffff", "line-width": 6 },
+    paint: { "line-color": "#ffffff", "line-width": 3.5 },
   });
   map.addLayer({
     id: "selected-road-route-line",
     type: "line",
     source: "selected-road-route",
     layout: { visibility: "none", "line-cap": "round", "line-join": "round" },
-    paint: { "line-color": "#123b6d", "line-width": 4 },
+    paint: { "line-color": "#123b6d", "line-width": 2 },
   });
   map.addSource("selected-straight-line", { type: "geojson", data: emptyLineCollection() as never });
   map.addLayer({
@@ -120,6 +120,45 @@ function addDistrictLayers(
     layout: { visibility: "none" },
     paint: { "line-color": "#111827", "line-width": 1.5, "line-dasharray": [2, 2] },
   });
+}
+
+function selectedDistrictFeature(geoJson: GeoJson, district: DistrictWithData | null): GeoJsonFeature | undefined {
+  if (!district) return undefined;
+  return geoJson.features.find((feature) => feature.properties.shapeName === district.shapeName);
+}
+
+function getFeatureBounds(feature: GeoJsonFeature): maplibregl.LngLatBounds {
+  const bounds = new maplibregl.LngLatBounds();
+  feature.geometry.coordinates.forEach((ring) => {
+    ring.forEach((coordinate) => bounds.extend(coordinate as [number, number]));
+  });
+  return bounds;
+}
+
+function addSelectedDistrictHighlight(map: maplibregl.Map) {
+  map.addSource("selected-district-highlight", { type: "geojson", data: emptyLineCollection() as never });
+  map.addLayer({
+    id: "selected-district-highlight-line",
+    type: "line",
+    source: "selected-district-highlight",
+    paint: { "line-color": "#0f172a", "line-width": 3 },
+  });
+}
+
+function setSelectedDistrictHighlight(
+  map: maplibregl.Map,
+  geoJson: GeoJson,
+  selected: DistrictWithData | null,
+) {
+  const highlightSource = map.getSource("selected-district-highlight") as GeoJSONSource | undefined;
+  const feature = selectedDistrictFeature(geoJson, selected);
+  highlightSource?.setData(feature
+    ? { type: "FeatureCollection", features: [feature] } as never
+    : emptyLineCollection() as never);
+  if (map.getLayer("districts-border")) {
+    map.setPaintProperty("districts-border", "line-color", selected ? "#cbd5e1" : "#64748b");
+    map.setPaintProperty("districts-border", "line-width", selected ? 0.5 : 1);
+  }
 }
 
 function addRwandaMask(map: maplibregl.Map, mask: RwandaMaskData) {
@@ -166,18 +205,14 @@ function setSelectedLine(
 function fitToSelectedDistrict(
   map: maplibregl.Map,
   district: DistrictWithData,
-  routes: DistrictRoutes | null,
+  geoJson: GeoJson,
 ) {
-  const routeData = routes?.routes[district.district];
-  if (!routes || !routeData) return;
-  const coordinates = routeData.route && routeData.route.length >= 2
-    ? routeData.route
-    : [[routes.origin.lon, routes.origin.lat], routeData.centre];
-  const bounds = new maplibregl.LngLatBounds();
-  coordinates.forEach((coordinate) => bounds.extend(coordinate as [number, number]));
-  bounds.extend(routeData.centre);
+  const feature = selectedDistrictFeature(geoJson, district);
+  if (!feature) return;
+  const bounds = getFeatureBounds(feature);
+  if (bounds.isEmpty()) return;
   map.fitBounds(bounds, {
-    padding: 24,
+    padding: 40,
     maxZoom: 11,
     duration: 800,
   });
@@ -200,6 +235,7 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
   const resetMapViewRef = useRef<() => void>(() => undefined);
   const userMovedMapRef = useRef(false);
   const mapRef = useRef<maplibregl.Map | null>(null);
+  const selectedLabelMarkerRef = useRef<maplibregl.Marker | null>(null);
   const [selectedLayer, setSelectedLayer] = useState<LayerKey>("poverty_rate");
   const [selectedDistrict, setSelectedDistrict] = useState<DistrictWithData | null>(null);
   const [geoJson, setGeoJson] = useState<GeoJson | null>(null);
@@ -302,10 +338,10 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
     pendingBaseStyle.current = null;
 
     const removeCustomStyleLayers = () => {
-      ["selected-road-route-line", "selected-road-route-casing", "selected-straight-line-layer", "rwanda-outline-line", "districts-border", "districts-fill", "rwanda-mask-fill"].forEach((id) => {
+      ["selected-district-highlight-line", "selected-road-route-line", "selected-road-route-casing", "selected-straight-line-layer", "rwanda-outline-line", "districts-border", "districts-fill", "rwanda-mask-fill"].forEach((id) => {
         if (map.getLayer(id)) map.removeLayer(id);
       });
-      ["selected-road-route", "selected-straight-line", "districts", "rwanda-outline", "rwanda-mask"].forEach((id) => {
+      ["selected-district-highlight", "selected-road-route", "selected-straight-line", "districts", "rwanda-outline", "rwanda-mask"].forEach((id) => {
         if (map.getSource(id)) map.removeSource(id);
       });
     };
@@ -317,7 +353,9 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
       addRwandaMask(map, rwandaMask);
       addDistrictLayers(map, geoJson, districtsWithData, view.selectedLayer, view.showRoads ? 0.55 : 0.8);
       addRwandaOutline(map, rwandaMask);
+      addSelectedDistrictHighlight(map);
       setSelectedLine(map, view.selectedDistrict, routes);
+      setSelectedDistrictHighlight(map, geoJson, view.selectedDistrict);
       if (attributionControlRef.current) map.removeControl(attributionControlRef.current);
       attributionControlRef.current = makeAttributionControl(activeBaseStyle.current, view.t);
       map.addControl(attributionControlRef.current, "bottom-right");
@@ -325,7 +363,7 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
       setStyleRevision((revision) => revision + 1);
       map.resize();
       updateMapLimits();
-      if (view.selectedDistrict) fitToSelectedDistrict(map, view.selectedDistrict, routes);
+      if (view.selectedDistrict) fitToSelectedDistrict(map, view.selectedDistrict, geoJson);
       else if (!userMovedMapRef.current) fitWholeRwanda(true);
     };
     const updateMapLimits = () => {
@@ -400,7 +438,7 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
         setSearch(district.shapeName);
         setSearchOpen(false);
         setActiveSuggestion(0);
-        fitToSelectedDistrict(map, district, routes);
+        fitToSelectedDistrict(map, district, geoJson);
       }
     });
     map.on("mousemove", (event) => {
@@ -424,6 +462,8 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
       if (roadStyleTimer.current) clearTimeout(roadStyleTimer.current);
       roadStyleTimer.current = null;
       attributionControlRef.current = null;
+      selectedLabelMarkerRef.current?.remove();
+      selectedLabelMarkerRef.current = null;
       fallbackRoadStyleRef.current = () => undefined;
       resetMapViewRef.current = () => undefined;
       map.remove();
@@ -490,8 +530,49 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
 
   useEffect(() => {
     const map = mapRef.current;
-    if (map) setSelectedLine(map, selectedDistrict, routes);
-  }, [selectedDistrict, routes, mapStatus, styleRevision]);
+    if (map) {
+      setSelectedLine(map, selectedDistrict, routes);
+      if (geoJson) setSelectedDistrictHighlight(map, geoJson, selectedDistrict);
+    }
+  }, [selectedDistrict, routes, geoJson, mapStatus, styleRevision]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || mapStatus !== "ready" || !geoJson) return;
+    if (!selectedDistrict) {
+      selectedLabelMarkerRef.current?.remove();
+      selectedLabelMarkerRef.current = null;
+      return;
+    }
+    const feature = selectedDistrictFeature(geoJson, selectedDistrict);
+    if (!feature) return;
+    const routeCentre = routes?.routes[selectedDistrict.district]?.centre;
+    const position = routeCentre ?? getFeatureBounds(feature).getCenter().toArray();
+    let element = selectedLabelMarkerRef.current?.getElement();
+    if (!element) {
+      element = document.createElement("div");
+      element.setAttribute("role", "status");
+      element.style.pointerEvents = "none";
+      element.style.maxWidth = "min(70vw, 16rem)";
+      element.style.overflow = "hidden";
+      element.style.textOverflow = "ellipsis";
+      element.style.whiteSpace = "nowrap";
+      element.style.border = "1px solid rgba(15, 23, 42, 0.25)";
+      element.style.borderRadius = "0.375rem";
+      element.style.background = "rgba(255, 255, 255, 0.94)";
+      element.style.padding = "0.25rem 0.5rem";
+      element.style.color = "#0f172a";
+      element.style.fontSize = "0.75rem";
+      element.style.fontWeight = "600";
+      element.style.boxShadow = "0 1px 3px rgba(15, 23, 42, 0.25)";
+      selectedLabelMarkerRef.current = new maplibregl.Marker({ element, anchor: "center" });
+    }
+    element.textContent = selectedDistrict.shapeName;
+    element.setAttribute("aria-label", selectedDistrict.shapeName);
+    const marker = selectedLabelMarkerRef.current;
+    if (!marker) return;
+    marker.setLngLat(position).addTo(map);
+  }, [selectedDistrict, routes, geoJson, mapStatus, styleRevision]);
 
   const suggestions = useMemo(() => {
     const query = search.trim().toLocaleLowerCase();
@@ -504,7 +585,7 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
     setSearch(district.shapeName);
     setSearchOpen(false);
     setActiveSuggestion(0);
-    if (mapRef.current) fitToSelectedDistrict(mapRef.current, district, routes);
+    if (mapRef.current && geoJson) fitToSelectedDistrict(mapRef.current, district, geoJson);
   };
 
   useEffect(() => {
