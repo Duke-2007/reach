@@ -87,6 +87,7 @@ export default function MissedPage({ data }: { data: Profiles }) {
   const [selectedArea, setSelectedArea] = useState(defaultArea);
 
   const areaData = data.by_area.find((a) => a.area === selectedArea);
+  const visibleTraits = new Set(["household_size", "improved_water_pct", "electricity_pct", "head_female_pct"]);
 
   if (!areaData) {
     return (
@@ -121,7 +122,7 @@ export default function MissedPage({ data }: { data: Profiles }) {
       </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 min-w-0">
-        {data.traits_metadata.map((trait) => {
+        {data.traits_metadata.filter((trait) => visibleTraits.has(trait.key)).map((trait) => {
           const comparison = areaData.traits[trait.key];
           if (!comparison) return null;
 

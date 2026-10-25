@@ -35,8 +35,6 @@
     "title": "TODO_TRANSLATE Where do poor households miss out on support, and what would reach more of them?",
     "exclusion_label": "TODO_TRANSLATE Exclusion error (95% interval)",
     "gain_label": "TODO_TRANSLATE Rule B gain per 1,000 poor households at {budget_share} coverage (95% interval)",
-    "auc_label": "TODO_TRANSLATE Model AUC; without size variables",
-    "auc_value": "TODO_TRANSLATE {auc}; {without_size_auc}",
     "simulator_button": "TODO_TRANSLATE Open the simulator",
     "priority_button": "TODO_TRANSLATE See priority districts"
   },
@@ -131,7 +129,6 @@
     "search_placeholder": "TODO_TRANSLATE Type a district name",
     "search_results_aria": "TODO_TRANSLATE District search results",
     "search_no_results": "TODO_TRANSLATE No matching districts.",
-    "rank_pin": "TODO_TRANSLATE Rank {rank}: {district}, {value}",
     "selected_indicator": "TODO_TRANSLATE Selected indicator: {indicator}, {value}",
     "selected_badge": "TODO_TRANSLATE Selected district",
     "distance_title": "TODO_TRANSLATE Distance from Kigali",
@@ -139,7 +136,6 @@
     "road_distance": "TODO_TRANSLATE {distance} km by road, about {duration}",
     "straight_distance": "TODO_TRANSLATE {distance} km in a straight line",
     "distance_approximate": "TODO_TRANSLATE Approximate: measured from Kigali city centre to the centre of the district.",
-    "kigali_marker": "TODO_TRANSLATE Kigali city centre",
     "route_attribution": "TODO_TRANSLATE Road-distance source: {attribution}",
     "show_roads": "TODO_TRANSLATE Show roads",
     "road_map_unavailable": "TODO_TRANSLATE Road map unavailable; showing districts only",
@@ -270,7 +266,7 @@
     "rank": "TODO_TRANSLATE Rank", "district": "TODO_TRANSLATE District", "province": "TODO_TRANSLATE Province", "poor_households": "TODO_TRANSLATE Poor households (weighted)", "poor_missed": "TODO_TRANSLATE Poor households with no support (95% interval)", "exclusion": "TODO_TRANSLATE Exclusion error (95% interval)", "triple_gap": "TODO_TRANSLATE Triple-gap share (95% interval)", "poverty": "TODO_TRANSLATE Poverty rate (95% interval)", "gain_b": "TODO_TRANSLATE Rule B gain per 1,000 poor (95% interval)", "gain_c": "TODO_TRANSLATE Rule C gain per 1,000 poor (95% interval)", "not_clear": "TODO_TRANSLATE not clear", "national": "TODO_TRANSLATE National", "small_cell": "TODO_TRANSLATE Small sample", "small_cell_note": "TODO_TRANSLATE Small-sample estimates should be interpreted with care.", "province_filter": "TODO_TRANSLATE Province", "all_provinces": "TODO_TRANSLATE All provinces", "download_csv": "TODO_TRANSLATE Download CSV", "ranking_note": "TODO_TRANSLATE Districts are ranked by the number of poor households with no support, not by the rate, so large districts rank high.", "rounding_note": "TODO_TRANSLATE Weighted household counts are survey estimates rounded to the nearest 100."
   },
   "equity": {
-    "title": "TODO_TRANSLATE Who is reached?", "description": "TODO_TRANSLATE Each rule picks households nationwide up to the programmes' actual coverage ({budget_share} of households); the table shows the share of each group's poor households that is reached.", "dimension": "TODO_TRANSLATE Dimension", "group": "TODO_TRANSLATE Group", "share": "TODO_TRANSLATE Share of all poor households", "observed": "TODO_TRANSLATE Observed targeting (95% interval)", "rule_b": "TODO_TRANSLATE Rule B (95% interval)", "rule_c": "TODO_TRANSLATE Rule C (95% interval)", "gain_b": "TODO_TRANSLATE Rule B gain per 1,000 poor (95% interval)", "not_clear": "TODO_TRANSLATE not clear", "small_cell": "TODO_TRANSLATE Small sample", "interval_note": "TODO_TRANSLATE Intervals are 95% design-based confidence intervals.", "gain_not_clear": "TODO_TRANSLATE Gain not clear for: {groups}", "none": "TODO_TRANSLATE none", "interpretation_note": "TODO_TRANSLATE Ranking by poverty risk does not reach every group equally. Where observed targeting already reaches a group better than average, the rules add little. Test the scorecard alongside existing criteria, not as a replacement."
+    "title": "TODO_TRANSLATE Who is reached?", "description": "TODO_TRANSLATE Each rule picks households nationwide up to the programmes' actual coverage ({budget_share} of households); the table shows the share of each group's poor households that is reached.", "dimension": "TODO_TRANSLATE Dimension", "group": "TODO_TRANSLATE Group", "share": "TODO_TRANSLATE Share of poor households", "observed": "TODO_TRANSLATE Observed targeting (95% interval)", "rule_b": "TODO_TRANSLATE Rule B (95% interval)", "rule_c": "TODO_TRANSLATE Rule C (95% interval)", "gain_b": "TODO_TRANSLATE Rule B gain per 1,000 poor (95% interval)", "not_clear": "TODO_TRANSLATE not clear", "small_cell": "TODO_TRANSLATE Small sample", "interval_note": "TODO_TRANSLATE Intervals are 95% design-based confidence intervals.", "gain_not_clear": "TODO_TRANSLATE Gain not clear for: {groups}", "none": "TODO_TRANSLATE none", "interpretation_note": "TODO_TRANSLATE Ranking by poverty risk does not reach every group equally. Where observed targeting already reaches a group better than average, the rules add little. Test the scorecard alongside existing criteria, not as a replacement."
   },
   "method": {
     "what_title": "TODO_TRANSLATE What Reach is",
@@ -283,14 +279,6 @@
     "exclusion": "TODO_TRANSLATE Exclusion error: {value}",
     "leakage": "TODO_TRANSLATE Leakage: {value}",
     "rule_findings": "TODO_TRANSLATE At the programmes’ own coverage ({budget_share}), observed targeting reaches {observed} of poor households. Rule B reaches {b_reached} (gain {b_gain} per 1,000 poor households, 95% interval {b_interval}); the scorecard reaches {c_reached} (gain {c_gain}, 95% interval {c_interval}). Rule B clearly beats observed targeting in {b_districts} of {n_districts} districts and Rule C in {c_districts}.",
-    "robust_title": "TODO_TRANSLATE Is it robust?",
-    "auc": "TODO_TRANSLATE Model AUC: {auc} (95% interval {ci}).",
-    "sensitivity_label": "TODO_TRANSLATE Model feature set",
-    "sensitivity_auc": "TODO_TRANSLATE AUC (95% interval)",
-    "sensitivity_reach": "TODO_TRANSLATE Poor households reached at observed coverage",
-    "sensitivity_1": "TODO_TRANSLATE All features",
-    "sensitivity_2": "TODO_TRANSLATE Without size / composition variables",
-    "sensitivity_3": "TODO_TRANSLATE Housing, water, energy and livestock only",
     "limits_title": "TODO_TRANSLATE Limits",
     "limit_district": "TODO_TRANSLATE Results are available at district level only.",
     "limit_programme_counts": "TODO_TRANSLATE Programme counts are small, so “any support” is the headline measure.",
@@ -376,7 +364,7 @@
     "open_brief": "TODO_TRANSLATE Open district brief",
     "picker_label": "TODO_TRANSLATE District",
     "picker_prompt": "TODO_TRANSLATE Choose a district",
-    "print": "TODO_TRANSLATE Print",
+    "print": "TODO_TRANSLATE Print or save as PDF",
     "unknown_title": "TODO_TRANSLATE District not found",
     "unknown_body": "TODO_TRANSLATE We could not find “{district}” in the district estimates. Choose a district from the picker above.",
     "return_map": "TODO_TRANSLATE Return to the gap map",

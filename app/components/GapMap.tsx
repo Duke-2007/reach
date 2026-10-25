@@ -193,18 +193,6 @@ function makeAttributionControl(
   });
 }
 
-function createRankPin(rank: number, label: string, selected: boolean): HTMLButtonElement {
-  const button = document.createElement("button");
-  button.type = "button";
-  button.setAttribute("aria-label", label);
-  button.setAttribute("aria-current", selected ? "true" : "false");
-  button.className = "gap-map-pin focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950";
-  button.style.width = selected ? "42px" : "34px";
-  button.style.height = selected ? "54px" : "44px";
-  button.innerHTML = `<svg aria-hidden="true" viewBox="0 0 40 52" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M20 1C9.5 1 2 8.7 2 18.3 2 31 20 51 20 51s18-20 18-32.7C38 8.7 30.5 1 20 1Z" fill="#4338ca" stroke="${selected ? "#111827" : "#ffffff"}" stroke-width="${selected ? "3" : "1.5"}"/><text x="20" y="24" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" font-family="Arial,sans-serif" font-size="14" font-weight="700">${rank}</text></svg>`;
-  return button;
-}
-
 export default function GapMap({ data }: { data: DistrictGaps }) {
   const { t } = useT();
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -212,7 +200,6 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
   const resetMapViewRef = useRef<() => void>(() => undefined);
   const userMovedMapRef = useRef(false);
   const mapRef = useRef<maplibregl.Map | null>(null);
-  const markerRefs = useRef<maplibregl.Marker[]>([]);
   const [selectedLayer, setSelectedLayer] = useState<LayerKey>("poverty_rate");
   const [selectedDistrict, setSelectedDistrict] = useState<DistrictWithData | null>(null);
   const [geoJson, setGeoJson] = useState<GeoJson | null>(null);
@@ -233,7 +220,6 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
   const pendingBaseStyle = useRef<BaseStyle | null>(null);
   const roadStyleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const mapHasLoaded = useRef(false);
-  const kigaliMarkerRef = useRef<maplibregl.Marker | null>(null);
   const attributionControlRef = useRef<maplibregl.AttributionControl | null>(null);
   const fallbackRoadStyleRef = useRef<() => void>(() => undefined);
   const viewStateRef = useRef({ selectedLayer, selectedDistrict, showRoads, t });
@@ -324,32 +310,14 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
       });
     };
 
-    const clearMarkers = () => {
-      markerRefs.current.forEach((marker) => marker.remove());
-      markerRefs.current = [];
-      kigaliMarkerRef.current?.remove();
-      kigaliMarkerRef.current = null;
-    };
-
     const installDistrictContent = () => {
       if (cancelled) return;
-      clearMarkers();
       removeCustomStyleLayers();
       const view = viewStateRef.current;
       addRwandaMask(map, rwandaMask);
       addDistrictLayers(map, geoJson, districtsWithData, view.selectedLayer, view.showRoads ? 0.55 : 0.8);
       addRwandaOutline(map, rwandaMask);
       setSelectedLine(map, view.selectedDistrict, routes);
-      if (routes) {
-        const marker = document.createElement("div");
-        marker.setAttribute("role", "img");
-        marker.setAttribute("aria-label", view.t("map.kigali_marker"));
-        marker.title = view.t("map.kigali_marker");
-        marker.className = "h-3 w-3 rounded-full border-2 border-white bg-rose-600 shadow ring-1 ring-slate-900";
-        kigaliMarkerRef.current = new maplibregl.Marker({ element: marker, anchor: "center" })
-          .setLngLat([routes.origin.lon, routes.origin.lat])
-          .addTo(map);
-      }
       if (attributionControlRef.current) map.removeControl(attributionControlRef.current);
       attributionControlRef.current = makeAttributionControl(activeBaseStyle.current, view.t);
       map.addControl(attributionControlRef.current, "bottom-right");
@@ -393,7 +361,6 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
       pendingBaseStyle.current = "plain";
       setRoadMapUnavailable(true);
       setShowRoads(false);
-      clearMarkers();
       try {
         map.setStyle(PLAIN_STYLE, { diff: false });
       } catch {
@@ -456,7 +423,6 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
       resizeObserver.disconnect();
       if (roadStyleTimer.current) clearTimeout(roadStyleTimer.current);
       roadStyleTimer.current = null;
-      clearMarkers();
       attributionControlRef.current = null;
       fallbackRoadStyleRef.current = () => undefined;
       resetMapViewRef.current = () => undefined;
@@ -475,23 +441,12 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
   }, [t, mapStatus, styleRevision]);
 
   useEffect(() => {
-    const marker = kigaliMarkerRef.current?.getElement();
-    if (!marker) return;
-    marker.setAttribute("aria-label", t("map.kigali_marker"));
-    marker.title = t("map.kigali_marker");
-  }, [t, styleRevision]);
-
-  useEffect(() => {
     const map = mapRef.current;
     if (!map || mapStatus !== "ready" || !mapHasLoaded.current) return;
     const target: BaseStyle = showRoads ? "roads" : "plain";
     if (pendingBaseStyle.current === target) return;
     if (activeBaseStyle.current === target && map.isStyleLoaded()) return;
 
-    markerRefs.current.forEach((marker) => marker.remove());
-    markerRefs.current = [];
-    kigaliMarkerRef.current?.remove();
-    kigaliMarkerRef.current = null;
     if (roadStyleTimer.current) clearTimeout(roadStyleTimer.current);
     requestedBaseStyle.current = target;
     pendingBaseStyle.current = target;
@@ -537,27 +492,6 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
     const map = mapRef.current;
     if (map) setSelectedLine(map, selectedDistrict, routes);
   }, [selectedDistrict, routes, mapStatus, styleRevision]);
-
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map || mapStatus !== "ready") return;
-    markerRefs.current.forEach((marker) => marker.remove());
-    markerRefs.current = rankedDistricts.flatMap((district, index) => {
-      const centre = routes?.routes[district.district]?.centre;
-      if (!centre) return [];
-      const value = formatPercent(district[selectedLayer]);
-      const element = createRankPin(index + 1, t("map.rank_pin", { rank: index + 1, district: district.shapeName, value }), selectedDistrict?.shapeName === district.shapeName);
-      element.addEventListener("click", (event) => {
-        event.stopPropagation();
-        setSelectedDistrict(district);
-        setSearch(district.shapeName);
-        setSearchOpen(false);
-        setActiveSuggestion(0);
-        fitToSelectedDistrict(map, district, routes);
-      });
-      return [new maplibregl.Marker({ element, anchor: "bottom" }).setLngLat(centre).addTo(map)];
-    });
-  }, [rankedDistricts, routes, selectedLayer, selectedDistrict, mapStatus, styleRevision, t]);
 
   const suggestions = useMemo(() => {
     const query = search.trim().toLocaleLowerCase();

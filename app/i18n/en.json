@@ -35,8 +35,6 @@
     "title": "Where do poor households miss out on support, and what would reach more of them?",
     "exclusion_label": "Exclusion error (95% interval)",
     "gain_label": "Rule B gain per 1,000 poor households at {budget_share} coverage (95% interval)",
-    "auc_label": "Model AUC; without size variables",
-    "auc_value": "{auc}; {without_size_auc}",
     "simulator_button": "Open the simulator",
     "priority_button": "See priority districts"
   },
@@ -131,7 +129,6 @@
     "search_placeholder": "Type a district name",
     "search_results_aria": "District search results",
     "search_no_results": "No matching districts.",
-    "rank_pin": "Rank {rank}: {district}, {value}",
     "selected_indicator": "Selected indicator: {indicator}, {value}",
     "selected_badge": "Selected district",
     "distance_title": "Distance from Kigali",
@@ -139,7 +136,6 @@
     "road_distance": "{distance} km by road, about {duration}",
     "straight_distance": "{distance} km in a straight line",
     "distance_approximate": "Approximate: measured from Kigali city centre to the centre of the district.",
-    "kigali_marker": "Kigali city centre",
     "route_attribution": "Road-distance source: {attribution}",
     "show_roads": "Show roads",
     "road_map_unavailable": "Road map unavailable; showing districts only",
@@ -270,7 +266,7 @@
     "rank": "Rank", "district": "District", "province": "Province", "poor_households": "Poor households (weighted)", "poor_missed": "Poor households with no support (95% interval)", "exclusion": "Exclusion error (95% interval)", "triple_gap": "Triple-gap share (95% interval)", "poverty": "Poverty rate (95% interval)", "gain_b": "Rule B gain per 1,000 poor (95% interval)", "gain_c": "Rule C gain per 1,000 poor (95% interval)", "not_clear": "not clear", "national": "National", "small_cell": "Small sample", "small_cell_note": "Small-sample estimates should be interpreted with care.", "province_filter": "Province", "all_provinces": "All provinces", "download_csv": "Download CSV", "ranking_note": "Districts are ranked by the number of poor households with no support, not by the rate, so large districts rank high.", "rounding_note": "Weighted household counts are survey estimates rounded to the nearest 100."
   },
   "equity": {
-    "title": "Who is reached?", "description": "Each rule picks households nationwide up to the programmes' actual coverage ({budget_share} of households); the table shows the share of each group's poor households that is reached.", "dimension": "Dimension", "group": "Group", "share": "Share of all poor households", "observed": "Observed targeting (95% interval)", "rule_b": "Rule B (95% interval)", "rule_c": "Rule C (95% interval)", "gain_b": "Rule B gain per 1,000 poor (95% interval)", "not_clear": "not clear", "small_cell": "Small sample", "interval_note": "Intervals are 95% design-based confidence intervals.", "gain_not_clear": "Gain not clear for: {groups}", "none": "none", "interpretation_note": "Ranking by poverty risk does not reach every group equally. Where observed targeting already reaches a group better than average, the rules add little. Test the scorecard alongside existing criteria, not as a replacement."
+    "title": "Who is reached?", "description": "Each rule picks households nationwide up to the programmes' actual coverage ({budget_share} of households); the table shows the share of each group's poor households that is reached.", "dimension": "Dimension", "group": "Group", "share": "Share of poor households", "observed": "Observed targeting (95% interval)", "rule_b": "Rule B (95% interval)", "rule_c": "Rule C (95% interval)", "gain_b": "Rule B gain per 1,000 poor (95% interval)", "not_clear": "not clear", "small_cell": "Small sample", "interval_note": "Intervals are 95% design-based confidence intervals.", "gain_not_clear": "Gain not clear for: {groups}", "none": "none", "interpretation_note": "Ranking by poverty risk does not reach every group equally. Where observed targeting already reaches a group better than average, the rules add little. Test the scorecard alongside existing criteria, not as a replacement."
   },
   "method": {
     "what_title": "What Reach is",
@@ -283,14 +279,6 @@
     "exclusion": "Exclusion error: {value}",
     "leakage": "Leakage: {value}",
     "rule_findings": "At the programmes’ own coverage ({budget_share}), observed targeting reaches {observed} of poor households. Rule B reaches {b_reached_interval} (gain {b_gain} per 1,000 poor households, 95% interval {b_interval}); the scorecard reaches {c_reached_interval} (gain {c_gain}, 95% interval {c_interval}). Rule B clearly beats observed targeting in {b_districts} of {n_districts} districts and Rule C in {c_districts}.",
-    "robust_title": "Is it robust?",
-    "auc": "Model AUC: {auc} (95% interval {ci}).",
-    "sensitivity_label": "Model feature set",
-    "sensitivity_auc": "AUC (95% interval)",
-    "sensitivity_reach": "Poor households reached at observed coverage",
-    "sensitivity_1": "All features",
-    "sensitivity_2": "Without size / composition variables",
-    "sensitivity_3": "Housing, water, energy and livestock only",
     "limits_title": "Limits",
     "limit_district": "Results are available at district level only.",
     "limit_programme_counts": "Programme counts are small, so “any support” is the headline measure.",
@@ -376,7 +364,7 @@
     "open_brief": "Open district brief",
     "picker_label": "District",
     "picker_prompt": "Choose a district",
-    "print": "Print",
+    "print": "Print or save as PDF",
     "unknown_title": "District not found",
     "unknown_body": "We could not find “{district}” in the district estimates. Choose a district from the picker above.",
     "return_map": "Return to the gap map",

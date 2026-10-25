@@ -63,7 +63,7 @@ export function BriefPage({ slug, gaps, targeting, today, nationalExclusionCi }:
   const tripleCi = ciFor(row, "triple_gap");
   if (tripleCi && tripleCi[0] > national.triple_gap) actions.push("action_access");
   if (row.small_cell) actions.push("action_small_cell");
-  actions.push("action_monitor", "action_outreach", "action_evaluate");
+  actions.push("action_monitor");
   const selectedActions = actions.filter((key, index) => actions.indexOf(key) === index).slice(0, 3);
   const formatGain = (item: typeof b) => item ? `${Math.round(item.gain_per_1000_poor)} (${Math.round(item.gain_per_1000_poor_ci[0])}–${Math.round(item.gain_per_1000_poor_ci[1])})` : "—";
 
