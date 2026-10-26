@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check literal and registered dynamic translation keys against both dictionaries."""
+"""Check literal and registered dynamic translation keys against en.json."""
 import json
 import re
 import sys
@@ -8,8 +8,6 @@ from pathlib import Path
 app_dir = Path(__file__).parent.parent
 with (app_dir / "i18n" / "en.json").open(encoding="utf-8") as f:
     en_data = json.load(f)
-with (app_dir / "i18n" / "rw.json").open(encoding="utf-8") as f:
-    rw_data = json.load(f)
 
 def get_all_keys(obj, prefix=""):
     keys = set()
@@ -21,7 +19,6 @@ def get_all_keys(obj, prefix=""):
     return keys
 
 en_keys = get_all_keys(en_data)
-rw_keys = get_all_keys(rw_data)
 t_keys = set()
 unknown_dynamic = set()
 code_dirs = [app_dir / "app", app_dir / "components", app_dir / "hooks", app_dir / "lib"]
@@ -79,16 +76,12 @@ for code_dir in code_dirs:
 t_keys.update(lookup_keys)
 
 missing_en = sorted(t_keys - en_keys)
-missing_rw = sorted(t_keys - rw_keys)
 if unknown_dynamic:
     print("ERROR: Unregistered dynamic translation template(s):")
     print("\n".join(f"  - {item}" for item in sorted(unknown_dynamic)))
 if missing_en:
     print("ERROR: Keys missing from en.json:")
     print("\n".join(f"  - {key}" for key in missing_en))
-if missing_rw:
-    print("ERROR: Keys missing from rw.json:")
-    print("\n".join(f"  - {key}" for key in missing_rw))
-if unknown_dynamic or missing_en or missing_rw:
+if unknown_dynamic or missing_en:
     sys.exit(1)
-print("OK: All literal and registered dynamic translation keys found in both dictionaries")
+print("OK: All literal and registered dynamic translation keys found in en.json")

@@ -1,9 +1,4 @@
 {
-  "lang": {
-    "label": "English",
-    "short": "EN",
-    "switcher": "Language selection"
-  },
   "common": {
     "skip_to_content": "Skip to content",
     "loading": "Loading data…",

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { type Lang, useT } from "@/hooks/useT";
+import { useT } from "@/hooks/useT";
 
 type Route = {
   href: string;
@@ -24,41 +24,6 @@ function isActive(key: Route["key"], pathname: string | null): boolean {
   if (key === "home") return pathname === "/";
   if (key === "brief") return pathname === "/brief" || pathname.startsWith("/brief/");
   return pathname === `/${key}` || pathname.startsWith(`/${key}/`);
-}
-
-function LangSwitcher() {
-  const { lang, setLang, t } = useT();
-  const options: { code: Lang; label: string }[] = [
-    { code: "en", label: "EN" },
-    { code: "rw", label: "RW" },
-  ];
-  return (
-    <div
-      role="group"
-      aria-label={t("lang.switcher")}
-      className="inline-flex overflow-hidden rounded-lg border border-slate-300 text-sm font-medium text-slate-700 dark:border-slate-600 dark:text-slate-200"
-    >
-      {options.map((opt) => {
-        const selected = opt.code === lang;
-        return (
-          <button
-            key={opt.code}
-            type="button"
-            onClick={() => setLang(opt.code)}
-            aria-pressed={selected}
-            className={
-              "px-2.5 py-1 transition-colors first:rounded-l-[7px] last:rounded-r-[7px] " +
-              (selected
-                ? "bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900"
-                : "bg-white hover:bg-slate-100 dark:bg-slate-900 dark:hover:bg-slate-800")
-            }
-          >
-            {opt.label}
-          </button>
-        );
-      })}
-    </div>
-  );
 }
 
 function HeaderNavInner() {
@@ -111,9 +76,6 @@ function HeaderNavInner() {
               </Link>
             );
           })}
-          <div className="ml-2">
-            <LangSwitcher />
-          </div>
         </nav>
 
         <button
@@ -175,12 +137,6 @@ function HeaderNavInner() {
                 </Link>
               );
             })}
-            <div className="mt-2 flex items-center justify-between border-t border-slate-200 pt-3 dark:border-slate-800">
-              <span className="text-sm font-medium text-slate-600 dark:text-slate-400">
-                {t("lang.label")}
-              </span>
-              <LangSwitcher />
-            </div>
           </nav>
         </div>
       ) : null}
