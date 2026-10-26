@@ -640,7 +640,7 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
         </>;
       })()}
     </div>
-    <Link href={`/brief/${encodeURIComponent(selectedDistrict.district)}`} className="mt-3 inline-flex min-h-10 max-w-full items-center justify-center rounded-md bg-indigo-700 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700">{t("brief.open_brief")}</Link>
+    <Link href={`/brief/${encodeURIComponent(selectedDistrict.district)}`} className="mt-3 inline-flex min-h-10 max-w-full items-center justify-center rounded-md bg-indigo-700 px-4 py-2 text-sm font-semibold text-white transition-transform duration-150 motion-safe:active:scale-[0.97] motion-reduce:transition-none hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700">{t("brief.open_brief")}</Link>
   </section> : <section ref={selectedCardRef} aria-label={t("map.overview_title")} className="w-full min-w-0 overflow-hidden rounded-xl border border-slate-300 bg-white p-4 shadow-lg dark:border-slate-700 dark:bg-slate-900 lg:rounded-md">
     <h3 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">{t("map.overview_title")}</h3>
     {indicatorTilesGrid}
@@ -678,7 +678,7 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
           <div className="mb-3 flex flex-wrap gap-2">
             {LAYERS.map((layer) => {
               const label = t(`map.layer_${layerKeyPart(layer)}`);
-              return <button key={layer} type="button" onClick={() => setSelectedLayer(layer)} aria-pressed={selectedLayer === layer} className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${selectedLayer === layer ? "bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900" : "bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"}`}>{label}</button>;
+              return <button key={layer} type="button" onClick={() => setSelectedLayer(layer)} aria-pressed={selectedLayer === layer} className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors duration-150 motion-reduce:transition-none ${selectedLayer === layer ? "bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900" : "bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"}`}>{label}</button>;
             })}
           </div>
 

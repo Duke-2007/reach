@@ -12,6 +12,8 @@ export default function BriefIndex({ districts }: { districts: PriorityDistrictR
   return <main className="mx-auto w-full min-w-0 max-w-5xl flex-1 px-4 py-10 sm:px-6 sm:py-14">
     <h1 className="mb-3">{t("brief.index_title")}</h1>
     <p className="mb-5 text-sm text-slate-700 dark:text-slate-300">{t("brief.index_body")}</p>
+    <p className="mb-2 text-sm text-slate-700 dark:text-slate-300">{t("brief.index_guidance")}</p>
+    <a href="#brief-district-picker" className="mb-6 inline-flex rounded-md border border-slate-300 px-3 py-2 text-sm font-medium text-slate-800 underline underline-offset-2 dark:border-slate-600 dark:text-slate-100">{t("brief.picker_prompt")}</a>
     <label className="mb-6 block text-sm font-medium" htmlFor="brief-district-picker">{t("brief.picker_label")}
       <select id="brief-district-picker" defaultValue="" onChange={(event) => { if (event.target.value) router.push(`/brief/${encodeURIComponent(event.target.value)}`); }} className="mt-1 block w-full max-w-md rounded-md border border-slate-300 bg-white px-3 py-2 dark:border-slate-700 dark:bg-slate-900">
         <option value="">{t("brief.picker_prompt")}</option>{ranked.map((row) => <option key={row.district} value={row.district}>{row.district}</option>)}

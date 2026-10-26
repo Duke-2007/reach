@@ -38,6 +38,14 @@
     "simulator_button": "TODO_TRANSLATE Open the simulator",
     "priority_button": "TODO_TRANSLATE See priority districts"
   },
+  "home": {
+    "orientation_title": "TODO_TRANSLATE How to use Reach",
+    "orientation_step1": "TODO_TRANSLATE Choose an indicator, then click a district on the map or search for one.",
+    "orientation_step2": "TODO_TRANSLATE Open the simulator to see how targeting rules compare at a support budget.",
+    "orientation_step3": "TODO_TRANSLATE Open a district brief to read the summary and print or save it as PDF.",
+    "orientation_hide": "TODO_TRANSLATE Hide",
+    "orientation_show": "TODO_TRANSLATE Show how to use Reach"
+  },
   "format": {
     "percent_whole": "{value}%",
     "ci_parens": "({lo}–{hi})",
@@ -359,6 +367,7 @@
   "brief": {
     "index_title": "TODO_TRANSLATE District briefs",
     "index_body": "TODO_TRANSLATE Choose a district to open its policy brief. Districts are listed by the number of poor households with no support.",
+    "index_guidance": "TODO_TRANSLATE Choose a district to open its one-page brief.",
     "open_brief": "TODO_TRANSLATE Open district brief",
     "picker_label": "TODO_TRANSLATE District",
     "picker_prompt": "TODO_TRANSLATE Choose a district",
