@@ -221,16 +221,6 @@ export default function ModelPage({ data }: { data: ModelMetrics }) {
         {featureData.length > 0 ? <details className="mt-3 text-sm"><summary className="cursor-pointer font-medium underline">{t("model.show_data_table")}</summary><div className="mt-2 max-w-full overflow-x-auto"><table className="w-full border-collapse text-xs"><thead><tr><th className="p-2 text-left">{t("model.feature")}</th><th className="p-2 text-right">{t("model.importance")}</th></tr></thead><tbody>{featureData.map((item) => <tr key={item.feature} className="border-t"><th className="p-2 text-left">{item.label}</th><td className="p-2 text-right">{item.importance.toFixed(3)}</td></tr>)}</tbody></table></div></details> : null}
       </div>
 
-      {/* Limitations Box */}
-      <div className="rounded-md border border-amber-300 bg-amber-50 p-4 dark:border-amber-700 dark:bg-amber-950/50 min-w-0">
-        <h3 className="mb-2 text-sm font-semibold text-amber-900 dark:text-amber-100">
-          {t("model.limitations_title")}
-        </h3>
-        <p className="text-xs leading-relaxed text-amber-800 dark:text-amber-200">
-          {t("model.limitations_text")}
-        </p>
-      </div>
-
       {/* Model vs Random Comparison */}
       <div className="rounded-md border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900 min-w-0">
         <h3 className="mb-3 text-sm font-semibold text-slate-900 dark:text-slate-100">

@@ -163,8 +163,6 @@
     "feature": "Feature",
     "importance": "Importance",
     "direction": "Direction",
-    "limitations_title": "What this model can and cannot do",
-    "limitations_text": "This model was trained on a survey sample (EICV7) and works at district level. Its accuracy is imperfect and it does not identify real households. Receiving support can itself change a household's welfare. Use it as a policy design tool, not as a list of individuals.",
     "comparison_title": "Observed, model and random targeting",
     "comparison_not_available": "Observed targeting data is not available in model_metrics.json.",
     "model": "Model-ranked targeting",
