@@ -49,6 +49,9 @@
 }
 
 @theme inline {
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-fluid: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
@@ -63,6 +66,29 @@
   --color-error: var(--error);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
+}
+
+@keyframes mobile-menu-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 html {

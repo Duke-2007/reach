@@ -678,7 +678,7 @@ export default function GapMap({ data }: { data: DistrictGaps }) {
           <div className="mb-3 flex flex-wrap gap-2">
             {LAYERS.map((layer) => {
               const label = t(`map.layer_${layerKeyPart(layer)}`);
-              return <button key={layer} type="button" onClick={() => setSelectedLayer(layer)} aria-pressed={selectedLayer === layer} className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors duration-150 motion-reduce:transition-none ${selectedLayer === layer ? "bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900" : "bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"}`}>{label}</button>;
+              return <button key={layer} type="button" onClick={() => setSelectedLayer(layer)} aria-pressed={selectedLayer === layer} className={`rounded-md px-3 py-1.5 text-sm font-medium transition-[color,background-color,border-color] duration-150 ease-smooth motion-reduce:transition-none ${selectedLayer === layer ? "bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900" : "bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"}`}>{label}</button>;
             })}
           </div>
 

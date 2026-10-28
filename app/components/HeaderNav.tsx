@@ -36,7 +36,7 @@ function HeaderNavInner() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 min-w-0">
         <Link
           href="/"
-          className="flex items-center gap-2 font-semibold tracking-tight min-w-0"
+          className="flex items-center gap-2 font-semibold tracking-tight transition-[color,background-color,border-color] duration-150 ease-smooth motion-reduce:transition-none min-w-0"
           onClick={() => setOpen(false)}
         >
           <svg
@@ -66,7 +66,7 @@ function HeaderNavInner() {
                 key={r.key}
                 href={href}
                 className={
-                  "rounded-md px-3 py-1.5 text-sm font-medium transition-colors whitespace-nowrap " +
+                  "rounded-md px-3 py-1.5 text-sm font-medium transition-[color,background-color,border-color] duration-150 ease-smooth motion-reduce:transition-none whitespace-nowrap " +
                   (active
                     ? "bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900"
                     : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800")
@@ -115,7 +115,7 @@ function HeaderNavInner() {
       {open ? (
         <div
           id="mobile-nav"
-          className="border-t border-slate-200 bg-white px-4 pb-4 pt-2 dark:border-slate-800 dark:bg-slate-950 2xl:hidden sm:px-6 min-w-0"
+          className="border-t border-slate-200 bg-white px-4 pb-4 pt-2 motion-safe:animate-[mobile-menu-enter_150ms_var(--ease-out-fluid)_both] motion-reduce:animate-none dark:border-slate-800 dark:bg-slate-950 2xl:hidden sm:px-6 min-w-0"
         >
           <nav aria-label="Primary (mobile)" className="flex flex-col gap-1 min-w-0">
             {ROUTES.map((r) => {
@@ -127,7 +127,7 @@ function HeaderNavInner() {
                   href={href}
                   onClick={() => setOpen(false)}
                   className={
-                    "rounded-md px-3 py-2 text-base font-medium transition-colors " +
+                    "rounded-md px-3 py-2 text-base font-medium transition-[color,background-color,border-color] duration-150 ease-smooth motion-reduce:transition-none " +
                     (active
                       ? "bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900"
                       : "text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800")
