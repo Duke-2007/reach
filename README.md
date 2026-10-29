@@ -128,4 +128,4 @@ Claude, Trae, Devin and Codex assisted with planning, writing and reviewing code
 | Scripts | `pipeline/run_all.sh` rebuilds the aggregated data and runs the Python tests. |
 | Data | Aggregated exports are in `outputs/` and `app/public/data/`; raw survey microdata is not redistributed. |
 
-<!-- RECORDING LINK: - Screen recording: [demo/reach-demo.webm](demo/reach-demo.webm) -->
+- Screen recording: [demo/reach-demo-v2.webm](demo/reach-demo-v2.webm)
